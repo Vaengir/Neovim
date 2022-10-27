@@ -61,4 +61,13 @@ return packer.startup(function(use)
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+
+  -- LSP
+  use({ "williamboman/mason.nvim" })
+  use({ "neovim/nvim-lspconfig" })
+  use({ "williamboman/mason-lspconfig.nvim" })
+  -- use({ "mfussenegger/nvim-lint" })
+  -- use({ "mhartington/formatter.nvim" })
+  -- use({ "mfussenegger/nvim-dap" })
+  
 end)
