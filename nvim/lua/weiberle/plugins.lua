@@ -43,11 +43,22 @@ return packer.startup(function(use)
   -- My plugins here
   
   use({ "wbthomason/packer.nvim" }) -- packer manage itself
-  use({ "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" }) -- Autopairs, integrates with both cmp and treesitter
-  use({ "numToStr/Comment.nvim" })
-  use({"jdhao/better-escape.vim", event = 'InsertEnter'})
-  use({"folke/which-key.nvim"})
-
+  use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
+  use({ "numToStr/Comment.nvim" }) -- Comment out lines
+  use({ "jdhao/better-escape.vim", event = 'InsertEnter' }) -- Allows jk to exit insert mode
+  use({ "folke/which-key.nvim" }) -- Allows <leader> keymap menu
+  use({ 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' }}) -- Explorer
+  use({ "akinsho/toggleterm.nvim" }) -- Integrated terminal
+  use({ "nvim-lua/plenary.nvim" }) -- Dependencies of other plugins
+  use({ "kyazdani42/nvim-web-devicons" })
+  use({ "goolord/alpha-nvim" })
+  
   -- Colorschemes
-  use "rmehri01/onenord.nvim"
+  use({ "rmehri01/onenord.nvim" })
+
+  -- Telescope
+  use({ "nvim-telescope/telescope.nvim" })
+
+  -- Treesitter
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 end)
