@@ -52,9 +52,23 @@ return packer.startup(function(use)
   use({ "nvim-lua/plenary.nvim" }) -- Dependencies of other plugins
   use({ "kyazdani42/nvim-web-devicons" })
   use({ "goolord/alpha-nvim" })
-  
+  use({ "nvim-lualine/lualine.nvim" })
+
+  -- Completion plugins
+  use({ "hrsh7th/nvim-cmp" })
+  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+  use({ "hrsh7th/cmp-path" }) -- path completions
+  use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+  use({ "hrsh7th/cmp-nvim-lsp" })
+  use({ "hrsh7th/cmp-nvim-lua" })
+
+  -- snippets
+  use({ "L3MON4D3/LuaSnip" }) --snippet engine
+  use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+
   -- Colorschemes
   use({ "rmehri01/onenord.nvim" })
+  use({ "Shatur/neovim-ayu" })
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
@@ -69,5 +83,5 @@ return packer.startup(function(use)
   -- use({ "mfussenegger/nvim-lint" })
   -- use({ "mhartington/formatter.nvim" })
   -- use({ "mfussenegger/nvim-dap" })
-  
+
 end)
