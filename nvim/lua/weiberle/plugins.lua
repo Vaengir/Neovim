@@ -41,7 +41,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  
+
   use({ "wbthomason/packer.nvim" }) -- packer manage itself
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "numToStr/Comment.nvim" }) -- Comment out lines
@@ -54,7 +54,7 @@ return packer.startup(function(use)
   use({ "goolord/alpha-nvim" })
   use({ "nvim-lualine/lualine.nvim" })
   use({ "lewis6991/gitsigns.nvim" })
---  use({ "tpope/vim-fugitive" })
+  --  use({ "tpope/vim-fugitive" })
 
   -- Completion plugins
   use({ "hrsh7th/nvim-cmp" })
