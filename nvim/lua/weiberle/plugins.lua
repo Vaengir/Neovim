@@ -53,6 +53,8 @@ return packer.startup(function(use)
   use({ "kyazdani42/nvim-web-devicons" })
   use({ "goolord/alpha-nvim" })
   use({ "nvim-lualine/lualine.nvim" })
+  use({ "lewis6991/gitsigns.nvim" })
+--  use({ "tpope/vim-fugitive" })
 
   -- Completion plugins
   use({ "hrsh7th/nvim-cmp" })
@@ -84,4 +86,9 @@ return packer.startup(function(use)
   -- use({ "mhartington/formatter.nvim" })
   -- use({ "mfussenegger/nvim-dap" })
 
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)
