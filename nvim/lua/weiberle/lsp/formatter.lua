@@ -9,7 +9,14 @@ require("formatter").setup {
   log_level = vim.log.levels.WARN,
   -- All formatter configurations are opt-in
   filetype = {
+    java = { require("weiberle.formatter.filetypes.any")},
+    css = { require("weiberle.formatter.filetypes.css")},
+    html = { require("weiberle.formatter.filetypes.html")},
     lua = { require("weiberle.formatter.filetypes.lua").stylua },
+    markdown = { require("weiberle.formatter.filetypes.markdown")},
+    php = { require("weiberle.formatter.filetypes.php")},
+    python = { require("weiberle.formatter.filetypes.python")},
+    sql = { require("weiberle.formatter.filetypes.sql")},
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
