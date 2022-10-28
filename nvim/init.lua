@@ -13,4 +13,3 @@ require "weiberle.cmp"
 require "weiberle.mason"
 -- require "weiberle.autopairs"
 require "weiberle.whichkey"
-
