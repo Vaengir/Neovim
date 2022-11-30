@@ -21,6 +21,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<S-l>", ":bn<CR>", opts)
 keymap("n", "<S-h>", ":bp<CR>", opts)
 
+-- Better Movements
+keymap("n", "H", "^", opts)
+keymap("n", "L", "$", opts)
+
 -- Insert --
 -- Allow Ctrl+Backslash to delete entire words
 keymap("i", "<C-H>", "<C-W>", opts)
