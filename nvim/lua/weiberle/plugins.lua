@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "lewis6991/gitsigns.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim" })
 	--  use({ "tpope/vim-fugitive" })
 
 	-- Completion plugins
