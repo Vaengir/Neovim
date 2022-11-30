@@ -32,6 +32,7 @@ local options = {
   sidescrolloff = 8,                    -- minimal number of screen columns right and left of cursor
   guifont = "monospace:h17",            -- the font used in graphical neovim applications
   guicursor = "n-v-c-i:block",          -- have cursor always as a block
+  showtabline = 2,                      -- always show tabs on the top
 }
 
 for k, v in pairs(options) do
