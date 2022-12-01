@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "lewis6991/gitsigns.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim" })
 	--  use({ "tpope/vim-fugitive" })
 
 	-- Completion plugins
@@ -79,12 +80,13 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	-- LSP
+	use({ "neovim/nvim-lspconfig" })
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
-	use({ "neovim/nvim-lspconfig" })
 	use({ "mhartington/formatter.nvim" })
-	-- use({ "mfussenegger/nvim-lint" })
-	-- use({ "mfussenegger/nvim-dap" })
+	use({ "mfussenegger/nvim-lint" })
+	use({ "mfussenegger/nvim-dap" })
+  use({ "mfussenegger/nvim-jdtls" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
