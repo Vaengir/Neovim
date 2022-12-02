@@ -18,8 +18,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bn<CR>", opts)
-keymap("n", "<S-h>", ":bp<CR>", opts)
+keymap("n", "<S-j>", ":bn<CR>", opts)
+keymap("n", "<S-k>", ":bp<CR>", opts)
 
 -- Better Movements
 keymap("n", "H", "^", opts)
