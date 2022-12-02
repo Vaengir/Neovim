@@ -44,10 +44,10 @@ return packer.startup(function(use)
 
 	use({ "wbthomason/packer.nvim" }) -- packer manage itself
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-	use({ "numToStr/Comment.nvim", 
+	use({ "numToStr/Comment.nvim",
         config = function()
           require('Comment').setup()
-        end 
+        end
       }) -- Comment out lines
 	use({ "jdhao/better-escape.vim", event = "InsertEnter" }) -- Allows jk to exit insert mode
 	use({ "folke/which-key.nvim" }) -- Allows <leader> keymap menu
