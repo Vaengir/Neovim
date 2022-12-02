@@ -31,6 +31,10 @@ local mode = {
 	end,
 }
 
+local function getGuiFont()
+  return vim.api.nvim_get_option("guifont")
+end
+
 local filetype = {
 	"filetype",
 	icons_enabled = false,
@@ -72,7 +76,7 @@ lualine.setup({
 		lualine_b = { mode },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, "encoding", filetype },
+		lualine_x = { --[[ {getGuiFont}, ]] diff, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
