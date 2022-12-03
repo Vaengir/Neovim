@@ -59,7 +59,8 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "lewis6991/gitsigns.nvim" })
   use({ "lukas-reineke/indent-blankline.nvim" })
-  use({ "mbbill/undotree"})
+  use({ "mbbill/undotree" })
+  use({ "junegunn/goyo.vim" })
 	--  use({ "tpope/vim-fugitive" })
 
 	-- Completion plugins
