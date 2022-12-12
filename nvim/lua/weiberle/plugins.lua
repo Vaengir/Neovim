@@ -79,21 +79,22 @@ return packer.startup(function(use)
 	use({ "rmehri01/onenord.nvim" })
 	use({ "Shatur/neovim-ayu" })
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" })
+	-- TelescopePrompt
+  use({ "nvim-telescope/telescope.nvim" })
 
-	-- Treesitter
+  -- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({ 'nvim-treesitter/nvim-treesitter-context' })
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig" })
-	use({ "williamboman/mason.nvim" })
-	use({ "williamboman/mason-lspconfig.nvim" })
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 	use({ "mhartington/formatter.nvim" })
 	use({ "mfussenegger/nvim-lint" })
 	use({ "mfussenegger/nvim-dap" })
-  use({ "mfussenegger/nvim-jdtls" })
 
   -- VimBeGood
   use({ "ThePrimeagen/vim-be-good"})

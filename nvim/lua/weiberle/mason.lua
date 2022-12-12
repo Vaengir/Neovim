@@ -7,6 +7,3 @@ require("mason").setup({
         }
     }
 })
-
-require("weiberle.lsp.lspconfig")
-require("weiberle.lsp.formatter")
