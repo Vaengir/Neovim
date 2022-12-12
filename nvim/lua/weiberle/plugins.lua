@@ -105,6 +105,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
-cd ~/git/AwesomeWM/awesome/
-nano rc.lua
