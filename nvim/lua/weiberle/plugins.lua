@@ -107,4 +107,4 @@ return packer.startup(function(use)
 end)
 
 cd ~/git/AwesomeWM/awesome/
-vim rc.lua
+nano rc.lua
