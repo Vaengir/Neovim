@@ -94,6 +94,7 @@ local mappings = {
   ["g"] = { "<cmd>Goyo | set wrap!<cr>", "Goyo" },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
   ["o"] = { "gg=G", "Format" },
+  -- ["O"] = { "<cmd>Format<cr>", "Format" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   t = {
