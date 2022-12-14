@@ -41,10 +41,10 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-
   use({ "wbthomason/packer.nvim" }) -- packer manage itself
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-  use({ "numToStr/Comment.nvim",
+  use({
+    "numToStr/Comment.nvim",
     config = function()
       require('Comment').setup()
     end

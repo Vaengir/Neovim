@@ -3,6 +3,17 @@ require("mason-lspconfig").setup({
   ensure_installed = { "bashls", "cssls", "cssmodules_ls", "html", "jdtls", "sumneko_lua", "sqls", "marksman", "pyright", "tailwindcss" }
 })
 
+local signs = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " "
+}
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+
 local on_attach = function(_, _)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
   vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, {})
