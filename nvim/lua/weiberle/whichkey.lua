@@ -91,7 +91,7 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["g"] = { "<cmd>Goyo | set wrap!<cr>", "Goyo" },
+  ["g"] = { "<cmd>Goyo | set wrap! | IndentBlanklineToggle<cr>", "Goyo" },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
   ["o"] = { "gg=G", "Format" },
   -- ["O"] = { "<cmd>Format<cr>", "Format" },
