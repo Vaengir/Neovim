@@ -20,6 +20,16 @@ lsp.ensure_installed({
   "tailwindcss"
 })
 
+-- Preferences
+lsp.set_preferences({
+  sign_icons = {
+    error = " ",
+    warn = " ",
+    hint = " ",
+    info = " "
+  }
+})
+
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
   settings = {
