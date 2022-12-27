@@ -27,7 +27,8 @@ lsp.set_preferences({
     warn = " ",
     hint = " ",
     info = " "
-  }
+  },
+  set_lsp_keymaps = false,
 })
 
 -- Fix Undefined global 'vim'
@@ -82,15 +83,18 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-local on_attach = function(client, bufnr)
+lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
-  vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set('n', '<leader>a', function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, opts)
-  vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, opts)
-  vim.keymap.set('n', 'B', function() vim.lsp.buf.hover() end, opts)
-end
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
+  vim.keymap.set('n', 'gt', "<cmd>Telescope diagnostics<cr>", opts)
+  vim.keymap.set('n', 'B', vim.lsp.buf.hover, opts)
+end)
 
 lsp.setup()
 
