@@ -89,7 +89,7 @@ local mappings = {
   ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
   ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["g"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode" },
+  ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode" },
   ["o"] = { "<cmd>LspZeroFormat<cr>", "Format" },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
