@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+require"fidget".setup{}
+
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')

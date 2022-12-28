@@ -135,6 +135,9 @@ return packer.startup(function(use)
   -- Vim Fugitive
   use({ "tpope/vim-fugitive" })
 
+  -- LSP Status
+  use({ "j-hui/fidget.nvim" })
+
   -- Whichkey
   use('folke/which-key.nvim')
 
