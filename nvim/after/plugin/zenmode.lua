@@ -5,8 +5,8 @@ end
 
 require("zen-mode").setup {
   window = {
-    width = 100, -- width of the Zen window
-    height = 1, -- height of the Zen window
+    width = 120, -- width of the Zen window
+    height = 0.9, -- height of the Zen window
     options = {
       scrolloff = 999,
       -- signcolumn = "no", -- disable signcolumn
