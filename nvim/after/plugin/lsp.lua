@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-require"fidget".setup{}
+require "fidget".setup {}
 
 local lsp = require('lsp-zero')
 
@@ -33,7 +33,7 @@ lsp.set_preferences({
   set_lsp_keymaps = false,
 })
 
--- Fix Undefined global 'vim'
+-- Lua LSP Setup
 lsp.configure('sumneko_lua', {
   settings = {
     Lua = {
@@ -66,6 +66,15 @@ lsp.configure('sumneko_lua', {
     }
   }
 })
+
+-- Java LSP Setup
+-- lsp.configure('jdtls', {
+--   java = {
+--     format = {
+--       settings = { url = "~/.config/nvim/lua/weiberle/jdtls/formatter.xml" }
+--     }
+--   }
+-- })
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
