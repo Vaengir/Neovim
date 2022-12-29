@@ -68,13 +68,15 @@ lsp.configure('sumneko_lua', {
 })
 
 -- Java LSP Setup
--- lsp.configure('jdtls', {
---   java = {
---     format = {
---       settings = { url = "~/.config/nvim/lua/weiberle/jdtls/formatter.xml" }
---     }
---   }
--- })
+lsp.configure('jdtls', {
+  settings = {
+    java = {
+      format = {
+        settings = { url = "~/.config/nvim/lua/weiberle/jdtls/formatter.xml" }
+      }
+    }
+  }
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
