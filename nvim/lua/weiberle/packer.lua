@@ -138,6 +138,14 @@ return packer.startup(function(use)
   -- LSP Status
   use({ "j-hui/fidget.nvim" })
 
+  -- Markdown Preview
+  -- install without yarn or npm
+  -- use({
+  --   "iamcco/markdown-preview.nvim",
+  --   run = function() vim.fn["mkdp#util#install"]() end,
+  -- })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   -- Whichkey
   use('folke/which-key.nvim')
 
