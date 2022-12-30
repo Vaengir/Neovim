@@ -36,6 +36,7 @@ local options = {
 }
 
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"  -- Allows undotree to have access to old undos
+vim.opt.nrformats:append({'alpha'})                     -- Allows letter incrementation
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
