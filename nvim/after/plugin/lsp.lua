@@ -14,6 +14,7 @@ lsp.ensure_installed({
   "bashls",
   "cssls",
   "cssmodules_ls",
+  "eslint",
   "html",
   "jdtls",
   "sumneko_lua",

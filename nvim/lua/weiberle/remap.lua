@@ -29,6 +29,10 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
+-- Allow empty Line Inserts
+keymap("n", "]", "<cmd>call append(line('.'), '')<CR>", opts)
+keymap("n", "[", "<cmd>call append(line('.')-1, '')<CR>", opts)
+
 -- Clear Searches
 keymap("n", "<CR>", "<cmd>nohl<cr>", opts)
 
@@ -51,4 +55,5 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
