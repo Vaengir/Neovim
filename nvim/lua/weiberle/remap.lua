@@ -30,8 +30,8 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
 -- Allow empty Line Inserts
-keymap("n", "]", "<cmd>call append(line('.'), '')<CR>", opts)
-keymap("n", "[", "<cmd>call append(line('.')-1, '')<CR>", opts)
+keymap("n", "]", "<cmd>call append(line('.'), repeat([''], v:count1))<CR>", opts)
+keymap("n", "[", "<cmd>call append(line('.')-1, repeat([''], v:count1))<CR>", opts)
 
 -- Clear Searches
 keymap("n", "<CR>", "<cmd>nohl<cr>", opts)
