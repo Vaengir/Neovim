@@ -88,6 +88,7 @@ local opts = {
 local mappings = {
   ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
   ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
+  ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["m"] = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
   ["o"] = { "<cmd>LspZeroFormat<cr>", "Format" },
