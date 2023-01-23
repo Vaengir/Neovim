@@ -114,6 +114,12 @@ local mappings = {
     -- o = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Go To " },
     -- p = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Go To " },
   },
+  l = {
+    name = "VimTex",
+    i = { "<cmd>VimtexInfo<cr>", "VimTex Info" },
+    l = { "<cmd>VimtexCompile<cr>", "VimTex Compile" },
+    s = { "<cmd>VimtexCompileSS", "VimTex Compile Once" },
+  }
 }
 
 which_key.setup(setup)
