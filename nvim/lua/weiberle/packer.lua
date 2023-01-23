@@ -150,7 +150,7 @@ return packer.startup(function(use)
   use({ "lervag/vimtex" })
 
   -- Whichkey
-  use('folke/which-key.nvim')
+  use({ "folke/which-key.nvim" })
 
   -- VimBeGood
   use({ "ThePrimeagen/vim-be-good" })
