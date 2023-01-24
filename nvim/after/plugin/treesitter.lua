@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "java", "lua", "html", "css", "php", "bash", "sql", "python", "markdown" }, -- one of "all" or a list of languages
+	ensure_installed = { "java", "lua", "html", "css", "php", "bash", "latex", "python", "markdown" },
 	highlight = {
 		enable = true, -- false will disable the whole extension
 	},

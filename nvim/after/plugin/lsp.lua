@@ -18,7 +18,6 @@ lsp.ensure_installed({
   "html",
   "jdtls",
   "sumneko_lua",
-  "sqls",
   "marksman",
   "pyright",
   "tailwindcss"
