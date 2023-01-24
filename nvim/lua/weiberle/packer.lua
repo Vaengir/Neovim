@@ -147,7 +147,11 @@ return packer.startup(function(use)
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- LaTeX Setup
-  use({ "lervag/vimtex" })
+  use({ "lervag/vimtex",
+    config = function ()
+      vim.g.vimtex_guickfix_open_on_warning = 0
+    end
+  })
 
   -- Whichkey
   use({ "folke/which-key.nvim" })
