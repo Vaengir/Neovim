@@ -118,7 +118,7 @@ local mappings = {
     name = "VimTex",
     i = { "<cmd>VimtexInfo<cr>", "VimTex Info" },
     l = { "<cmd>VimtexCompile<cr>", "VimTex Compile" },
-    s = { "<cmd>VimtexCompileSS", "VimTex Compile Once" },
+    s = { "<cmd>VimtexCompileSS<cr>", "VimTex Compile Once" },
   }
 }
 
