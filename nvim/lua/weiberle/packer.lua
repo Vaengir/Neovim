@@ -148,7 +148,7 @@ return packer.startup(function(use)
 
   -- LaTeX Setup
   use({ "lervag/vimtex",
-    config = function ()
+    config = function()
       vim.g.vimtex_guickfix_open_on_warning = 0
     end
   })
