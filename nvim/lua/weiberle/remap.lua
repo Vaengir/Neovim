@@ -52,3 +52,6 @@ keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+-- Unmap q to test if that is what causes weird jk and esc functionality
+keymap("", "q", "<Nop>", opts)
