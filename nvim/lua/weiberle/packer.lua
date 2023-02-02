@@ -145,6 +145,7 @@ return packer.startup(function(use)
   use({ "lervag/vimtex",
     config = function()
       vim.g.vimtex_quickfix_open_on_warning = 0
+      vim.g.vimtex_mappings_enabled = false
     end
   })
 
