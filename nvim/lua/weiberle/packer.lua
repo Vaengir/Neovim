@@ -148,6 +148,12 @@ return packer.startup(function(use)
     end
   })
 
+  -- Better Scrolloff
+  use({
+    'Aasim-A/scrollEOF.nvim',
+    require("scrollEOF").setup({})
+  })
+
   -- Whichkey
   use({ "folke/which-key.nvim" })
 
