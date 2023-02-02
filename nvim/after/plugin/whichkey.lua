@@ -99,7 +99,7 @@ local mappings = {
   f = {
     name = "Fuzzy Find",
     f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-    g = { "<cmd>Telescope git_files<cr>", "Git Files" },
+    g = { "<cmd>Telescope git_status<cr>", "Git Status" },
     s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
