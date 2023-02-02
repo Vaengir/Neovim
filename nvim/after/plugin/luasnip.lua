@@ -68,6 +68,24 @@ ls.add_snippets("all", {
 
 -- For Tex files
 ls.add_snippets("tex", {
+  s("fig", {
+    t({"\\begin{figure}[htb]", "\\centering", "\\includesgraphics["}),
+    c(1, { t{"width="}, t{"height="}, }),
+    i(2),
+    t("]{"),
+    i(3),
+    t({"}", "\\caption["}),
+    i(4),
+    t({"]{"}),
+    rep(4),
+    t({" \\footnotemark}", "\\label{abb:"}),
+    i(5),
+    t({"}", "\\end{figure}", "\\footnotetext{"}),
+    c(6, { t{"Enthalten in: "}, t{"Mit Änderungen entnommen aus: "}, }),
+    t({"\\cite{"}),
+    i(7),
+    t({"}}", "", ""}),
+  })
 })
 
 -- Keymaps
