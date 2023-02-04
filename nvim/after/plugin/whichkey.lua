@@ -97,12 +97,13 @@ local mappings = {
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode" },
   f = {
-    name = "Fuzzy Find",
+    name = "Telescope",
     f = { "<cmd>Telescope find_files<cr>", "Find Files" },
     g = { "<cmd>Telescope git_status<cr>", "Git Status" },
-    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
-    q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
+    q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
+    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
+    t = { "<cmd>TodoTelescope<cr>", "Show TODOs"}
   },
   h = {
     name = "Harpoon",
