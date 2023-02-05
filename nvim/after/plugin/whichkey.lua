@@ -39,8 +39,6 @@ local setup = {
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
-    scroll_down = '<c-d>', -- binding to scroll down inside the popup
-    scroll_up = '<c-u>', -- binding to scroll up inside the popup
   },
   window = {
     border = "none", -- none, single, double, shadow
@@ -103,7 +101,7 @@ local mappings = {
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
     s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
-    t = { "<cmd>TodoTelescope<cr>", "Show TODOs"}
+    t = { "<cmd>TodoTelescope<cr>", "Show TODOs" }
   },
   h = {
     name = "Harpoon",
