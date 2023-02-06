@@ -99,6 +99,14 @@ ls.add_snippets("tex", {
     t { "}" },
   }),
 
+  s("al", {
+    t { "\\glqq " }
+  }),
+
+  s("ar", {
+    c(1, { t { "\\grqq " }, t { "\\grqq{} " }, }),
+  }),
+
 })
 
 -- Keymaps
