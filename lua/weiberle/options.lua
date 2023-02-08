@@ -1,7 +1,7 @@
 local options = {
   autoindent = true,            -- auto indent lines
   backup = false,               -- creates a backup file
-  clipboard = "unnamed",        -- allows neovim to access the system clipboard
+  clipboard = "unnamedplus",    -- allows neovim to access the system clipboard
   cmdheight = 2,                -- more space in the neovim command line for displaying messages
   fileencoding = "utf-8",       -- the encoding written to a file
   hlsearch = true,              -- highlight all matches on previous search pattern
