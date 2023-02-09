@@ -113,8 +113,8 @@ ls.add_snippets("tex", {
 
 -- End Tex files
 
--- Typescript files
-ls.add_snippets("typescript", {
+-- Svelte files
+ls.add_snippets("svelte", {
   s("script", {
     t({ "<script lang='ts'>", "" }),
     i(0),
@@ -122,7 +122,7 @@ ls.add_snippets("typescript", {
   })
 })
 
--- End Typescript files
+-- End Svelte files
 
 -- Keymaps
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
