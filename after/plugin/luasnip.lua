@@ -66,6 +66,8 @@ ls.setup({
 ls.add_snippets("all", {
 })
 
+-- End all files
+
 -- For Tex files
 ls.add_snippets("tex", {
 
@@ -108,6 +110,19 @@ ls.add_snippets("tex", {
   }),
 
 })
+
+-- End Tex files
+
+-- Typescript files
+ls.add_snippets("typescript", {
+  s("script", {
+    t({"<script lang='ts'>", ""}),
+    i(0),
+    t({"", "</script>"}),
+  })
+})
+
+-- End Typescript files
 
 -- Keymaps
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
