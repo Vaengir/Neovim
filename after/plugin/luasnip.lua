@@ -116,7 +116,7 @@ ls.add_snippets("tex", {
 -- Svelte files
 ls.add_snippets("svelte", {
   s("script", {
-    t({ "<script lang='ts'>", "" }),
+    t({ "<script lang='ts'>", "  " }),
     i(0),
     t({ "", "</script>" }),
   })
@@ -132,8 +132,8 @@ vim.keymap.set({ "i", "s" }, "<c-k>", function()
 end, { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
-  if ls.jumpable( -1) then
-    ls.jump( -1)
+  if ls.jumpable(-1) then
+    ls.jump(-1)
   end
 end, { silent = true })
 
