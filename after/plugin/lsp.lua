@@ -57,6 +57,7 @@ lsp.configure('sumneko_lua', {
         defaultConfig = {
           indent_style = "space",
           indent_size = "2",
+          continuation_indent = "2",
           max_line_length = "unset",
         }
       },
