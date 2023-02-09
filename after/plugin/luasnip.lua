@@ -98,11 +98,11 @@ ls.add_snippets("tex", {
     i(3),
     t({ "]{" }),
     i(4),
-    t { "}" },
+    t({ "}" }),
   }),
 
   s("al", {
-    t { "\\glqq " }
+    t({ "\\glqq " }),
   }),
 
   s("ar", {
@@ -116,9 +116,9 @@ ls.add_snippets("tex", {
 -- Typescript files
 ls.add_snippets("typescript", {
   s("script", {
-    t({"<script lang='ts'>", ""}),
+    t({ "<script lang='ts'>", "" }),
     i(0),
-    t({"", "</script>"}),
+    t({ "", "</script>" }),
   })
 })
 
@@ -132,8 +132,8 @@ vim.keymap.set({ "i", "s" }, "<c-k>", function()
 end, { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
+  if ls.jumpable( -1) then
+    ls.jump( -1)
   end
 end, { silent = true })
 
