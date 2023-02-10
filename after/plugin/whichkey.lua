@@ -98,6 +98,7 @@ local mappings = {
     name = "Telescope",
     f = { "<cmd>Telescope find_files<cr>", "Find Files" },
     g = { "<cmd>Telescope git_status<cr>", "Git Status" },
+    h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files" },
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
     s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
