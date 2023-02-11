@@ -6,6 +6,9 @@ end
 require "fidget".setup {}
 require("luasnip/loaders/from_vscode").lazy_load()
 
+vim.g.markdown_recommended_style = 0
+vim.g.python_recommended_style = 0
+
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
