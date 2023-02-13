@@ -60,9 +60,8 @@ lsp.configure('sumneko_lua', {
         defaultConfig = {
           indent_style = "space",
           indent_size = "2",
-          continuation_indent = "2",
           max_line_length = "unset",
-          trailing_table_separator = "always",
+          trailing_table_separator = "always", --NOTE: Currently doesn't work
         }
       },
       -- Do not send telemetry data containing a randomized but unique identifier
