@@ -46,7 +46,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -150,10 +150,12 @@ return packer.startup(function(use)
   use({ "j-hui/fidget.nvim" })
 
   -- Markdown Preview
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- LaTeX Setup
-  use({ "lervag/vimtex",
+  use({
+    "lervag/vimtex",
     config = function()
       vim.g.vimtex_quickfix_open_on_warning = 0
       vim.g.vimtex_mappings_enabled = false
