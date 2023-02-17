@@ -21,7 +21,6 @@ lsp.ensure_installed({
   "jdtls",
   "lua_ls",
   "marksman",
-  "prettier",
   "pyright",
   "svelte",
   "texlab",
