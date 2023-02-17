@@ -20,7 +20,7 @@ lsp.ensure_installed({
   "eslint",
   "html",
   "jdtls",
-  "lua-language-server",
+  "lua_ls",
   "marksman",
   "pyright",
   "tailwindcss"
