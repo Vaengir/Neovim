@@ -38,7 +38,7 @@ lsp.set_preferences({
 })
 
 -- Lua LSP Setup
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
   settings = {
     Lua = {
       runtime = {
