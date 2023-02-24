@@ -22,7 +22,6 @@ lsp.ensure_installed({
   "lua_ls",
   "marksman",
   "pyright",
-  "svelte",
   "texlab",
   "tsserver",
 })
