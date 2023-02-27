@@ -22,7 +22,7 @@ require("zen-mode").setup {
     options = {
       enabled = true,
     },
-    gitsigns = { enabled = false }, -- disables git signs
+    gitsigns = { enabled = false, }, -- disables git signs
   },
   -- callback where you can add custom code when the Zen window opens
   on_open = function()

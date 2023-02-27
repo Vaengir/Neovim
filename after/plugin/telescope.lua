@@ -5,11 +5,11 @@ end
 
 local actions = require "telescope.actions"
 
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "smart", },
 
     mappings = {
       i = {
@@ -18,8 +18,8 @@ require('telescope').setup{
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["jk"] = actions.close,
-        ["<C-h>"] = "which_key"
-      }
-    }
+        ["<C-h>"] = "which_key",
+      },
+    },
   },
 }
