@@ -38,7 +38,7 @@ ls.setup({
   ext_opts = {
     [types.choiceNode] = {
       active = {
-        virt_text = { { "choiceNode", "Comment" } },
+        virt_text = { { "choiceNode", "Comment", }, },
       },
     },
   },
@@ -72,41 +72,41 @@ ls.add_snippets("all", {
 ls.add_snippets("tex", {
 
   s("fig", {
-    t({ "\\begin{figure}[htb]", "\\centering", "\\includesgraphics[" }),
-    c(1, { t { "width=" }, t { "height=" }, }),
+    t({ "\\begin{figure}[htb]", "\\centering", "\\includesgraphics[", }),
+    c(1, { t { "width=", }, t { "height=", }, }),
     i(2),
     t("]{"),
     i(3),
-    t({ "}", "\\caption[" }),
+    t({ "}", "\\caption[", }),
     i(4),
-    t({ "]{" }),
+    t({ "]{", }),
     rep(4),
-    t({ " \\footnotemark}", "\\label{abb:" }),
+    t({ " \\footnotemark}", "\\label{abb:", }),
     i(5),
-    t({ "}", "\\end{figure}", "\\footnotetext{" }),
-    c(6, { t { "Enthalten in: " }, t { "Mit Änderungen entnommen aus: " }, }),
-    t({ "\\cite{" }),
+    t({ "}", "\\end{figure}", "\\footnotetext{", }),
+    c(6, { t { "Enthalten in: ", }, t { "Mit Änderungen entnommen aus: ", }, }),
+    t({ "\\cite{", }),
     i(7),
-    t({ "}}", "", "" }),
+    t({ "}}", "", "", }),
   }),
 
   s("fc", {
-    t({ "\\footcite[" }),
-    c(1, { t { "" }, t { "Vgl. " }, }),
-    t({ "][" }),
-    c(2, { t { "" }, t { "S. " }, }),
+    t({ "\\footcite[", }),
+    c(1, { t { "", }, t { "Vgl. ", }, }),
+    t({ "][", }),
+    c(2, { t { "", }, t { "S. ", }, }),
     i(3),
-    t({ "]{" }),
+    t({ "]{", }),
     i(4),
-    t({ "}" }),
+    t({ "}", }),
   }),
 
   s("al", {
-    t({ "\\glqq " }),
+    t({ "\\glqq ", }),
   }),
 
   s("ar", {
-    c(1, { t { "\\grqq " }, t { "\\grqq{} " }, }),
+    c(1, { t { "\\grqq ", }, t { "\\grqq{} ", }, }),
   }),
 
 })
@@ -116,26 +116,26 @@ ls.add_snippets("tex", {
 -- Svelte files
 ls.add_snippets("svelte", {
   s("script", {
-    t({ "<script lang='ts'>", "  " }),
+    t({ "<script lang='ts'>", "  ", }),
     i(0),
-    t({ "", "</script>" }),
-  })
+    t({ "", "</script>", }),
+  }),
 })
 
 -- End Svelte files
 
 -- Keymaps
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
+vim.keymap.set({ "i", "s", }, "<c-k>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
-end, { silent = true })
+end, { silent = true, })
 
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
+vim.keymap.set({ "i", "s", }, "<c-j>", function()
+  if ls.jumpable( -1) then
+    ls.jump( -1)
   end
-end, { silent = true })
+end, { silent = true, })
 
 vim.keymap.set("i", "<c-l>", function()
   if ls.choice_active() then

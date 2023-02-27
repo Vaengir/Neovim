@@ -43,18 +43,18 @@ local setup = {
   window = {
     border = "none", -- none, single, double, shadow
     position = "bottom", -- bottom, top
-    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-    padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0
+    margin = { 1, 0, 1, 0, }, -- extra window margin [top, right, bottom, left]
+    padding = { 2, 2, 2, 2, }, -- extra window padding [top, right, bottom, left]
+    winblend = 0,
   },
   layout = {
-    height = { min = 4, max = 25 }, -- min and max height of the columns
-    width = { min = 20, max = 50 }, -- min and max width of the columns
+    height = { min = 4, max = 25, }, -- min and max height of the columns
+    width = { min = 20, max = 50, }, -- min and max width of the columns
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ ", }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
   triggers = "auto", -- automatically setup triggers
@@ -63,14 +63,14 @@ local setup = {
     -- list of mode / prefixes that should never be hooked by WhichKey
     -- this is mostly relevant for key maps that start with a native binding
     -- most people should not need to change this
-    i = { "j", "k" },
-    v = { "j", "k" },
+    i = { "j", "k", },
+    v = { "j", "k", },
   },
   -- disable the WhichKey popup for certain buf types and file types.
   -- Disabled by deafult for Telescope
   disable = {
     buftypes = {},
-    filetypes = { "TelescopePrompt" },
+    filetypes = { "TelescopePrompt", },
   },
 }
 
@@ -84,42 +84,42 @@ local opts = {
 }
 
 local mappings = {
-  ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
-  ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
-  ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
-  ["o"] = { "<cmd>LspZeroFormat<cr>", "Format" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode" },
+  ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
+  ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
+  ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
+  ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
+  ["o"] = { "<cmd>LspZeroFormat<cr>", "Format", },
+  ["q"] = { "<cmd>q!<CR>", "Quit", },
+  ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree", },
+  ["w"] = { "<cmd>w!<CR>", "Save", },
+  ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode", },
   f = {
     name = "Telescope",
-    f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-    g = { "<cmd>Telescope git_status<cr>", "Git Status" },
-    h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files" },
-    j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
-    q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist" },
-    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings" },
-    t = { "<cmd>TodoTelescope<cr>", "Show TODOs" }
+    f = { "<cmd>Telescope find_files<cr>", "Find Files", },
+    g = { "<cmd>Telescope git_status<cr>", "Git Status", },
+    h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files", },
+    j = { "<cmd>Telescope jumplist<cr>", "Jumplist", },
+    q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
+    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings", },
+    t = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
   },
   h = {
     name = "Harpoon",
-    h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
-    m = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-    d = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File" },
-    w = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Go To Whichkey" },
-    c = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Go To Plugins" },
+    h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu", },
+    m = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark File", },
+    d = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove File", },
+    w = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Go To Whichkey", },
+    c = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Go To Plugins", },
     -- o = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Go To " },
     -- p = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Go To " },
   },
   l = {
     name = "VimTex",
-    i = { "<cmd>VimtexInfo<cr>", "VimTex Info" },
-    l = { "<cmd>VimtexCompile<cr>", "VimTex Compile" },
-    s = { "<cmd>VimtexCompileSS<cr>", "VimTex Compile Once" },
-  }
+    i = { "<cmd>VimtexInfo<cr>", "VimTex Info", },
+    l = { "<cmd>VimtexCompile<cr>", "VimTex Compile", },
+    s = { "<cmd>VimtexCompileSS<cr>", "VimTex Compile Once", },
+  },
 }
 
 which_key.setup(setup)
