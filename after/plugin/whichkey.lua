@@ -101,6 +101,7 @@ local mappings = {
     h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files", },
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist", },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
+    r = { "<cmd>Telescope lsp_references", "References", },
     s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings", },
     t = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
   },
