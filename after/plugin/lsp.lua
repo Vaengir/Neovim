@@ -15,7 +15,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   "bashls",
-  "css-lsp",
+  "cssls",
   "eslint",
   "html",
   "jdtls",
