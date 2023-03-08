@@ -15,7 +15,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   "bashls",
-  "css_lsp",
+  "css-lsp",
   "eslint",
   "html",
   "jdtls",
@@ -51,8 +51,8 @@ lsp.configure('lua_ls', {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.stdpath "config" .. "/lua"] = true,
+              [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+              [vim.fn.stdpath "config" .. "/lua"] = true,
         },
       },
       format = {
@@ -115,9 +115,9 @@ local kind_icons = {
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select, }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true, }),
+      ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+      ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+      ['<C-y>'] = cmp.mapping.confirm({ select = true, }),
 })
 
 -- disable completion with tab
