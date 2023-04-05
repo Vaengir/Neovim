@@ -71,35 +71,43 @@ ls.add_snippets("all", {
 -- For Tex files
 ls.add_snippets("tex", {
 
-  s("fig", {
-    t({ "\\begin{figure}[htb]", "\\centering", "\\includesgraphics[", }),
-    c(1, { t { "width=", }, t { "height=", }, }),
-    i(2),
-    t("]{"),
-    i(3),
-    t({ "}", "\\caption[", }),
-    i(4),
-    t({ "]{", }),
-    rep(4),
-    t({ " \\footnotemark}", "\\label{abb:", }),
-    i(5),
-    t({ "}", "\\end{figure}", "\\footnotetext{", }),
-    c(6, { t { "Enthalten in: ", }, t { "Mit Änderungen entnommen aus: ", }, }),
-    t({ "\\cite{", }),
-    i(7),
-    t({ "}}", "", "", }),
-  }),
+  s("fig",
+    fmta(
+      [[
+        \begin{figure}[htb]
+          \centering
+          \includesgraphics[<><>]{<>}
+          \caption[<>]{<> \footnotemark}
+          \label{abb: <>}
+        \end{figure}
+        \footnotetext{<> \cite{<>}}
+      ]],
+      {
+        c(1, { t { "width=", }, t { "height=", }, }),
+        i(2),
+        i(3),
+        i(4),
+        rep(4),
+        i(5),
+        c(6, { t { "Enthalten in: ", }, t { "Mit Änderungen entnommen aus: ", }, }),
+        i(7),
+      }
+    )
+  ),
 
-  s("fc", {
-    t({ "\\footcite[", }),
-    c(1, { t { "", }, t { "Vgl. ", }, }),
-    t({ "][", }),
-    c(2, { t { "", }, t { "S. ", }, }),
-    i(3),
-    t({ "]{", }),
-    i(4),
-    t({ "}", }),
-  }),
+  s("fc",
+    fmta(
+      [[
+        \footcite[<>][<>]{<>}
+      ]],
+      {
+        c(1, { t { "", }, t { "Vgl. ", }, }),
+        c(2, { t { "", }, t { "S. ", }, }),
+        i(3),
+        i(4),
+      }
+    )
+  ),
 
   s("al", {
     t({ "\\glqq ", }),
