@@ -140,8 +140,8 @@ vim.keymap.set({ "i", "s", }, "<c-k>", function()
 end, { silent = true, })
 
 vim.keymap.set({ "i", "s", }, "<c-j>", function()
-  if ls.jumpable( -1) then
-    ls.jump( -1)
+  if ls.jumpable(-1) then
+    ls.jump(-1)
   end
 end, { silent = true, })
 
