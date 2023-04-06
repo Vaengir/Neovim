@@ -174,11 +174,13 @@ ls.add_snippets("tex", {
 
 -- Svelte files
 ls.add_snippets("svelte", {
+
   s("script", {
     t({ "<script lang='ts'>", "  ", }),
     i(0),
     t({ "", "</script>", }),
   }),
+
 })
 
 -- End Svelte files
