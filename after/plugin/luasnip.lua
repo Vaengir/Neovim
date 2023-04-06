@@ -111,7 +111,7 @@ ls.add_snippets("lua", {
 -- For Tex files
 ls.add_snippets("tex", {
 
-  s("fig",
+  s({ trig = "fig", name = "Figure", dscr = "Create figure template", },
     fmta(
       [[
         \begin{figure}[htb]
@@ -135,7 +135,7 @@ ls.add_snippets("tex", {
     )
   ),
 
-  s("fc",
+  s({ trig = "fc", name = "Footcite", dscr = "Snippet to cite with footnote in one", },
     fmta(
       [[
         \footcite[<>][<>]{<>}
@@ -156,13 +156,17 @@ ls.add_snippets("tex", {
     )
   ),
 
-  s("al", {
-    t({ "\\glqq ", }),
-  }),
+  s({ trig = "al", name = "Anführungszeichen links", dscr = "Deutsche Anführungszeichen links für Zitate beispielsweise", },
+    {
+      t({ "\\glqq ", }),
+    }
+  ),
 
-  s("ar", {
-    c(1, { t { "\\grqq ", }, t { "\\grqq{} ", }, }),
-  }),
+  s({ trig = "ar", name = "Anführungszeichen rechts", dscr = "Deutsche Anführungszeichen rechts für Zitate beispielsweise", },
+    {
+      c(1, { t { "\\grqq ", }, t { "\\grqq{} ", }, }),
+    }
+  ),
 
 })
 
