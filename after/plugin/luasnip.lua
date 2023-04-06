@@ -172,6 +172,25 @@ ls.add_snippets("tex", {
 
 -- End Tex files
 
+-- HTML files
+
+ls.add_snippets("html", {
+
+  s({ trig = "gprop", name = "JSPgetProperty", dscr = "Inserts the jsp getProperty tag", },
+    fmt(
+      [[
+        <jsp:getProperty name='form' property='{}' />
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
+})
+
+-- End HTML files
+
 -- Svelte files
 ls.add_snippets("svelte", {
 
