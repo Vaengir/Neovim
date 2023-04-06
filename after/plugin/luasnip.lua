@@ -192,6 +192,7 @@ ls.add_snippets("html", {
 -- End HTML files
 
 -- Svelte files
+
 ls.add_snippets("svelte", {
 
   s("script", {
