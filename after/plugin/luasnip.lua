@@ -104,13 +104,20 @@ ls.add_snippets("tex", {
   s("fc",
     fmta(
       [[
-        \footcite[<>][<><>]{<>}
+        \footcite[<>][<>]{<>}
       ]],
       {
         c(1, { t { "", }, t { "Vgl. ", }, }),
-        c(2, { t { "", }, t { "S. ", }, }),
+        c(2, { t { "", }, sn(nil,
+          fmta("S. <><>",
+            {
+              i(1),
+              c(2, { t{""}, t{" auch im Folgenden"}})
+            }
+          )
+        ),
+        }),
         i(3),
-        i(4),
       }
     )
   ),
