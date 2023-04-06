@@ -74,6 +74,40 @@ ls.add_snippets("all", {
 
 -- End all files
 
+-- for lua files
+
+ls.add_snippets("lua", {
+
+  s({ trig = "snip", name = "snippet", dscr = "create a new snippet", },
+    fmta(
+      [[
+        s({ trig = "<>", name = "<>", dscr = "<>", },
+          fmta(
+            <>
+              <>
+            <>
+            {
+              <>
+            }
+          )
+        ),
+      ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+        t("[["),
+        i(4),
+        t("]],"),
+        i(5),
+      }
+    )
+  ),
+
+})
+
+-- end lua files
+
 -- For Tex files
 ls.add_snippets("tex", {
 
