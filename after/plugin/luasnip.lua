@@ -146,7 +146,7 @@ ls.add_snippets("tex", {
           fmta("S. <><>",
             {
               i(1),
-              c(2, { t{""}, t{" auch im Folgenden"}})
+              c(2, { t { "", }, t { " auch im Folgenden", }, }),
             }
           )
         ),
