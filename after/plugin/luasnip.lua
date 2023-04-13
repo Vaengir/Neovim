@@ -116,9 +116,9 @@ ls.add_snippets("tex", {
       [[
         \begin{figure}[htb]
           \centering
-          \includesgraphics[<><>]{<>}
+          \includegraphics[<><>]{<>}
           \caption[<>]{<> \footnotemark}
-          \label{abb: <>}
+          \label{abb:<>}
         \end{figure}
         \footnotetext{<> \cite{<>}}
       ]],
