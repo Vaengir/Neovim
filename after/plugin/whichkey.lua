@@ -83,6 +83,7 @@ local opts = {
   nowait = true,  -- use `nowait` when creating keymaps
 }
 
+-- TODO: Fugitive keymaps hinzufügen
 local mappings = {
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
