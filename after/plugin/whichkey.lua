@@ -102,7 +102,7 @@ local mappings = {
     j = { "<cmd>Telescope jumplist<cr>", "Jumplist", },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
     r = { "<cmd>Telescope lsp_references<cr>", "References", },
-    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Strings", },
+    s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
     t = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
   },
   h = {
