@@ -87,7 +87,12 @@ local mappings = {
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
-  ["g"] = { "<cmd>Ge:<cr>", "Open Fugitive", },
+  g = {
+    name = "Git",
+    d = { "<cmd>Git pull<cr>", "Pull remote Changes", },
+    g = { "<cmd>Ge:<cr>", "Open Fugitive", },
+    p = { "<cmd>Git push<cr>", "Push local Changes", },
+  },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
   ["o"] = { "<cmd>LspZeroFormat<cr>", "Format", },
   ["q"] = { "<cmd>q!<CR>", "Quit", },
