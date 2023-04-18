@@ -83,17 +83,11 @@ local opts = {
   nowait = true,  -- use `nowait` when creating keymaps
 }
 
--- TODO: Fugitive keymaps hinzufügen
 local mappings = {
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
-  g = {
-    name = "Git",
-    a = { "<cmd>G commit --amend<cr>", "Amend Commit", },
-    g = { "<cmd>vertical G<cr>", "Open Fugitive", },
-    c = { "<cmd>G commit<cr>", "Commit Changes", },
-  },
+  ["g"] = { "<cmd>Ge:<cr>", "Open Fugitive", },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
   ["o"] = { "<cmd>LspZeroFormat<cr>", "Format", },
   ["q"] = { "<cmd>q!<CR>", "Quit", },
