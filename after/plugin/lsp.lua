@@ -3,6 +3,11 @@ if not status_ok then
   return
 end
 
+local status_ok, whichkey = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
 require "fidget".setup {}
 require("luasnip/loaders/from_vscode").lazy_load()
 
