@@ -161,6 +161,7 @@ lsp.setup_nvim_cmp({
   },
 })
 
+-- TODO: Update Keymaps with whichkey
 lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, remap = false, desc = "Rename using LSP" })
   vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { buffer = bufnr, remap = false, desc = "Code Action" })
