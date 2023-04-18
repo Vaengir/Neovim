@@ -84,7 +84,6 @@ local opts = {
 }
 
 local mappings = {
-  ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
@@ -96,6 +95,7 @@ local mappings = {
   ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode", },
   f = {
     name = "Telescope",
+    b = { "<cmd>Telescope buffers<cr>", "Show Buffers", },
     f = { "<cmd>Telescope find_files<cr>", "Find Files", },
     g = { "<cmd>Telescope git_status<cr>", "Git Status", },
     h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files", },
