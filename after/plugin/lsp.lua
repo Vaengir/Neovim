@@ -56,8 +56,8 @@ lsp.configure('lua_ls', {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = {
-              [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-              [vim.fn.stdpath "config" .. "/lua"] = true,
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.stdpath "config" .. "/lua"] = true,
         },
       },
       format = {
@@ -120,9 +120,9 @@ local kind_icons = {
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select, }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-      ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-      ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-      ['<C-y>'] = cmp.mapping.confirm({ select = true, }),
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true, }),
 })
 
 -- disable completion with tab
@@ -146,11 +146,11 @@ lsp.setup_nvim_cmp({
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-            nvim_lsp = "[LSP]",
-            luasnip = "[Snippet]",
-            buffer = "[Buffer]",
-            path = "[Path]",
-          })[entry.source.name]
+        nvim_lsp = "[LSP]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
       return vim_item
     end,
   },
