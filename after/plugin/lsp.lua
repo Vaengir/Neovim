@@ -161,17 +161,23 @@ lsp.setup_nvim_cmp({
   },
 })
 
--- TODO: Update Keymaps with whichkey
 lsp.on_attach(function(client, bufnr)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, remap = false, desc = "Rename using LSP" })
-  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { buffer = bufnr, remap = false, desc = "Code Action" })
-  vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, { buffer = bufnr, remap = false, desc = "Goto next LSP Diagnostic" })
-  vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, { buffer = bufnr, remap = false, desc = "Goto previous LSP Diagnostic" })
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, remap = false, desc = "Open LSP Definition" })
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, remap = false, desc = "Open LSP Implementation" })
-  vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { buffer = bufnr, remap = false, desc = "Show LSP References" })
-  vim.keymap.set('n', 'gt', "<cmd>Telescope diagnostics<cr>", { buffer = bufnr, remap = false, desc = "Show LSP Diagnostics" })
-  vim.keymap.set('n', 'B', vim.lsp.buf.hover, { buffer = bufnr, remap = false, desc = "Show LSP Info" })
+  whichkey.register({
+    ["<leader>"] = {
+      k = {
+        name = "LSP",
+        a = { vim.lsp.buf.code_action, "Code Action", },
+        b = { vim.lsp.buf.hover, "Show LSP Info", },
+        c = { vim.lsp.rename, "Rename using LSP", },
+        d = { vim.lsp.buf.definition, "Open LSP Definition", },
+        i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
+        n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
+        p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
+        r = { require('telescope.builtin').lsp_references, "Show LSP References", },
+        t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
+      },
+    },
+  })
 end)
 
 lsp.setup()
