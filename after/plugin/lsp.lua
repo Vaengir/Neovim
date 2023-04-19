@@ -168,7 +168,7 @@ lsp.on_attach(function(client, bufnr)
         name = "LSP",
         a = { vim.lsp.buf.code_action, "Code Action", },
         b = { vim.lsp.buf.hover, "Show LSP Info", },
-        c = { vim.lsp.rename, "Rename using LSP", },
+        c = { vim.lsp.buf.rename, "Rename using LSP", },
         d = { vim.lsp.buf.definition, "Open LSP Definition", },
         i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
         n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
