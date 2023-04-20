@@ -92,6 +92,7 @@ local mappings = {
     d = { "<cmd>Git pull<cr>", "Pull remote Changes", },
     g = { "<cmd>Ge:<cr>", "Open Fugitive", },
     p = { "<cmd>Git push<cr>", "Push local Changes", },
+    s = { "<cmd>Git submodule update --remote<cr>", "Update submodules"}
   },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
   ["o"] = { "<cmd>LspZeroFormat<cr>", "Format", },
