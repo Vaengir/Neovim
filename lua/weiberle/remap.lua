@@ -38,11 +38,11 @@ keymap("i", "<C-H>", "<C-W>", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("x", "<", "<gv", opts)
+keymap("x", ">", ">gv", opts)
 
 -- Keep yanked Text after pasting over
-keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
