@@ -84,6 +84,8 @@ local opts = {
 }
 
 local mappings = {
+  ["["] = { "<cmd>call append(line('.')-1, repeat([''], v:count1))<CR>", "Insert Blank Line above", },
+  ["]"] = { "<cmd>call append(line('.'), repeat([''], v:count1))<CR>", "Insert Blank Line below", },
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
@@ -128,8 +130,6 @@ local mappings = {
     l = { "<cmd>VimtexCompile<cr>", "VimTex Compile", },
     s = { "<cmd>VimtexCompileSS<cr>", "VimTex Compile Once", },
   },
-  ["["] = { "<cmd>call append(line('.'), repeat([''], v:count1))<CR>", "Insert Blank Line above", },
-  ["]"] = { "<cmd>call append(line('.')-1, repeat([''], v:count1))<CR>", "Insert Blank Line below", },
 }
 
 which_key.setup(setup)
