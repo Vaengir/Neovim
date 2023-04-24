@@ -136,7 +136,12 @@ lsp.setup_nvim_cmp({
   sources = {
     { name = "nvim_lsp", },
     { name = "luasnip", },
-    { name = "buffer", },
+    {
+      name = "buffer",
+      option = {
+        keyword_pattern = [[\K\k*]],
+      },
+    },
     { name = "path", },
   },
   formatting = {
