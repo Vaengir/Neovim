@@ -121,7 +121,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -135,7 +135,7 @@ ls.add_snippets("gitcommit", {
     ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -149,7 +149,7 @@ ls.add_snippets("gitcommit", {
     ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -163,7 +163,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -177,7 +177,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -191,7 +191,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -205,7 +205,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
@@ -219,7 +219,7 @@ ls.add_snippets("gitcommit", {
       ]],
       {
         i(1, "Title"),
-        i(2, "Description"),
+        i(0, "Description"),
       }
     )
   ),
