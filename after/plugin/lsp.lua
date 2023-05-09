@@ -32,15 +32,12 @@ lsp.ensure_installed({
 })
 
 -- Preferences
-lsp.set_preferences({
-  sign_icons = {
+lsp.set_sign_icons({
     error = " ",
     warn = " ",
     hint = " ",
     info = " ",
   },
-  set_lsp_keymaps = false,
-})
 
 -- Lua LSP Setup
 lsp.configure('lua_ls', {
