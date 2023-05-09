@@ -14,7 +14,7 @@ require("luasnip/loaders/from_vscode").lazy_load()
 vim.g.markdown_recommended_style = 0
 vim.g.python_recommended_style = 0
 
-local lsp = require('lsp-zero')
+local lsp = require('lsp-zero').preset({})
 
 lsp.preset('recommended')
 
@@ -33,11 +33,11 @@ lsp.ensure_installed({
 
 -- Preferences
 lsp.set_sign_icons({
-    error = " ",
-    warn = " ",
-    hint = " ",
-    info = " ",
-  },
+  error = " ",
+  warn = " ",
+  hint = " ",
+  info = " ",
+})
 
 -- Lua LSP Setup
 lsp.configure('lua_ls', {
