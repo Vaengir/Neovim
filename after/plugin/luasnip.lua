@@ -108,6 +108,126 @@ ls.add_snippets("lua", {
 
 -- end lua files
 
+-- For git commits
+
+ls.add_snippets("gitcommit", {
+
+  s({ trig = "fe", name = "feat", dscr = "A new feature", },
+    fmta(
+      [[
+        feat: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "fi", name = "fix", dscr = "A bug fix", },
+    fmta(
+      [[
+      fix: <>
+
+      <>
+    ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "do", name = "docs", dscr = "Documentation only changes", },
+    fmta(
+      [[
+      docs: <>
+
+      <>
+    ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "st", name = "style", dscr = "Changes that do not affext the meaning of the code", },
+    fmta(
+      [[
+        style: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "re", name = "refactor", dscr = "A code change that neither fixes a bug nor adds a feature", },
+    fmta(
+      [[
+        refactor: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "pe", name = "perf", dscr = "A code change that improves performace", },
+    fmta(
+      [[
+        perf: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "te", name = "test", dscr = "Adding missing tests", },
+    fmta(
+      [[
+        test: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+  s({ trig = "ch", name = "chore", dscr = "Changes to the build process or auxiliary tools and libraries such as documentation", },
+    fmta(
+      [[
+        chore: <>
+
+        <>
+      ]],
+      {
+        i(1, "Title"),
+        i(2, "Description"),
+      }
+    )
+  ),
+
+})
+
+-- end git commits
+
 -- For Tex files
 ls.add_snippets("tex", {
 
