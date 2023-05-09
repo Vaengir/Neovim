@@ -174,6 +174,7 @@ lsp.on_attach(function(client, bufnr)
         d = { vim.lsp.buf.definition, "Open LSP Definition", },
         i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
         n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
+        o = { vim.lsp.buf.format({ async = false, timeout_ms = 10000, }), "Format", },
         p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
         r = { require('telescope.builtin').lsp_references, "Show LSP References", },
         t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
