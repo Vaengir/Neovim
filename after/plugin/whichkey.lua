@@ -97,7 +97,7 @@ local mappings = {
     s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
   },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
-  ["o"] = { "<cmd>LspZeroFormat<cr>", "Format", },
+  ["o"] = { vim.lsp.buf.format({ async = false, timeout_ms = 10000, }), "Format", },
   ["q"] = { "<cmd>q!<CR>", "Quit", },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree", },
   ["w"] = { "<cmd>w!<CR>", "Save", },
