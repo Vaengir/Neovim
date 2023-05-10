@@ -64,13 +64,8 @@ return packer.startup(function(use)
   use('nvim-treesitter/playground')
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- Nvim-Tree
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-    },
-  }
+  -- Oil.nvim
+  use { 'stevearc/oil.nvim', }
 
   -- JK to exit Insert Mode
   use({ "jdhao/better-escape.vim", event = "InsertEnter", })
