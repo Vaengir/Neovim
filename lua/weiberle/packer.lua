@@ -65,7 +65,10 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-context'
 
   -- Oil.nvim
-  use { 'stevearc/oil.nvim', }
+  use {
+    'stevearc/oil.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', },
+  }
 
   -- JK to exit Insert Mode
   use({ "jdhao/better-escape.vim", event = "InsertEnter", })
