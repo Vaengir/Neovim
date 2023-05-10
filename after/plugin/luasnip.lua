@@ -288,6 +288,40 @@ ls.add_snippets("tex", {
     }
   ),
 
+  s({ trig = "acro", name = "New acronym", dscr = "Create new acronym", },
+    fmta(
+      [[
+        \acro{<>}{<>}
+      ]],
+      {
+        i(1, "Acronym"),
+        i(2, "Long form"),
+      }
+    )
+  ),
+
+  s({ trig = "ac", name = "Text acronym", dscr = "Add acronym to text", },
+    fmta(
+      [[
+        \ac{<>}
+      ]],
+      {
+        i(1, "Acronym"),
+      }
+    )
+  ),
+
+  s({ trig = "acl", name = "Long text acronym", dscr = "Add long version of acronym to text", },
+    fmta(
+      [[
+        \acl{<>}
+      ]],
+      {
+        i(1, "Acronym"),
+      }
+    )
+  ),
+
 })
 
 -- End Tex files
