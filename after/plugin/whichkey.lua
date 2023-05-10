@@ -88,7 +88,7 @@ local mappings = {
   ["]"] = { "<cmd>call append(line('.'), repeat([''], v:count1))<CR>", "Insert Blank Line below", },
   ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
   ["d"] = { "<cmd>pu=strftime('%d %b %Y')<CR>", "Insert Date", },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", },
+  ["e"] = { "<cmd>Oil<cr>", "Explorer", },
   g = {
     name = "Git",
     d = { "<cmd>Git pull<cr>", "Pull remote Changes", },
