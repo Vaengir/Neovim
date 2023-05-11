@@ -156,6 +156,9 @@ lsp.setup_nvim_cmp({
       return vim_item
     end,
   },
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
   window = {
     documentation = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│", },
