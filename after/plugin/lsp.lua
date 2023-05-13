@@ -16,8 +16,6 @@ vim.g.python_recommended_style = 0
 
 local lsp = require('lsp-zero').preset({})
 
-lsp.preset('recommended')
-
 lsp.ensure_installed({
   "bashls",
   "cssls",
