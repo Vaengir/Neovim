@@ -240,7 +240,7 @@ ls.add_snippets("tex", {
           \caption[<>]{<> \footnotemark}
           \label{abb:<>}
         \end{figure}
-        \footnotetext{<> \cite{<>}}
+        \footnotetext{<>\cite{<>}}
       ]],
       {
         c(1, { t { "width=", }, t { "height=", }, }),
