@@ -255,6 +255,27 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "tab", name = "Table", dscr = "Create table template", },
+    fmta(
+      [[
+        \begin{table}[htb]
+          \centering
+          \begin{tabular}{<>}
+            <>
+          \end{tabular}
+        \caption{<>}
+        \label{tab:<>}
+        \end{table}
+      ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+        i(4),
+      }
+    )
+  ),
+
   s({ trig = "fc", name = "Footcite", dscr = "Snippet to cite with footnote in one", },
     fmta(
       [[
