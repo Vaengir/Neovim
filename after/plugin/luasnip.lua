@@ -276,6 +276,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "abb:ref", name = "Reference for a figure", dscr = "Create a reference to a figure", },
+    fmta(
+      [[
+        Abbildung~\ref{abb:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "fc", name = "Footcite", dscr = "Snippet to cite with footnote in one", },
     fmta(
       [[
