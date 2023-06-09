@@ -154,7 +154,7 @@ ls.add_snippets("gitcommit", {
     )
   ),
 
-  s({ trig = "st", name = "style", dscr = "Changes that do not affext the meaning of the code", },
+  s({ trig = "st", name = "style", dscr = "Changes that do not affect the meaning of the code", },
     fmta(
       [[
         style: <>
