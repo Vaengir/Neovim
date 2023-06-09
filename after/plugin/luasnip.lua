@@ -284,6 +284,22 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "lst", name = "Listing", dscr = "Create listing template", },
+    fmta(
+      [[
+        \begin{lstlisting}[language=<>, caption=<>, label=lst:<>]
+          <>
+        \end{lstlisting}
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(2),
+        i(3, "Code goes here"),
+      }
+    )
+  ),
+
   s({ trig = "abb:ref", name = "Reference for a figure", dscr = "Create a reference to a figure", },
     fmta(
       [[
