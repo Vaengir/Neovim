@@ -224,6 +224,14 @@ ls.add_snippets("gitcommit", {
     )
   ),
 
+  s({ trig = "nvim", name = "Neovim Update", dscr = "The Neovim submodule was updated", },
+    t "Neovim update"
+  ),
+
+  s({ trig = "awe", name = "AwesomeWM Update", dscr = "The AwesomeWM submodule was updated", },
+    t "AwesomeWM update"
+  ),
+
 })
 
 -- end git commits
