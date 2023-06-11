@@ -146,7 +146,7 @@ return packer.startup(function(use)
   use({ "tpope/vim-fugitive", })
 
   -- LSP Status
-  use({ "j-hui/fidget.nvim", })
+  use({ "j-hui/fidget.nvim", tag = 'legacy', })
 
   -- Markdown Preview
   use({
