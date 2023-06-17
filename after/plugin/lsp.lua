@@ -32,9 +32,9 @@ lsp.ensure_installed({
 
 -- Preferences
 lsp.set_sign_icons({
-  error = " ",
+  error = "󰅚 ",
   warn = " ",
-  hint = " ",
+  hint = "󰌶 ",
   info = " ",
 })
 
@@ -84,33 +84,33 @@ lsp.configure('jdtls', {
   },
 })
 
---   פּ ﯟ   some other good icons
+-- some other good icons
 local kind_icons = {
-  Text = "",
+  Text = "󰉿",
   Method = "m",
-  Function = "",
+  Function = "󰊕",
   Constructor = "",
   Field = "",
-  Variable = "",
-  Class = "",
+  Variable = "󰆧",
+  Class = "󰌗",
   Interface = "",
   Module = "",
   Property = "",
   Unit = "",
-  Value = "",
+  Value = "󰎠",
   Enum = "",
-  Keyword = "",
+  Keyword = "󰌋",
   Snippet = "",
-  Color = "",
-  File = "",
+  Color = "󰏘",
+  File = "󰈙",
   Reference = "",
-  Folder = "",
+  Folder = "󰉋",
   EnumMember = "",
-  Constant = "",
+  Constant = "󰇽",
   Struct = "",
   Event = "",
-  Operator = "",
-  TypeParameter = "",
+  Operator = "󰆕",
+  TypeParameter = "󰊄",
 }
 
 local cmp = require('cmp')
