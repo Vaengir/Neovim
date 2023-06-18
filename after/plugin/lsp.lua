@@ -33,7 +33,7 @@ lsp.ensure_installed({
 -- Preferences
 lsp.set_sign_icons({
   error = "󰅚 ",
-  warn = " ",
+  warn = " ",
   hint = "󰌶 ",
   info = " ",
 })
