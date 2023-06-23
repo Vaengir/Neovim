@@ -382,6 +382,25 @@ ls.add_snippets("tex", {
 
 -- End Tex files
 
+-- Rust files
+
+ls.add_snippets("rust", {
+
+  s({ trig = "pl", name = "println!", dscr = "Print a line", },
+    fmta(
+      [[
+      println!("<>")<>
+    ]],
+      {
+        i(1),
+        c(2, { t { "", }, t { ";", }, }),
+      }
+    )
+  ),
+})
+
+-- End Rust files
+
 -- HTML files
 
 ls.add_snippets("html", {
