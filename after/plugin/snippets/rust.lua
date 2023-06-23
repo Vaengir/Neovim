@@ -28,7 +28,7 @@ local ms = ls.multi_snippet
 
 ls.add_snippets("rust", {
 
-  s({ trig = "pl", name = "println!", dscr = "Print a line", },
+  s({ trig = "prl", name = "println!", dscr = "Print a line", },
     fmta(
       [[
       println!("<>")<>
