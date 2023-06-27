@@ -172,6 +172,12 @@ return packer.startup(function(use)
   -- Whichkey
   use({ "folke/which-key.nvim", })
 
+  -- Hardtime
+  -- use({
+  --   "m4xshen/hardtime.nvim",
+  --   setup = require("hardtime").setup(),
+  -- })
+
   -- VimBeGood
   use({ "ThePrimeagen/vim-be-good", })
 
