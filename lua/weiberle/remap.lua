@@ -21,6 +21,9 @@ keymap("n", "<Right>", "<C-w>l", opts)
 keymap("n", "<C-j>", ":bn<CR>", opts)
 keymap("n", "<C-k>", ":bp<CR>", opts)
 
+-- Append lines but keep cursor position
+keymap("n", "S", "mzJ`z", opts)
+
 -- Better Movements
 keymap("n", "H", "^", opts)
 keymap("n", "L", "$", opts)
