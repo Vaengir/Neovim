@@ -48,3 +48,8 @@ keymap("x", "p", '"_dP', opts)
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+-- Vimscript
+-- Adds relative jumps of more than 3 lines to the jumplist
+keymap("n", "j", "(v:count > 3 ? 'm`' . v:count: '') . 'j'", opts)
+keymap("n", "k", "(v:count > 3 ? 'm`' . v:count: '') . 'k'", opts)
