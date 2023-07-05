@@ -18,8 +18,8 @@ keymap("n", "<Up>", "<C-w>k", opts)
 keymap("n", "<Right>", "<C-w>l", opts)
 
 -- Navigate buffers
-keymap("n", "<C-j>", ":bn<CR>", opts)
-keymap("n", "<C-k>", ":bp<CR>", opts)
+keymap("n", "<A-j>", ":bn<CR>", opts)
+keymap("n", "<A-k>", ":bp<CR>", opts)
 
 -- Append lines but keep cursor position
 keymap("n", "S", "mzJ`z", opts)
