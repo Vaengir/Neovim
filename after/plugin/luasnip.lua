@@ -67,22 +67,6 @@ ls.setup({
   end,
 })
 
--- Snippets
--- For all files
-dofile(os.getenv("HOME").. "/.config/nvim/after/plugin/snippets/all.lua")
-
--- For git commits
-dofile(os.getenv("HOME").. "/.config/nvim/after/plugin/snippets/gitcommit.lua")
-
--- For lua files
-dofile(os.getenv("HOME").. "/.config/nvim/after/plugin/snippets/lua.lua")
-
--- Rust files
-dofile(os.getenv("HOME").. "/.config/nvim/after/plugin/snippets/rust.lua")
-
--- For Tex files
-dofile(os.getenv("HOME").. "/.config/nvim/after/plugin/snippets/tex.lua")
-
 -- Keymaps
 vim.keymap.set({ "i", "s", }, "<c-k>", function()
   if ls.expand_or_jumpable() then
