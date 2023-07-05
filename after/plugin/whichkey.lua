@@ -100,6 +100,7 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit", },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree", },
   ["w"] = { "<cmd>w!<CR>", "Save", },
+  ["y"] = { "\"+y", "Yank to system clipboard", },
   ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode", },
   f = {
     name = "Telescope",
