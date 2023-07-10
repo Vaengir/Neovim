@@ -97,6 +97,7 @@ local mappings = {
     s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
   },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
+  ["p"] = { "\"+p", "Print from system clipboard", },
   ["q"] = { "<cmd>q!<CR>", "Quit", },
   ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree", },
   ["w"] = { "<cmd>w!<CR>", "Save", },
