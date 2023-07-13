@@ -127,7 +127,6 @@ return packer.startup(function(use)
   })
 
   -- TODOs
-  -- Lua
   use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
