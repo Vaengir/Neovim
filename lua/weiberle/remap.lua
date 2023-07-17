@@ -47,6 +47,14 @@ keymap("x", ">", ">gv", opts)
 -- Keep yanked Text after pasting over
 keymap("x", "p", '"_dP', opts)
 
+-- Yank to system clipboard
+keymap("n", "<leader>y", "\"+y", opts)
+keymap("x", "<leader>y", "\"+y", opts)
+
+-- Paste to system clipboard
+keymap("n", "<leader>p", "\"+p", opts)
+keymap("x", "<leader>p", "\"+p", opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
