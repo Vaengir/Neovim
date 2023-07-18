@@ -10,6 +10,7 @@ hardtime.setup({
   hint = true,
   notification = true,
   allow_different_key = false,
+
   resetting_keys = {
     ["1"] = { "n", "x", },
     ["2"] = { "n", "x", },
@@ -30,6 +31,7 @@ hardtime.setup({
     ["p"] = { "n", },
     ["P"] = { "n", },
   },
+
   restricted_keys = {
     ["h"] = { "n", "x", },
     ["j"] = { "n", "x", },
@@ -44,11 +46,14 @@ hardtime.setup({
     ["<C-N>"] = { "n", "x", },
     ["<C-P>"] = { "n", "x", },
   },
+
   disabled_keys = {
     ["<UP>"] = { "", "i", },
     ["<DOWN>"] = { "", "i", },
     ["<LEFT>"] = { "", "i", },
     ["<RIGHT>"] = { "", "i", },
   },
-  disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", },
+
+  disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "harpoon", "oil", "fugitive", },
+
 })
