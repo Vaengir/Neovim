@@ -31,12 +31,10 @@ ls.add_snippets("markdown", {
   s({ trig = "pm", name = "Privat Merken", dscr = "Tags für Private Merken Datei", },
     fmta(
       [[
-        <><><>
+        "private", "merken", "<>"
       ]],
       {
-        t({ "\"private\", \"merken\", \"", }),
-        i(2, "Custom tags go here..."),
-        t({ "\"", }),
+        i(1, "Custom tags go here..."),
       }
     )
   ),
