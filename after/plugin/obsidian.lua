@@ -30,12 +30,11 @@ require("obsidian").setup({
   note_id_func = function(title)
     local suffix = ""
     if title ~= nil then
-      -- If title is given, transform it into valid file name.
-      suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      return title
     else
       suffix = "Note"
+      return tostring(os.date('%Y-%m-%d %H:%M')) .. "-" .. suffix
     end
-    return tostring(os.date('%Y-%m-%d %H:%M')) .. "-" .. suffix
   end,
 
   -- Optional, set to true if you don't want Obsidian to manage frontmatter.
