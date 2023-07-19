@@ -7,6 +7,9 @@ require("obsidian").setup({
   -- Required, the path to your vault directory.
   dir = "~/personal/obsidian/",
 
+  -- Optional, if you keep notes in a specific subdirectory of your vault.
+  notes_subdir = "Inbox",
+
   -- Optional, set the log level for Obsidian. This is an integer corresponding to one of the log
   -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
   log_level = vim.log.levels.DEBUG,
@@ -20,7 +23,7 @@ require("obsidian").setup({
     -- Where to put new notes created from completion. Valid options are
     --  * "current_dir" - put new notes in same directory as the current buffer.
     --  * "notes_subdir" - put new notes in the default notes subdirectory.
-    new_notes_location = "Inbox",
+    new_notes_location = "notes_subdir",
   },
 
   -- Optional, customize how names/IDs for new notes are created.
