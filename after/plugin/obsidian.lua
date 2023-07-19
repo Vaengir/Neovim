@@ -28,20 +28,14 @@ require("obsidian").setup({
 
   -- Optional, customize how names/IDs for new notes are created.
   note_id_func = function(title)
-    -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-    -- In this case a note with the title 'My new note' will given an ID that looks
-    -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
     local suffix = ""
     if title ~= nil then
       -- If title is given, transform it into valid file name.
       suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
     else
-      -- If title is nil, just add 4 random uppercase letters to the suffix.
-      for _ = 1, 4 do
-        suffix = suffix .. string.char(math.random(65, 90))
-      end
+      suffix = "Note"
     end
-    return tostring(os.time()) .. "-" .. suffix
+    return tostring(os.date('%Y-%m-%d %H:%M')) .. "-" .. suffix
   end,
 
   -- Optional, set to true if you don't want Obsidian to manage frontmatter.
@@ -50,7 +44,7 @@ require("obsidian").setup({
   -- Optional, alternatively you can customize the frontmatter data.
   note_frontmatter_func = function(note)
     -- This is equivalent to the default frontmatter function.
-    local out = { id = note.id, aliases = note.aliases, tags = note.tags, }
+    local out = { id = note.id, tags = note.tags, date = os.date('%Y-%m-%d %H:%M'), }
     -- `note.metadata` contains any manually added fields in the frontmatter.
     -- So here we just make sure those fields are kept in the frontmatter.
     if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
