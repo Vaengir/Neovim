@@ -165,6 +165,8 @@ return packer.startup(function(use)
     end,
   })
 
+  use({ "epwalsh/obsidian.nvim", })
+
   -- Better Scrolloff
   use({ 'Aasim-A/scrollEOF.nvim', })
 
