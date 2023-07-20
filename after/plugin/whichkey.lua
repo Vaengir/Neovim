@@ -54,7 +54,7 @@ local setup = {
     align = "left",                                                              -- align columns left, center or right
   },
   ignore_missing = true,                                                         -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ ", }, -- hide mapping boilerplate
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ ", }, -- hide mapping boilerplate
   show_help = true,                                                              -- show help message on the command line when the popup is visible
   show_keys = true,                                                              -- show the currently pressed key and its label as a message in the command line
   triggers = "auto",                                                             -- automatically setup triggers
@@ -84,9 +84,9 @@ local opts = {
 }
 
 local mappings = {
-  ["["] = { "<cmd>call append(line('.')-1, repeat([''], v:count1))<CR>", "Insert Blank Line above", },
-  ["]"] = { "<cmd>call append(line('.'), repeat([''], v:count1))<CR>", "Insert Blank Line below", },
-  ["c"] = { "<cmd>bd<CR>", "Close Buffer", },
+  ["["] = { "<cmd>call append(line('.')-1, repeat([''], v:count1))<cr>", "Insert Blank Line above", },
+  ["]"] = { "<cmd>call append(line('.'), repeat([''], v:count1))<cr>", "Insert Blank Line below", },
+  ["c"] = { "<cmd>bd<cr>", "Close Buffer", },
   ["d"] = { "\"_d", "Delete to void register", },
   ["e"] = { "<cmd>Oil<cr>", "Explorer", },
   g = {
@@ -97,9 +97,18 @@ local mappings = {
     s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
   },
   ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
-  ["q"] = { "<cmd>q!<CR>", "Quit", },
-  ["u"] = { "<cmd>UndotreeToggle<CR>", "UndoTree", },
-  ["w"] = { "<cmd>w!<CR>", "Save", },
+  o = {
+    name = "Obsidian",
+    ["b"] = { "<cmd>ObsidianBacklinks<cr>", "Location list of references", },
+    ["f"] = { "<cmd>ObsidianQuickswitch<cr>", "Find Notes", },
+    ["n"] = { ":ObsidianNew ", "Create new note", },
+    ["o"] = { "<cmd>ObsidianOpen", "Open Note in Obsidian app", },
+    ["s"] = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
+    ["t"] = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
+  },
+  ["q"] = { "<cmd>q!<cr>", "Quit", },
+  ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree", },
+  ["w"] = { "<cmd>w!<cr>", "Save", },
   ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode", },
   f = {
     name = "Telescope",
