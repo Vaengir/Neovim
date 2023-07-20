@@ -187,6 +187,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "cha:ref", name = "Chapter reference", dscr = "Create a reference to a chapter", },
+    fmta(
+      [[
+        Kapitel~\href{cha:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "sec", name = "Section", dscr = "Create a new Section", },
     fmta(
       [[
