@@ -278,4 +278,15 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "par:ref", name = "Paragraph reference", dscr = "Create a reference to a paragraph", },
+    fmta(
+      [[
+        Kapitel~\ref{par:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
 })
