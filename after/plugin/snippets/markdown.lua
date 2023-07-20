@@ -52,7 +52,7 @@ ls.add_snippets("markdown", {
   s({ trig = "wm", name = "Work Merken", dscr = "Tags for Work, Merken, Custom", },
     fmta(
       [[
-        private, merken, <>
+        work, merken, <>
       ]],
       {
         i(1, "Custom tags go here..."),
@@ -63,7 +63,7 @@ ls.add_snippets("markdown", {
   s({ trig = "pt", name = "Work TODO", dscr = "Tags for Work, TODOs", },
     fmta(
       [[
-        private, todos
+        work, todos
       ]],
       {
       }
