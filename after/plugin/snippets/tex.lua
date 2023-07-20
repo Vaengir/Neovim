@@ -221,7 +221,7 @@ ls.add_snippets("tex", {
   s({ trig = "sec:ref", name = "Section reference", dscr = "Create a reference to a section", },
     fmta(
       [[
-        Kapitel~\ref{sec:<>}
+        Unterkapitel~\ref{sec:<>}
       ]],
       {
         i(1),
@@ -252,7 +252,7 @@ ls.add_snippets("tex", {
   s({ trig = "sub:ref", name = "Subsection reference", dscr = "Create a reference to a subsection", },
     fmta(
       [[
-        Kapitel~\ref{sub:<>}
+        Abschnitt~\ref{sub:<>}
       ]],
       {
         i(1),
@@ -283,7 +283,7 @@ ls.add_snippets("tex", {
   s({ trig = "subs:ref", name = "Subsubsection reference", dscr = "Create a reference to a subsubsection", },
     fmta(
       [[
-        Kapitel~\ref{subs:<>}
+        Unterabschnitt~\ref{subs:<>}
       ]],
       {
         i(1),
@@ -314,7 +314,7 @@ ls.add_snippets("tex", {
   s({ trig = "par:ref", name = "Paragraph reference", dscr = "Create a reference to a paragraph", },
     fmta(
       [[
-        Kapitel~\ref{par:<>}
+        Paragraph~\ref{par:<>}
       ]],
       {
         i(1),
