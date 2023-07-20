@@ -190,7 +190,7 @@ ls.add_snippets("tex", {
   s({ trig = "cha:ref", name = "Chapter reference", dscr = "Create a reference to a chapter", },
     fmta(
       [[
-        Kapitel~\ref{cha:<>}
+        Kapitel~\ref{chap:<>}
       ]],
       {
         i(1),
