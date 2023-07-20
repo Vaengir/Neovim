@@ -26,6 +26,18 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
+local rec_itemize
+rec_itemize = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t({ "", "\t\\item ", }), i(1), d(2, rec_itemize, {}), }),
+    })
+  )
+end
+
 ls.add_snippets("tex", {
 
   s({ trig = "fig", name = "Figure", dscr = "Create figure template", },
@@ -340,6 +352,20 @@ ls.add_snippets("tex", {
       ]],
       {
         i(1),
+      }
+    )
+  ),
+
+  s({ trig = "itemize", name = "Itemize", dscr = "Create itemize", },
+    fmta(
+      [[
+        \begin{itemize}
+          \item <><>
+        \end{itemize}
+      ]],
+      {
+        i(1),
+        d(2, rec_itemize, {}),
       }
     )
   ),
