@@ -207,4 +207,24 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "sub", name = "Subsection", dscr = "Create a new Subsection", },
+    fmta(
+      [[
+        \subsection{<>}
+        \label{sub:<>}
+
+        <>
+
+        % End Subsection: <>
+
+      ]],
+      {
+        i(1),
+        rep(1),
+        i(0, "Insert Text here..."),
+        rep(1),
+      }
+    )
+  ),
+
 })
