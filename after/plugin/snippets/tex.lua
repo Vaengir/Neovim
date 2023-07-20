@@ -247,4 +247,24 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "par", name = "Paragraph", dscr = "Create a new Paragraph", },
+    fmta(
+      [[
+        \paragraph{<>}
+        \label{par:<>}
+
+        <>
+
+        % End Paragraph: <>
+
+      ]],
+      {
+        i(1),
+        rep(1),
+        i(0, "Insert Text here..."),
+        rep(1),
+      }
+    )
+  ),
+
 })
