@@ -218,6 +218,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "sec:ref", name = "Section reference", dscr = "Create a reference to a section", },
+    fmta(
+      [[
+        Kapitel~\ref{sec:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "sub", name = "Subsection", dscr = "Create a new Subsection", },
     fmta(
       [[
