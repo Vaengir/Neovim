@@ -177,8 +177,8 @@ ls.add_snippets("tex", {
       ]],
       {
         i(1),
-        r(1),
-        r(1),
+        rep(1),
+        rep(1),
       }
     )
   ),
