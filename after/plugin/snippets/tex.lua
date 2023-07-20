@@ -167,4 +167,20 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "cha", name = "Chapter", dscr = "Create a new Chapter", },
+    fmta(
+      [[
+        \chapter{<>}
+        \label{cha:<>}
+
+        % End Chapter: <>
+      ]],
+      {
+        i(1),
+        r(1),
+        r(1),
+      }
+    )
+  ),
+
 })
