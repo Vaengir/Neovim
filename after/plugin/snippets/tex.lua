@@ -171,13 +171,14 @@ ls.add_snippets("tex", {
     fmta(
       [[
         \chapter{<>}
-        \label{cha:<>}
-
+        \label{chap:<>}
+        <>
         % End Chapter: <>
       ]],
       {
         i(1),
         rep(1),
+        i(0),
         rep(1),
       }
     )
