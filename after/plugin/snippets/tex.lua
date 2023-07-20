@@ -176,7 +176,27 @@ ls.add_snippets("tex", {
         <>
 
         % End Chapter: <>
-        
+
+      ]],
+      {
+        i(1),
+        rep(1),
+        i(0),
+        rep(1),
+      }
+    )
+  ),
+
+  s({ trig = "sec", name = "Section", dscr = "Create a new Section", },
+    fmta(
+      [[
+        \section{<>}
+        \label{sec:<>}
+
+        <>
+
+        % End Section: <>
+
       ]],
       {
         i(1),
