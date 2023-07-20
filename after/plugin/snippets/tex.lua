@@ -52,6 +52,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "abb:ref", name = "Reference for a figure", dscr = "Create a reference to a figure", },
+    fmta(
+      [[
+        Abbildung~\ref{abb:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "tab", name = "Table", dscr = "Create table template", },
     fmta(
       [[
@@ -73,6 +84,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "tab:ref", name = "Reference for a table", dscr = "Create a reference to a table", },
+    fmta(
+      [[
+        Tabelle~\ref{abb:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "lst", name = "Listing", dscr = "Create listing template", },
     fmta(
       [[
@@ -85,17 +107,6 @@ ls.add_snippets("tex", {
         i(2),
         rep(2),
         i(3, "Code goes here"),
-      }
-    )
-  ),
-
-  s({ trig = "abb:ref", name = "Reference for a figure", dscr = "Create a reference to a figure", },
-    fmta(
-      [[
-        Abbildung~\ref{abb:<>}
-      ]],
-      {
-        i(1),
       }
     )
   ),
