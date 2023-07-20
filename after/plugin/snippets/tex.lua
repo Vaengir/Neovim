@@ -172,8 +172,11 @@ ls.add_snippets("tex", {
       [[
         \chapter{<>}
         \label{chap:<>}
+
         <>
+
         % End Chapter: <>
+        
       ]],
       {
         i(1),
