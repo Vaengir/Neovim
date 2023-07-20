@@ -111,6 +111,17 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "lst:ref", name = "Reference for a listing", dscr = "Create a reference to a listing", },
+    fmta(
+      [[
+        Listing~\ref{abb:<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "fc", name = "Footcite", dscr = "Snippet to cite with footnote in one", },
     fmta(
       [[
