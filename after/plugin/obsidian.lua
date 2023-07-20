@@ -33,7 +33,7 @@ require("obsidian").setup({
       return title
     else
       suffix = "Note"
-      return tostring(os.date('%Y-%m-%d %H:%M')) .. "-" .. suffix
+      return tostring(os.date('%Y-%m-%d %H-%M')) .. "-" .. suffix
     end
   end,
 
