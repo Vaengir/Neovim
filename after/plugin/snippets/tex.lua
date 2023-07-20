@@ -181,7 +181,7 @@ ls.add_snippets("tex", {
       {
         i(1),
         rep(1),
-        i(0),
+        i(0, "Insert Text here..."),
         rep(1),
       }
     )
@@ -201,7 +201,7 @@ ls.add_snippets("tex", {
       {
         i(1),
         rep(1),
-        i(0),
+        i(0, "Insert Text here..."),
         rep(1),
       }
     )
