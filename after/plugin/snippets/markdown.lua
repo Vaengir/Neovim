@@ -28,13 +28,44 @@ local ms = ls.multi_snippet
 
 ls.add_snippets("markdown", {
 
-  s({ trig = "pm", name = "Privat Merken", dscr = "Tags für Private Merken Datei", },
+  s({ trig = "pm", name = "Privat Merken", dscr = "Tags for Private, Merken, Custom", },
     fmta(
       [[
-        "private", "merken", "<>"
+        private, merken, <>
       ]],
       {
         i(1, "Custom tags go here..."),
+      }
+    )
+  ),
+
+  s({ trig = "pt", name = "Privat TODO", dscr = "Tags for Private, TODOs", },
+    fmta(
+      [[
+        private, todos
+      ]],
+      {
+      }
+    )
+  ),
+
+  s({ trig = "wm", name = "Work Merken", dscr = "Tags for Work, Merken, Custom", },
+    fmta(
+      [[
+        private, merken, <>
+      ]],
+      {
+        i(1, "Custom tags go here..."),
+      }
+    )
+  ),
+
+  s({ trig = "pt", name = "Work TODO", dscr = "Tags for Work, TODOs", },
+    fmta(
+      [[
+        private, todos
+      ]],
+      {
       }
     )
   ),
