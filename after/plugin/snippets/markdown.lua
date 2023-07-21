@@ -77,10 +77,11 @@ ls.add_snippets("markdown", {
   s({ trig = "wm", name = "Work Merken", dscr = "Tags for Work, Merken, Custom", },
     fmta(
       [[
-        work, merken, <>
+        work, merken, <><>
       ]],
       {
         i(1, "Custom tags go here..."),
+        d(2, rec_tag, {}),
       }
     )
   ),
