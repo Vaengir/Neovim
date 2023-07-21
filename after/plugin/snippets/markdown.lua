@@ -94,4 +94,18 @@ ls.add_snippets("markdown", {
     )
   ),
 
+  s({ trig = "code", name = "Code block", dscr = "Create a code block", },
+    fmta(
+      [[
+        ```<>
+        <>
+        ```
+      ]],
+      {
+        i(1, "Language"),
+        i(2, "Code goes here..."),
+      }
+    )
+  ),
+
 })
