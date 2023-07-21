@@ -26,6 +26,18 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
+local rec_tag
+rec_tag = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t({ ", ", }), i(1, "Tag goes here..."), d(2, rec_tag, {}), }),
+    })
+  )
+end
+
 local rec_todo
 rec_todo = function()
   return sn(
@@ -43,10 +55,11 @@ ls.add_snippets("markdown", {
   s({ trig = "pm", name = "Privat Merken", dscr = "Tags for Private, Merken, Custom", },
     fmta(
       [[
-        private, merken, <>
+        private, merken, <><>
       ]],
       {
         i(1, "Custom tags go here..."),
+        d(2, rec_tag, {}),
       }
     )
   ),
