@@ -33,7 +33,7 @@ rec_todo = function()
     c(1, {
       -- Order is important, sn(...) first would cause infinite loop of expansion.
       t(""),
-      sn(nil, { t({ "", "\t- [ ] ", }), i(1), d(2, rec_todo, {}), }),
+      sn(nil, { t({ "", "- [ ] ", }), i(1), d(2, rec_todo, {}), }),
     })
   )
 end
