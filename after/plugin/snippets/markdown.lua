@@ -72,7 +72,7 @@ ls.add_snippets("markdown", {
     )
   ),
 
-  s({ trig = "pt", name = "Work TODO", dscr = "Tags for Work, TODOs", },
+  s({ trig = "wt", name = "Work TODO", dscr = "Tags for Work, TODOs", },
     fmta(
       [[
         work, todos
