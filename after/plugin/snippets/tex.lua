@@ -38,6 +38,18 @@ rec_itemize_enumerate = function()
   )
 end
 
+local rec_desc
+rec_desc = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t({ "", "\t\\item[", }), i(1), t({ "] ", }), i(2), d(3, rec_desc, {}), }),
+    })
+  )
+end
+
 ls.add_snippets("tex", {
 
   s({ trig = "fig", name = "Figure", dscr = "Create figure template", },
@@ -380,6 +392,21 @@ ls.add_snippets("tex", {
       {
         i(1),
         d(2, rec_itemize_enumerate, {}),
+      }
+    )
+  ),
+
+  s({ trig = "description", name = "Description", dscr = "Create description", },
+    fmta(
+      [[
+        \begin{description}
+          \item[<>] <><>
+        \end{description}
+      ]],
+      {
+        i(1),
+        i(2),
+        d(3, rec_desc, {}),
       }
     )
   ),
