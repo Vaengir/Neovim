@@ -411,4 +411,15 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "cite", name = "Cite", dscr = "Create a new citation", },
+    fmta(
+      [[
+        ~\cite{<>}
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
 })
