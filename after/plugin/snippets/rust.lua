@@ -28,6 +28,21 @@ local ms = ls.multi_snippet
 
 ls.add_snippets("rust", {
 
+  s({ trig = "struct", name = "Struct", dscr = "Create a struct", },
+    fmta(
+      [[
+        <>struct <> {
+          <>
+        }
+      ]],
+      {
+        c(1),
+        i(2, "Name of struct"),
+        i(0, "Fields go here..."),
+      }
+    )
+  ),
+
   s({ trig = "prl", name = "println!", dscr = "Print a line", },
     fmta(
       [[
