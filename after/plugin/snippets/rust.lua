@@ -45,7 +45,7 @@ rec_enum = function()
     c(1, {
       -- Order is important, sn(...) first would cause infinite loop of expansion.
       t(""),
-      sn(nil, { t { "", "\t", }, i(1, "Variant()"), t { ",", }, d(3, rec_enum, {}), }),
+      sn(nil, { t { "", "\t", }, i(1, "Variant()"), t { ",", }, d(2, rec_enum, {}), }),
     })
   )
 end
