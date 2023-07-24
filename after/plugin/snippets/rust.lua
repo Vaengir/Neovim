@@ -36,8 +36,8 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        c(1, { t { "", }, t { "pub", }, }),
-        i(2, "Name of struct"),
+        c(1, { t { "", }, t { "pub ", }, }),
+        i(2, "Name"),
         i(0, "Fields go here..."),
       }
     )
@@ -51,10 +51,10 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        c(1, { t { "", }, t { "pub", }, }),
-        i(2),
-        i(3),
-        i(0),
+        c(1, { t { "", }, t { "pub ", }, }),
+        i(2, "Name"),
+        i(3, "Parameter"),
+        i(0, "Body of the function goes here..."),
       }
     )
   ),
