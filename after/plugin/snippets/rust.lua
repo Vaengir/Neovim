@@ -33,7 +33,7 @@ rec_struct = function()
     c(1, {
       -- Order is important, sn(...) first would cause infinite loop of expansion.
       t(""),
-      sn(nil, { t { "", }, i(1, "Field"), t { ": ", }, i(2, "FieldType"), d(3, rec_struct, {}), }),
+      sn(nil, { t { "", i(1, "field"), }, t { ": ", }, i(2, "field_type"), d(3, rec_struct, {}), }),
     })
   )
 end
@@ -49,8 +49,8 @@ ls.add_snippets("rust", {
       ]],
       {
         c(1, { t { "", }, t { "pub ", }, }),
-        i(2, "Name"),
-        sn(3, { i(1, "Field"), t { ": ", }, i(2, "FieldType"), }),
+        i(2, "name"),
+        sn(3, { i(1, "field"), t { ": ", }, i(2, "field_type"), }),
         d(4, rec_struct),
       }
     )
