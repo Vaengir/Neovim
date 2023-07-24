@@ -36,9 +36,25 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        c(1),
+        c(1, { t { "", }, t { "pub", }, }),
         i(2, "Name of struct"),
         i(0, "Fields go here..."),
+      }
+    )
+  ),
+
+  s({ trig = "fn", name = "Function", dscr = "Create a new function", },
+    fmta(
+      [[
+        <>fn <>(<>) {
+          <>
+        }
+      ]],
+      {
+        c(1, { t { "", }, t { "pub", }, }),
+        i(2),
+        i(3),
+        i(0),
       }
     )
   ),
