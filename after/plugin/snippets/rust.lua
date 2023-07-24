@@ -53,7 +53,7 @@ ls.add_snippets("rust", {
       {
         c(1, { t { "", }, t { "pub ", }, }),
         i(2, "Name"),
-        i(3, "Parameter"),
+        c(3, { t { "", }, i { "Parameter", }, }),
         i(0, "Body of the function goes here..."),
       }
     )
