@@ -38,6 +38,18 @@ rec_struct = function()
   )
 end
 
+local rec_enum
+rec_enum = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t { "", "\t", }, i(1, "Variant()"), t { ",", }, d(3, rec_enum, {}), }),
+    })
+  )
+end
+
 ls.add_snippets("rust", {
 
   s({ trig = "struct", name = "Struct", dscr = "Create a struct", },
@@ -51,7 +63,23 @@ ls.add_snippets("rust", {
         c(1, { t { "", }, t { "pub ", }, }),
         i(2, "Name"),
         sn(3, { i(1, "field"), t { ": ", }, i(2, "field_type"), }),
-        d(4, rec_struct),
+        d(4, rec_struct, {}),
+      }
+    )
+  ),
+
+  s({ trig = "enum", name = "Enum", dscr = "Create a enum", },
+    fmta(
+      [[
+        <>enum <> {
+          <>,<>
+        }
+      ]],
+      {
+        c(1, { t { "", }, t { "pub ", }, }),
+        i(2, "Name"),
+        i(3, "Variant()"),
+        d(4, rec_enum, {}),
       }
     )
   ),
