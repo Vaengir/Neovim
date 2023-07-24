@@ -26,19 +26,32 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
+local rec_struct
+rec_struct = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { i(1, "Field"), i(2, "FieldType"), d(3, rec_struct, {}), }),
+    })
+  )
+end
+
 ls.add_snippets("rust", {
 
   s({ trig = "struct", name = "Struct", dscr = "Create a struct", },
     fmta(
       [[
         <>struct <> {
-          <>
+          <><>
         }
       ]],
       {
         c(1, { t { "", }, t { "pub ", }, }),
         i(2, "Name"),
-        i(0, "Fields go here..."),
+        sn(3, { i(1, "Field"), i(2, "FieldType"), }),
+        d(4, rec_struct),
       }
     )
   ),
