@@ -113,6 +113,35 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "testing", name = "Testing", dscr = "Create a testing environment", },
+    fmta(
+      [[
+        #[cfg(test)]
+        mod tests {
+          <>
+        }
+      ]],
+      {
+        i(0, "Test functions go here..."),
+      }
+    )
+  ),
+
+  s({ trig = "test", name = "Test", dscr = "Create a test", },
+    fmta(
+      [[
+        #[test]
+        fn <>() {
+          <>
+        }
+      ]],
+      {
+        i(1, "name"),
+        i(0, "Body of the function goes here..."),
+      }
+    )
+  ),
+
   s({ trig = "main", name = "Main function", dscr = "Create the main function", },
     fmta(
       [[
