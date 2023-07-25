@@ -184,4 +184,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "loop", name = "Loop", dscr = "Create a loop", },
+    fmta(
+      [[
+        loop {
+          <>
+        }
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
 })
