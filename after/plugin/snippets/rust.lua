@@ -178,8 +178,8 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(1),
-        i(2),
+        i(1, "pattern"),
+        i(2, "expression"),
         i(0),
       }
     )
