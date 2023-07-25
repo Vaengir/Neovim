@@ -226,4 +226,39 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "assert", name = "Assert macro", dscr = "Create an assert macro", },
+    fmta(
+      [[
+        assert!(<>);
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
+  s({ trig = "assert_eq", name = "Assert_eq macro", dscr = "Create an assert_eq macro", },
+    fmta(
+      [[
+        assert_eq!(<>, <>);
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
+
+  s({ trig = "assert_ne", name = "Assert_ne macro", dscr = "Create an assert_ne macro", },
+    fmta(
+      [[
+        assert_ne!(<>, <>);
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
+
 })
