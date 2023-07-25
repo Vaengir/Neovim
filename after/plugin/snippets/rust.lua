@@ -196,6 +196,19 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "else", name = "Else statement", dscr = "Create a new else statement", },
+    fmta(
+      [[
+        else {
+          <>
+        }
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "match", name = "Match-expression", dscr = "Create a new match expression", },
     fmta(
       [[
