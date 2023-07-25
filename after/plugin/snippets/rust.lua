@@ -113,4 +113,19 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "for", name = "For-Loop", dscr = "Create a new for loop", },
+    fmta(
+      [[
+        for <> in <> {
+          <>;
+        }
+      ]],
+      {
+        i(1),
+        i(2),
+        i(0),
+      }
+    )
+  ),
+
 })
