@@ -329,6 +329,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "panic", name = "Panic macro", dscr = "Create a panic macro", },
+    fmta(
+      [[
+        panic!("<>");
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
     fmta(
       [[
