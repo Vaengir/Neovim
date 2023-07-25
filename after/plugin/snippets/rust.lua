@@ -340,6 +340,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "format", name = "Format macro", dscr = "Create a format macro", },
+    fmta(
+      [[
+        format!("");
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
     fmta(
       [[
