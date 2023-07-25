@@ -250,6 +250,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "err", name = "Err", dscr = "Create a Err value", },
+    fmta(
+      [[
+        Err(<>)
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "assert", name = "Assert macro", dscr = "Create an assert macro", },
     fmta(
       [[
