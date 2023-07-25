@@ -358,7 +358,7 @@ ls.add_snippets("rust", {
   s({ trig = "format", name = "Format macro", dscr = "Create a format macro", },
     fmta(
       [[
-        format!("");
+        format!("<>");
       ]],
       {
         i(1),
