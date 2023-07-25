@@ -307,6 +307,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "vec", name = "Vec macro", dscr = "Create a vec macro", },
+    fmta(
+      [[
+        vec![<>];
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
     fmta(
       [[
