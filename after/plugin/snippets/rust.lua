@@ -261,6 +261,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "ok", name = "Ok", dscr = "Create an Ok value", },
+    fmta(
+      [[
+        Ok(<>)
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "assert", name = "Assert macro", dscr = "Create an assert macro", },
     fmta(
       [[
