@@ -128,4 +128,18 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "if", name = "If-condition", dscr = "Create a new if condition", },
+    fmta(
+      [[
+        if <> {
+          <>
+        }
+      ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+
 })
