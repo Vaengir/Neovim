@@ -50,6 +50,18 @@ rec_enum = function()
   )
 end
 
+local rec_match
+rec_match = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t { "", "\t", }, i(1), t { " => ", }, i(2), d(3, rec_enum, {}), }),
+    })
+  )
+end
+
 ls.add_snippets("rust", {
 
   s({ trig = "struct", name = "Struct", dscr = "Create a struct", },
@@ -151,6 +163,22 @@ ls.add_snippets("rust", {
       {
         i(1),
         i(0),
+      }
+    )
+  ),
+
+  s({ trig = "match", name = "Match-expression", dscr = "Create a new match expression", },
+    fmta(
+      [[
+        match <> {
+          <> => <>,<>
+        }
+      ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+        d(4, rec_match, {}),
       }
     )
   ),
