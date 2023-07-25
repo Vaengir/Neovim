@@ -57,7 +57,7 @@ rec_match = function()
     c(1, {
       -- Order is important, sn(...) first would cause infinite loop of expansion.
       t(""),
-      sn(nil, { t { "", "\t", }, i(1), t { " => ", }, i(2), t { ",", }, d(3, rec_enum, {}), }),
+      sn(nil, { t { "", "\t", }, i(1), t { " => ", }, i(2), t { ",", }, d(3, rec_match, {}), }),
     })
   )
 end
