@@ -57,7 +57,7 @@ rec_match = function()
     c(1, {
       -- Order is important, sn(...) first would cause infinite loop of expansion.
       t(""),
-      sn(nil, { t { "", "\t", }, i(1), t { " => ", }, i(2), t { ",", }, d(3, rec_match, {}), }),
+      sn(nil, { t { "", "\t", }, i(1, "pattern"), t { " => ", }, i(2, "code"), t { ",", }, d(3, rec_match, {}), }),
     })
   )
 end
@@ -193,8 +193,8 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(1),
-        i(0),
+        i(1, "condition"),
+        i(0, "body"),
       }
     )
   ),
@@ -207,7 +207,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(1),
+        i(0, "body"),
       }
     )
   ),
@@ -220,10 +220,10 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(1),
-        i(2),
+        i(1, "expression"),
+        i(2, "pattern"),
         t("=>"),
-        i(3),
+        i(3, "code"),
         d(4, rec_match, {}),
       }
     )
@@ -237,7 +237,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(1),
+        i(0, "body"),
       }
     )
   ),
@@ -248,7 +248,7 @@ ls.add_snippets("rust", {
         Some(<>)
       ]],
       {
-        i(1),
+        i(1, "value"),
       }
     )
   ),
@@ -259,7 +259,7 @@ ls.add_snippets("rust", {
         Err(<>)
       ]],
       {
-        i(1),
+        i(1, "value"),
       }
     )
   ),
@@ -270,7 +270,7 @@ ls.add_snippets("rust", {
         Ok(<>)
       ]],
       {
-        i(1),
+        i(1, "value"),
       }
     )
   ),
