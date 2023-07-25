@@ -155,14 +155,17 @@ ls.add_snippets("rust", {
     )
   ),
 
-  s({ trig = "prl", name = "println!", dscr = "Print a line", },
+  s({ trig = "impl", name = "Implementation", dscr = "Create an implementation", },
     fmta(
       [[
-      println!("<>")<>
-    ]],
+        impl <><> {
+          <>
+        }
+      ]],
       {
-        i(1),
-        c(2, { t { "", }, t { ";", }, }),
+        c(2, { t { "", }, }, { i(1, "trait"), t { " for ", }, }),
+        i(1, "Type"),
+        i(3),
       }
     )
   ),
@@ -268,6 +271,18 @@ ls.add_snippets("rust", {
       ]],
       {
         i(1),
+      }
+    )
+  ),
+
+  s({ trig = "prl", name = "println!", dscr = "Print a line", },
+    fmta(
+      [[
+      println!("<>")<>
+    ]],
+      {
+        i(1),
+        c(2, { t { "", }, t { ";", }, }),
       }
     )
   ),
