@@ -261,4 +261,15 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
+    fmta(
+      [[
+        #[derive(<>)]
+      ]],
+      {
+        i(1, "traits"),
+      }
+    )
+  ),
+
 })
