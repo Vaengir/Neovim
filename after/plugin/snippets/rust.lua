@@ -101,6 +101,19 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "main", name = "Main function", dscr = "Create the main function", },
+    fmta(
+      [[
+        fn main() {
+          <>
+        }
+      ]],
+      {
+        i(0, "Body of the function goes here..."),
+      }
+    )
+  ),
+
   s({ trig = "prl", name = "println!", dscr = "Print a line", },
     fmta(
       [[
