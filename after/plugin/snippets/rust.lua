@@ -318,6 +318,17 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "dbg", name = "Debug macro", dscr = "Create a debug macro", },
+    fmta(
+      [[
+        dbg!(<>);
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+
   s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
     fmta(
       [[
