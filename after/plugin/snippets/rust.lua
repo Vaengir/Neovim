@@ -96,6 +96,21 @@ ls.add_snippets("rust", {
     )
   ),
 
+  s({ trig = "trait", name = "Trait", dscr = "Create a trait", },
+    fmta(
+      [[
+        <>trait <> {
+          <>
+        }
+      ]],
+      {
+        c(1, { t { "", }, t { "pub ", }, }),
+        i(2, "Name"),
+        i(0, "Functions to implement..."),
+      }
+    )
+  ),
+
   s({ trig = "fn", name = "Function", dscr = "Create a new function", },
     fmta(
       [[
@@ -163,7 +178,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        c(2, { t { "", }, sn(1, { i(1, "trait"), t { " for ", }, }), }),
+        c(2, { t { "", }, sn(1, { i(1, "Trait"), t { " for ", }, }), }),
         i(1, "Type"),
         i(3),
       }
@@ -372,7 +387,7 @@ ls.add_snippets("rust", {
         #[derive(<>)]
       ]],
       {
-        i(1, "traits"),
+        i(1, "Traits"),
       }
     )
   ),
