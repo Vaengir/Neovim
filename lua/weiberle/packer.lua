@@ -71,7 +71,12 @@ return packer.startup(function(use)
   }
 
   -- JK to exit Insert Mode
-  use({ "jdhao/better-escape.vim", event = "InsertEnter", })
+  use {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  }
 
   -- LSP Setup
   use {
