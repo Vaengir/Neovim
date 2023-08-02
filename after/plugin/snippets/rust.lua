@@ -155,7 +155,6 @@ ls.add_snippets("rust", {
     )
   ),
 
-  -- FIX: This choice node
   s({ trig = "impl", name = "Implementation", dscr = "Create an implementation", },
     fmta(
       [[
@@ -164,7 +163,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        c(2, { t { "", }, }, { i(1, "trait"), t { " for ", }, }),
+        c(2, { t { "", }, sn(1, { i(1, "trait"), t { " for ", }, }), }),
         i(1, "Type"),
         i(3),
       }
