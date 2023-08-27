@@ -33,9 +33,9 @@ local options = {
   guicursor = "n-v-c-i:block", -- have cursor always as a block
 }
 
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Allows undotree to have access to old undos
-vim.opt.nrformats:append({ 'alpha', })                 -- Allows letter incrementation
-vim.g.rust_recommended_style = false                   -- Disable default Rust style
+vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- Allows undotree to have access to old undos
+vim.opt.nrformats:append({ 'alpha', })                         -- Allows letter incrementation
+vim.g.rust_recommended_style = false                           -- Disable default Rust style
 
 for k, v in pairs(options) do
   vim.opt[k] = v
