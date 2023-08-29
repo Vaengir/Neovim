@@ -14,6 +14,11 @@ require("obsidian").setup({
   -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
   log_level = vim.log.levels.DEBUG,
 
+  daily_notes = {
+    folder = "Habits",
+    date_format = "%Y-%m-%d",
+  },
+
   -- Optional, completion.
   completion = {
     -- If using nvim-cmp, otherwise set to false
