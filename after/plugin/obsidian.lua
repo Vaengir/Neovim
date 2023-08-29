@@ -26,6 +26,9 @@ require("obsidian").setup({
     new_notes_location = "notes_subdir",
   },
 
+  -- Needs to be here to not interfere with whichkey
+  mappings = {},
+
   -- Optional, customize how names/IDs for new notes are created.
   note_id_func = function(title)
     local suffix = ""
