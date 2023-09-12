@@ -16,6 +16,7 @@ ts_configs.setup({
     "markdown",
     "php",
     "python",
+    "rust",
     "svelte",
     "typescript",
     "vim",
