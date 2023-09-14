@@ -116,7 +116,13 @@ return packer.startup(function(use)
   use({ "lukas-reineke/indent-blankline.nvim", })
 
   -- Undotree
-  use({ "mbbill/undotree", })
+  use({
+    "mbbill/undotree",
+    config = function()
+      vim.g.undotree_WindowLayout = 2
+      vim.g.undotree_SetFocusWhenToggle = 1
+    end,
+  })
 
   -- Zen mode
   use { "folke/zen-mode.nvim", }
