@@ -111,7 +111,7 @@ ls.add_snippets("tex", {
   s({ trig = "tab:ref", name = "Reference for a table", dscr = "Create a reference to a table", },
     fmta(
       [[
-        Tabelle~\ref{abb:<>}
+        Tabelle~\ref{tab:<>}
       ]],
       {
         i(1),
@@ -138,7 +138,7 @@ ls.add_snippets("tex", {
   s({ trig = "lst:ref", name = "Reference for a listing", dscr = "Create a reference to a listing", },
     fmta(
       [[
-        Listing~\ref{abb:<>}
+        Listing~\ref{lst:<>}
       ]],
       {
         i(1),
