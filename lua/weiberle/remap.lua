@@ -62,5 +62,5 @@ keymap("x", "K", ":move '<-2<CR>gv=gv", opts)
 
 -- Vimscript
 -- Adds relative jumps of more than 3 lines to the jumplist
-keymap("n", "j", "(v:count > 3 ? 'm`' . v:count: '') . 'j'", opts)
-keymap("n", "k", "(v:count > 3 ? 'm`' . v:count: '') . 'k'", opts)
+keymap("n", "j", "(v:count >= 3 ? 'm`' . v:count: '') . 'j'", opts)
+keymap("n", "k", "(v:count >= 3 ? 'm`' . v:count: '') . 'k'", opts)
