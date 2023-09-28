@@ -146,6 +146,18 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({ trig = "ilst", name = "Inline listing", dscr = "Create an inline listing", },
+    fmta(
+      [[
+        \lstinline{<>} <>
+      ]],
+      {
+        i(1, "Code goes here"),
+        i(0),
+      }
+    )
+  ),
+
   s({ trig = "fc", name = "Footcite", dscr = "Snippet to cite with footnote in one", },
     fmta(
       [[
