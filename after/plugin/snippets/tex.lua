@@ -149,11 +149,10 @@ ls.add_snippets("tex", {
   s({ trig = "ilst", name = "Inline listing", dscr = "Create an inline listing", },
     fmta(
       [[
-        \lstinline{<>} <>
+        \lstinline{<>}
       ]],
       {
         i(1, "Code goes here"),
-        i(0),
       }
     )
   ),
