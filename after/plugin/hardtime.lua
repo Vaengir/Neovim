@@ -54,7 +54,7 @@ hardtime.setup({
     ["<RIGHT>"] = { "", "i", },
   },
 
-  disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "harpoon", "oil", "fugitive", "undotree", },
+  disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "harpoon", "oil", "fugitive", "undotree", "query", },
 
   hints = {
     ["k%^"] = {
