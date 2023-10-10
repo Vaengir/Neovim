@@ -114,7 +114,14 @@ return packer.startup(function(use)
   use({ "lewis6991/gitsigns.nvim", })
 
   -- Show indented blanklines
-  use({ "lukas-reineke/indent-blankline.nvim", })
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("ibl").setup {
+        scope = { enabled = false, },
+      }
+    end,
+  })
 
   -- Undotree
   use({
