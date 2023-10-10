@@ -36,7 +36,7 @@ local setup = {
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
-    group = "+",      -- symbol prepended to a group
+    group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
   },
@@ -108,6 +108,12 @@ local mappings = {
     ["t"] = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
   },
   ["q"] = { "<cmd>q!<cr>", "Quit", },
+  ["t"] = {
+    name = "TODOs",
+    f = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
+    n = { "<cmd>lua require('todo-comments').jump_next()<cr>", "Jump to next TODO", },
+    p = { "<cmd>lua require('todo-comments').jump_prev()<cr>", "Jump to previous TODO", },
+  },
   ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree", },
   ["w"] = { "<cmd>w!<cr>", "Save", },
   ["z"] = { "<cmd>ZenMode | IndentBlanklineToggle<cr>", "ZenMode", },
@@ -121,7 +127,6 @@ local mappings = {
     q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
     r = { "<cmd>Telescope lsp_references<cr>", "References", },
     s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
-    t = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
   },
   h = {
     name = "Harpoon",
