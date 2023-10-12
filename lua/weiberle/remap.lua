@@ -45,7 +45,7 @@ keymap("x", "<", "<gv", opts)
 keymap("x", ">", ">gv", opts)
 
 -- Keep yanked Text after pasting over
-keymap("x", "p", '"_dP', opts)
+keymap("x", "p", "P", opts)
 
 -- Yank to system clipboard
 keymap("n", "<leader>y", "\"+y", opts)
