@@ -22,7 +22,7 @@ lsp.ensure_installed({
   "eslint",
   "html",
   "jdtls",
-  "kotlin-language-server",
+  "kotlin_language_server",
   "lua_ls",
   "marksman",
   "pyright",
