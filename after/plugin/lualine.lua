@@ -47,7 +47,7 @@ local branch = {
   icon = "",
 }
 
-local location = {
+local cursor_position = {
   "location",
   padding = 1,
 }
@@ -77,7 +77,7 @@ lualine.setup({
     lualine_c = { "filename", },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_x = { --[[ {getGuiFont}, ]] diff, "encoding", filetype, },
-    lualine_y = { location, },
+    lualine_y = { cursor_position, },
     lualine_z = { progress, },
   },
   inactive_sections = {
