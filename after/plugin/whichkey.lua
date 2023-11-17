@@ -108,6 +108,7 @@ local mappings = {
     ["t"] = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
   },
   ["q"] = { "<cmd>q!<cr>", "Quit", },
+  ["r"] = { "<cmd>LspRestart<cr>", "Restart Lsp Servers", },
   ["t"] = {
     name = "TODOs",
     f = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
