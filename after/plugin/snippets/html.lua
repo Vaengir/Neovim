@@ -28,9 +28,9 @@ local ms = ls.multi_snippet
 
 ls.add_snippets("html", {
 
-  s({ trig = "doc", name = "Doctype", dscr = "Create DOCTYPE statement", },
-    t("<!DOCTYPE html>")
-  ),
+  s({ trig = "doc", name = "Doctype", dscr = "Create DOCTYPE statement", }, {
+    t("<!DOCTYPE html>"),
+  }),
 
   s({ trig = "html", name = "HTML", dscr = "Create minimal HTML document", },
     fmta(
