@@ -36,20 +36,20 @@ ls.add_snippets("html", {
     fmta(
       [[
         <!DOCTYPE html>
-        <html lang='en'>
+        <html lang='<>'>
           <head>
-            <title>Basic HTML5 document</title>
+            <title><></title>
             <meta charset='utf-8'>
-            <style>
-            </style>
-            <script>
-            </script>
            </head>
            <body>
+             <>
            </body>
         </html>
       ]],
       {
+        i(1, "de"),
+        i(2, "Title"),
+        i(0, "Body goes here..."),
       }
     )
   ),
