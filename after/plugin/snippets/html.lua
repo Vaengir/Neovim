@@ -33,16 +33,16 @@ ls.add_snippets("html", {
   }),
 
   s({ trig = "html", name = "HTML", dscr = "Create minimal HTML document", },
-    fmta(
+    fmt(
       [[
         <!DOCTYPE html>
-        <html lang='<>'>
+        <html lang='{}'>
           <head>
-            <title><></title>
+            <title>{}</title>
             <meta charset='utf-8'>
            </head>
            <body>
-             <>
+             {}
            </body>
         </html>
       ]],
