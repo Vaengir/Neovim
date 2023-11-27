@@ -53,4 +53,16 @@ ls.add_snippets("html", {
       }
     )
   ),
+
+  s({ trig = "h1", name = "Heading 1", dscr = "Create a heading 1", },
+    fmt(
+      [[
+        <h1>{}</h1>
+      ]],
+      {
+        i(1, "Heading goes here..."),
+      }
+    )
+  ),
+
 })
