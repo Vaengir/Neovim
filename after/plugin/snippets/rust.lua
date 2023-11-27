@@ -302,7 +302,7 @@ ls.add_snippets("rust", {
     )
   ),
 
-  s({ trig = "assert", name = "Assert macro", dscr = "Create an assert macro", },
+  s({ trig = "as", name = "Assert macro", dscr = "Create an assert macro", },
     fmta(
       [[
         assert!(<>);
@@ -313,7 +313,7 @@ ls.add_snippets("rust", {
     )
   ),
 
-  s({ trig = "assert_eq", name = "Assert_eq macro", dscr = "Create an assert_eq macro", },
+  s({ trig = "aseq", name = "Assert_eq macro", dscr = "Create an assert_eq macro", },
     fmta(
       [[
         assert_eq!(<>, <>);
@@ -325,7 +325,7 @@ ls.add_snippets("rust", {
     )
   ),
 
-  s({ trig = "assert_ne", name = "Assert_ne macro", dscr = "Create an assert_ne macro", },
+  s({ trig = "asne", name = "Assert_ne macro", dscr = "Create an assert_ne macro", },
     fmta(
       [[
         assert_ne!(<>, <>);
