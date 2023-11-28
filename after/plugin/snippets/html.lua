@@ -37,13 +37,16 @@ ls.add_snippets("html", {
       [[
         <!DOCTYPE html>
         <html lang='{}'>
-          <head>
-            <title>{}</title>
-            <meta charset='utf-8'>
-           </head>
-           <body>
-             {}
-           </body>
+
+        <head>
+          <title>{}</title>
+          <meta charset='utf-8'>
+        </head>
+
+        <body>
+          {}
+        </body>
+
         </html>
       ]],
       {
