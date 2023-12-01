@@ -189,13 +189,13 @@ ls.add_snippets("rust", {
     fmta(
       [[
         for <> in <> {
-          <>;
+          <>
         }
       ]],
       {
         i(1, "pattern"),
         i(2, "expression"),
-        i(0),
+        i(0, "todo!();"),
       }
     )
   ),
