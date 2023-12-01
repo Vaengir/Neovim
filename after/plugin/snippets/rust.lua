@@ -123,7 +123,7 @@ ls.add_snippets("rust", {
         i(2, "name"),
         i(3),
         c(4, { t { "", }, sn(1, { t(" -> "), i(1, "return_type"), }), }),
-        i(0, "Body of the function goes here..."),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -137,7 +137,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(0, "Test functions go here..."),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -152,7 +152,7 @@ ls.add_snippets("rust", {
       ]],
       {
         i(1, "name"),
-        i(0, "Body of the function goes here..."),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -165,7 +165,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(0, "Body of the function goes here..."),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -209,7 +209,7 @@ ls.add_snippets("rust", {
       ]],
       {
         i(1, "condition"),
-        i(0, "body"),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -222,7 +222,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(0, "body"),
+        i(0, "todo!();"),
       }
     )
   ),
@@ -252,7 +252,7 @@ ls.add_snippets("rust", {
         }
       ]],
       {
-        i(0, "body"),
+        i(0, "todo!();"),
       }
     )
   ),
