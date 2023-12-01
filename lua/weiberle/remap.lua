@@ -18,7 +18,7 @@ keymap("n", "<Up>", "<C-w>k", opts)
 keymap("n", "<Right>", "<C-w>l", opts)
 
 -- Navigate buffers
-keymap("n", "<S-Tab>", ":bn<CR>", opts)
+-- Tab doesn't work with the jumplist, have to find a better solution
 
 -- Append lines but keep cursor position
 keymap("n", "S", "mzJ`z", opts)
