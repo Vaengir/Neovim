@@ -136,7 +136,14 @@ return packer.startup(function(use)
   use { "folke/zen-mode.nvim", }
 
   -- Harpoon
-  use { "theprimeagen/harpoon", }
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim", }, },
+    config = function()
+      require("harpoon"):setup()
+    end,
+  }
 
   -- Comments
   use({
