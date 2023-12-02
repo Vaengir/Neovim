@@ -3,6 +3,9 @@ if not status_ok then
   return
 end
 
+local harpoon = require("harpoon")
+harpoon:setup()
+
 local setup = {
   plugins = {
     marks = false,      -- shows a list of your marks on ' and `
@@ -131,12 +134,12 @@ local mappings = {
   },
   h = {
     name = "Harpoon",
-    h = { "<cmd>lua require('harpoon').ui:toggle_quick_menu(harpoon:list())<cr>", "Quick Menu", },
-    m = { "<cmd>lua require('harpoon'):list():append()<cr>", "Mark File", },
-    f = { "<cmd>lua require('harpoon'):list():select(1)<cr>", "Go To File 1", },
-    d = { "<cmd>lua require('harpoon'):list():select(2)<cr>", "Go To File 2", },
-    s = { "<cmd>lua require('harpoon'):list():select(3)<cr>", "Go To File 3", },
-    a = { "<cmd>lua require('harpoon'):list():select(4)<cr>", "Go To File 4", },
+    h = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Quick Menu", },
+    m = { function() harpoon:list():append() end, "Mark File", },
+    f = { function() harpoon:list():select(1) end, "Go To File 1", },
+    d = { function() harpoon:list():select(2) end, "Go To File 2", },
+    s = { function() harpoon:list():select(3) end, "Go To File 3", },
+    a = { function() harpoon:list():select(4) end, "Go To File 4", },
   },
   l = {
     name = "VimTex",
