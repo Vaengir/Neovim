@@ -4,7 +4,11 @@ if not status_ok then
 end
 
 local harpoon = require("harpoon")
-harpoon:setup()
+harpoon:setup({
+  settings = {
+    save_on_toggle = true,
+  },
+})
 
 local setup = {
   plugins = {
