@@ -171,7 +171,7 @@ lsp.on_attach(function(client, bufnr)
     ["<leader>"] = {
       k = {
         name = "LSP",
-        a = { vim.lsp.buf.code_action, "Code Action", },
+        a = { require("actions-preview").code_actions, "Code Action", },
         b = { vim.lsp.buf.hover, "Show LSP Info", },
         c = { vim.lsp.buf.rename, "Rename using LSP", },
         d = { vim.lsp.buf.definition, "Open LSP Definition", },

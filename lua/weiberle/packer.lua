@@ -107,6 +107,11 @@ return packer.startup(function(use)
     },
   }
 
+  -- Better code actions
+  use {
+    "aznhe21/actions-preview.nvim",
+  }
+
   -- Startscreen for Vim
   use({ "goolord/alpha-nvim", })
 
