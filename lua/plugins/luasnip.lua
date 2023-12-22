@@ -50,7 +50,7 @@ return {
       end,
     })
 
-    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets", })
+    require("luasnip.loaders.from_lua").load({ paths = "~/personal/dotfiles/nvim/.config/nvim/lua/snippets", })
 
     -- Keymaps
     vim.keymap.set({ "i", "s", }, "<c-k>", function()
