@@ -95,6 +95,17 @@ return {
     )
   ),
 
+  s({ trig = "daily", name = "Daily Note", dscr = "Tags for Daily Notes", },
+    fmta(
+      [[
+        daily, <>
+      ]],
+      {
+        p(os.date, "%Y-%m-%d"),
+      }
+    )
+  ),
+
   s({ trig = "tl", name = "TODO List", dscr = "Create a TODO List", },
     fmta(
       [[
