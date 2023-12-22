@@ -26,12 +26,7 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
-<<<<<<< HEAD:after/plugin/snippets/html.lua
-ls.add_snippets("html", {
-
-=======
 return {
->>>>>>> lazy:lua/snippets/html.lua
   s({ trig = "doc", name = "Doctype", dscr = "Create DOCTYPE statement", }, {
     t("<!DOCTYPE html>"),
   }),
@@ -71,9 +66,4 @@ return {
       }
     )
   ),
-<<<<<<< HEAD:after/plugin/snippets/html.lua
-
-})
-=======
 }
->>>>>>> lazy:lua/snippets/html.lua
