@@ -105,7 +105,7 @@ return {
       o = {
         name = "Obsidian",
         ["b"] = { "<cmd>ObsidianBacklinks<cr>", "Location List of References", },
-        ["d"] = { ":ObsidianToday<CR>", "Daily Note", },
+        ["d"] = { "<cmd>ObsidianToday<cr>", "Daily Note", },
         ["f"] = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
         ["n"] = { ":ObsidianNew ", "Create new Note", },
         ["o"] = { "<cmd>ObsidianOpen", "Open Note in Obsidian app", },
