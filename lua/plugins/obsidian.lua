@@ -2,6 +2,7 @@ return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
+  cmd = { "ObsidianBacklinks", "ObsidianToday", "ObsidianQuickSwitch", "ObsidianNew", "ObsidianOpen", "ObsidianSearch", "ObsidianTemplate", },
   event = {
     "BufReadPre " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
     "BufNewFile " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
@@ -26,7 +27,7 @@ return {
     daily_notes = {
       folder = "Daily",
       date_format = "%Y-%m-%d",
-      template = "Daily.md"
+      template = "Daily.md",
     },
     completion = {
       nvim_cmp = true,
