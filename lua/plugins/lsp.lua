@@ -3,6 +3,7 @@ return {
   dependencies = {
     {
       "j-hui/fidget.nvim",
+      tag = "*",
       event = "LspAttach",
       opts = {},
     },
