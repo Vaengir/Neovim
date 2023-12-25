@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = { "BufReadPre", "BufNewFile", },
   config = function()
     local lualine = require("lualine")
 
@@ -20,7 +21,7 @@ return {
     local diff = {
       "diff",
       colored = false,
-      symbols = { added = " ", modified = " ", removed = " ", }, -- changes diff symbols
+      symbols = { added = " ", modified = " ", removed = " ", },
       cond = hide_in_width,
     }
 
@@ -51,8 +52,6 @@ return {
       "location",
       padding = 1,
     }
-
-    -- cool function for progress
     local progress = function()
       local current_line = vim.fn.line(".")
       local total_lines = vim.fn.line("$")

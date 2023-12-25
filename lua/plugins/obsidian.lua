@@ -1,8 +1,8 @@
 return {
   "epwalsh/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
+  version = "*",
   lazy = true,
-  cmd = { "ObsidianBacklinks", "ObsidianToday", "ObsidianQuickSwitch", "ObsidianNew", "ObsidianOpen", "ObsidianSearch", "ObsidianTemplate", },
+  cmd = { "ObsidianBacklinks", "ObsidianFollowLink", "ObsidianToday", "ObsidianQuickSwitch", "ObsidianNew", "ObsidianOpen", "ObsidianSearch", "ObsidianTemplate", },
   event = {
     "BufReadPre " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
     "BufNewFile " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
@@ -61,7 +61,7 @@ return {
       time_format = "%H:%M",
     },
     follow_url_func = function(url)
-      vim.fn.jobstart({ "open", url, }) -- Mac OS
+      vim.fn.jobstart({ "open", url, })
     end,
     use_advanced_uri = true,
     open_app_foreground = false,
