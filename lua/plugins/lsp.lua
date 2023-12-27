@@ -9,7 +9,7 @@ return {
     },
     { "aznhe21/actions-preview.nvim", event = "LspAttach", },
   },
-  event = "LspAttach",
+  event = { "BufReadPre", "BufNewFile", },
   config = function()
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
