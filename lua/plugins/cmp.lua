@@ -88,7 +88,7 @@ return {
       },
       window = {
         documentation = {
-          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│", },
+          border = "rounded",
         },
       },
     })
