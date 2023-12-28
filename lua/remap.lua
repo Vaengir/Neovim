@@ -1,8 +1,4 @@
 local opts = { noremap = true, silent = true, }
-
-local term_opts = { silent = true, }
-
--- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap space as leader key
@@ -34,11 +30,9 @@ keymap("n", "N", "Nzzzv", opts)
 -- Clear Searches
 keymap("n", "<CR>", "<cmd>nohl<cr>", opts)
 
--- Insert --
 -- Allow Ctrl+Backslash to delete entire words
 keymap("i", "<C-H>", "<C-W>", opts)
 
--- Visual --
 -- Stay in indent mode
 keymap("x", "<", "<gv", opts)
 keymap("x", ">", ">gv", opts)
@@ -54,12 +48,14 @@ keymap("x", "<leader>y", "\"+y", opts)
 keymap("n", "<leader>p", "\"+p", opts)
 keymap("x", "<leader>p", "\"+p", opts)
 
--- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv=gv", opts)
 
--- Vimscript
 -- Adds relative jumps of more than 3 lines to the jumplist
 keymap("n", "j", "(v:count >= 3 ? 'm`' . v:count: '') . 'j'", opts)
 keymap("n", "k", "(v:count >= 3 ? 'm`' . v:count: '') . 'k'", opts)
+
+-- Easier macros
+keymap("n", "Q", "@qj", opts)
+keymap("x", "Q", ":norm @q<cr>", opts)
