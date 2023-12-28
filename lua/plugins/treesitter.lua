@@ -24,6 +24,7 @@ return {
         "typescript",
         "vim",
       },
+      auto_install = true,
       highlight = {
         enable = true,
       },
