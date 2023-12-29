@@ -89,6 +89,7 @@ return {
         ["b"] = { "<cmd>ObsidianBacklinks<cr>", "Location List of References", },
         ["d"] = { "<cmd>ObsidianToday<cr>", "Daily Note", },
         ["f"] = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
+        ["l"] = { "<cmd>ObsidianFollowLink<cr>", "Follow Link", },
         ["n"] = { ":ObsidianNew ", "Create new Note", },
         ["o"] = { "<cmd>ObsidianOpen", "Open Note in Obsidian app", },
         ["s"] = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
