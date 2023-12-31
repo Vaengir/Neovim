@@ -5,62 +5,64 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
-  opts = {
-    plugins = {
-      marks = false,
-      registers = true,
-      spelling = {
-        enabled = false,
-        suggestions = 20,
-      },
-      presets = {
-        operators = false,
-        motions = true,
-        text_objects = true,
-        windows = true,
-        nav = true,
-        z = true,
-        g = true,
-      },
-    },
-    key_labels = {},
-    icons = {
-      breadcrumb = "»",
-      separator = "➜",
-      group = "+",
-    },
-    popup_mappings = {
-    },
-    window = {
-      border = "none",
-      position = "bottom",
-      margin = { 1, 0, 1, 0, },
-      padding = { 2, 2, 2, 2, },
-      winblend = 0,
-    },
-    layout = {
-      height = { min = 4, max = 25, },
-      width = { min = 20, max = 50, },
-      spacing = 3,
-      align = "left",
-    },
-    ignore_missing = true,
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ ", },
-    show_help = true,
-    show_keys = true,
-    triggers = "auto",
-    triggers_blacklist = {
-      i = { "j", "k", },
-      v = { "j", "k", },
-    },
-    disable = {
-      buftypes = {},
-      filetypes = { "TelescopePrompt", },
-    },
-  },
   config = function()
     local which_key = require("which-key")
     local harpoon = require("harpoon")
+
+    which_key.setup({
+      plugins = {
+        marks = false,
+        registers = true,
+        spelling = {
+          enabled = false,
+          suggestions = 20,
+        },
+        presets = {
+          operators = false,
+          motions = true,
+          text_objects = true,
+          windows = true,
+          nav = true,
+          z = true,
+          g = true,
+        },
+      },
+      key_labels = {},
+      icons = {
+        breadcrumb = "»",
+        separator = "➜",
+        group = "+",
+      },
+      popup_mappings = {
+      },
+      window = {
+        border = "single",
+        position = "bottom",
+        margin = { 1, 0, 1, 0, },
+        padding = { 2, 2, 2, 2, },
+        winblend = 0,
+      },
+      layout = {
+        height = { min = 4, max = 25, },
+        width = { min = 20, max = 50, },
+        spacing = 3,
+        align = "left",
+      },
+      ignore_missing = true,
+      hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ ", },
+      show_help = true,
+      show_keys = true,
+      triggers = "auto",
+      triggers_blacklist = {
+        i = { "j", "k", },
+        v = { "j", "k", },
+      },
+      disable = {
+        buftypes = {},
+        filetypes = { "TelescopePrompt", },
+      },
+    })
+
     local opts = {
       mode = "n",
       prefix = "<leader>",
