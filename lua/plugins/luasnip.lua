@@ -1,7 +1,16 @@
 return {
   "L3MON4D3/LuaSnip",
-  version = "v2.*",
+  version = "*",
   build = "make install_jsregexp",
+  dependencies = {
+    {
+      "kawre/neotab.nvim",
+      opts = {
+        tabkey = "",
+        act_as_tab = false,
+      },
+    },
+  },
   event = "InsertEnter",
   config = function()
     local ls = require("luasnip")
@@ -68,6 +77,8 @@ return {
     vim.keymap.set({ "i", "s", }, "<c-l>", function()
       if ls.choice_active() then
         ls.change_choice(1)
+      else
+        require("neotab").tabout()
       end
     end)
   end,
