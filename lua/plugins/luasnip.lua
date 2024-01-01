@@ -63,6 +63,8 @@ return {
     vim.keymap.set({ "i", "s", }, "<c-k>", function()
       if ls.expand_or_jumpable() then
         ls.expand_or_jump()
+      else
+        require("neotab").tabout()
       end
     end, { silent = true, })
 
@@ -75,8 +77,6 @@ return {
     vim.keymap.set({ "i", "s", }, "<c-l>", function()
       if ls.choice_active() then
         ls.change_choice(1)
-      else
-        require("neotab").tabout()
       end
     end)
   end,
