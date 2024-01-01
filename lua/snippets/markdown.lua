@@ -95,6 +95,18 @@ return {
     )
   ),
 
+  s({ trig = "prog", name = "Programming", dscr = "Tags for Programming", },
+    fmta(
+      [[
+        Programming, <><>
+      ]],
+      {
+        i(1, "Custom tags go here..."),
+        d(2, rec_tag, {}),
+      }
+    )
+  ),
+
   s({ trig = "daily", name = "Daily Note", dscr = "Tags for Daily Notes", },
     fmta(
       [[
