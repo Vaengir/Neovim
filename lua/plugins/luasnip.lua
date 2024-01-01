@@ -41,7 +41,9 @@ return {
     local ms = ls.multi_snippet
 
     ls.setup({
-      history = true,
+      keep_roots = true,
+      link_roots = false,
+      link_children = true,
       update_events = "TextChanged,TextChangedI",
       delete_check_events = "TextChanged",
       ext_opts = {
@@ -54,10 +56,6 @@ return {
       ext_base_prio = 300,
       ext_prio_increase = 1,
       enable_autosnippets = true,
-      store_selection_keys = "<Tab>",
-      ft_func = function()
-        return vim.split(vim.bo.filetype, ".", true)
-      end,
     })
 
     require("luasnip.loaders.from_lua").load({ paths = "~/personal/dotfiles/nvim/.config/nvim/lua/snippets", })
