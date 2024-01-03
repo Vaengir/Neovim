@@ -1,6 +1,7 @@
 return {
   'stevearc/oil.nvim',
   dependencies = { "nvim-tree/nvim-web-devicons", },
+  version = "*",
   event = "Syntax",
   opts = {
     default_file_explorer = true,
