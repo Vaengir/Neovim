@@ -15,4 +15,7 @@ require("autocmd")
 require("options")
 require("remap")
 require("telescope-function")
-require("lazy").setup("plugins")
+require("lazy").setup({
+  spec = "plugins",
+  change_detection = { notify = false, },
+})
