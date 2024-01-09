@@ -111,6 +111,12 @@ return {
     autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
+        local keymap = vim.api.nvim_buf_set_keymap
+        local options = { noremap = true, silent = true, }
+        keymap(ev.buf, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", options)
+        keymap(ev.buf, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", options)
+        keymap(ev.buf, "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", options)
+
         local opts = {
           mode = "n",
           prefix = "<leader>",
@@ -124,10 +130,9 @@ return {
           k = {
             name = "LSP",
             a = { require("actions-preview").code_actions, "Code Action", },
-            b = { vim.lsp.buf.hover, "Show LSP Info", },
             c = { vim.lsp.buf.rename, "Rename using LSP", },
-            d = { vim.lsp.buf.definition, "Open LSP Definition", },
             f = { function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, }) end, "Format", },
+            h = { vim.lsp.buf.signature_help, "Open signature help", },
             i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
             n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
             p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },

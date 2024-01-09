@@ -1,5 +1,5 @@
-local opts = { noremap = true, silent = true, }
 local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true, }
 
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -25,8 +25,8 @@ keymap("n", "<C-k>", "<cmd>cp<cr>", opts)
 keymap("n", "S", "mzJ`z", opts)
 
 -- Better Movements
-keymap("n", "H", "^", opts)
-keymap("n", "L", "$", opts)
+keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
+keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
