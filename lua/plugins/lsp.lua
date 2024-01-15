@@ -131,7 +131,10 @@ return {
             name = "LSP",
             a = { require("actions-preview").code_actions, "Code Action", },
             c = { vim.lsp.buf.rename, "Rename using LSP", },
-            f = { function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, }) end, "Format", },
+            f = { function()
+              vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
+              print("File formatted")
+            end, "Format", },
             h = { vim.lsp.buf.signature_help, "Open signature help", },
             i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
             n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
