@@ -117,6 +117,12 @@ return {
         keymap(ev.buf, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", options)
         keymap(ev.buf, "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", options)
 
+        local make_input = function()
+          vim.ui.input({ prompt = "Build command: ", }, function(input)
+            vim.cmd("set makeprg=" .. input)
+          end)
+        end
+
         local opts = {
           mode = "n",
           prefix = "<leader>",
@@ -127,6 +133,13 @@ return {
         }
 
         local mappings = {
+          b = {
+            name = "Build",
+            j = { "<cmd>make<cr>", "Run make command", },
+            k = { function()
+              make_input()
+            end, "Configure make command", },
+          },
           k = {
             name = "LSP",
             a = { require("actions-preview").code_actions, "Code Action", },
