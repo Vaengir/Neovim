@@ -139,6 +139,7 @@ return {
             k = { function()
               make_input()
             end, "Configure make command", },
+            l = { require("functions").toggle_qf, "Toggle Quickfix List", },
           },
           k = {
             name = "LSP",
