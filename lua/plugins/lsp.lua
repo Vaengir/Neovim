@@ -135,7 +135,7 @@ return {
         local mappings = {
           b = {
             name = "Build",
-            j = { "<cmd>make<cr>", "Run make command", },
+            j = { "<cmd>make!<cr>", "Run make command", },
             k = { function()
               make_input()
             end, "Configure make command", },
