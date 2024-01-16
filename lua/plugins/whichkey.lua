@@ -93,7 +93,7 @@ return {
         ["f"] = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
         ["l"] = { "<cmd>ObsidianFollowLink<cr>", "Follow Link", },
         ["n"] = { ":ObsidianNew ", "Create new Note", },
-        ["o"] = { "<cmd>ObsidianOpen", "Open Note in Obsidian app", },
+        ["o"] = { "<cmd>ObsidianOpen<cr>", "Open Note in Obsidian app", },
         ["s"] = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
         ["t"] = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
       },
