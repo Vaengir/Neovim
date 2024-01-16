@@ -20,3 +20,12 @@ autocmd("BufWritePre", {
   pattern = "*",
   command = "%s/\\s\\+$//e",
 })
+
+autocmd("BufWritePre", {
+  group = WeiberleGroup,
+  callback = function(opts)
+    if vim.bo[opts.buf].filetype == 'rust' then
+      vim.cmd [[setlocal makeprg=cargo\ build]]
+    end
+  end,
+})
