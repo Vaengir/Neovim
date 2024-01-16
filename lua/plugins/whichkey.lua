@@ -112,7 +112,7 @@ return {
         name = "Telescope",
         b = { "<cmd>Telescope buffers<cr>", "Show Buffers", },
         d = { "<cmd>Telescope git_status<cr>", "Show Git Diff", },
-        f = { "<cmd>lua require('telescope-function').project_files()<cr>", "Find Project Files", },
+        f = { "<cmd>lua require('functions').project_files()<cr>", "Find Project Files", },
         h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files", },
         j = { "<cmd>Telescope jumplist<cr>", "Jumplist", },
         q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },

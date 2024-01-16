@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("autocmd")
 require("options")
 require("remap")
-require("telescope-function")
+require("functions")
 require("lazy").setup({
   spec = "plugins",
   change_detection = { notify = false, },
