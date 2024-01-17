@@ -92,7 +92,7 @@ return {
         ["d"] = { "<cmd>ObsidianToday<cr>", "Daily Note", },
         ["f"] = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
         ["l"] = { "<cmd>ObsidianFollowLink<cr>", "Follow Link", },
-        ["n"] = { ":ObsidianNew ", "Create new Note", },
+        ["n"] = { "<cmd>ObsidianNew<cr>", "Create new Note", },
         ["o"] = { "<cmd>ObsidianOpen<cr>", "Open Note in Obsidian app", },
         ["s"] = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
         ["t"] = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
@@ -118,8 +118,14 @@ return {
         q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
         r = { "<cmd>Telescope lsp_references<cr>", "References", },
         s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
-        w = { function () local word = vim.fn.expand("<cword>") require("telescope.builtin").grep_string({ search = word }) end, "Find word", },
-        W = { function () local word = vim.fn.expand("<cWORD>") require("telescope.builtin").grep_string({ search = word }) end, "Find WORD", },
+        w = { function()
+          local word = vim.fn.expand("<cword>")
+          require("telescope.builtin").grep_string({ search = word, })
+        end, "Find word", },
+        W = { function()
+          local word = vim.fn.expand("<cWORD>")
+          require("telescope.builtin").grep_string({ search = word, })
+        end, "Find WORD", },
       },
       h = {
         name = "Harpoon",
