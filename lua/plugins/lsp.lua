@@ -118,6 +118,12 @@ return {
         keymap(ev.buf, "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", options)
 
         local make_input = function()
+          vim.ui.input({ prompt = "Make argument: ", }, function(input)
+            vim.cmd("make!" .. input)
+          end)
+        end
+
+        local makeprg_input = function()
           vim.ui.input({ prompt = "Build command: ", }, function(input)
             vim.cmd("set makeprg=" .. input)
           end)
@@ -135,9 +141,11 @@ return {
         local mappings = {
           b = {
             name = "Build",
-            j = { "<cmd>make!<cr>", "Run make command", },
-            k = { function()
+            j = { function()
               make_input()
+            end, "Run make command", },
+            k = { function()
+              makeprg_input()
             end, "Configure make command", },
             l = { require("functions").toggle_qf, "Toggle Quickfix List", },
           },

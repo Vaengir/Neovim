@@ -25,7 +25,7 @@ autocmd("BufWritePre", {
   group = WeiberleGroup,
   callback = function(opts)
     if vim.bo[opts.buf].filetype == 'rust' then
-      vim.cmd [[setlocal makeprg=cargo\ build]]
+      vim.cmd("compiler cargo")
     end
   end,
 })
