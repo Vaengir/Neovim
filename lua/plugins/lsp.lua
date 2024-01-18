@@ -143,7 +143,7 @@ return {
             name = "Build",
             j = { function()
               make_input()
-              vim.cmd("copen")
+              vim.cmd("cw")
             end, "Run make command", },
             k = { function()
               makeprg_input()
