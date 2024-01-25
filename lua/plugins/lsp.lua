@@ -80,6 +80,16 @@ return {
       },
     }
 
+    -- Markdown LSP
+    lspconfig.marksman.setup {
+      capabilities = capabilities,
+    }
+
+    -- Python LSP
+    lspconfig.pyright.setup {
+      capabilities = capabilities,
+    }
+
     -- Rust LSP
     lspconfig.rust_analyzer.setup {
       capabilities = capabilities,
