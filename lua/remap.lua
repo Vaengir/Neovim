@@ -18,8 +18,8 @@ keymap("n", "<A-j>", "<cmd>bn<cr>", opts)
 keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
-keymap("n", "<C-j>", "<cmd>cn<cr>", opts)
-keymap("n", "<C-k>", "<cmd>cp<cr>", opts)
+keymap("n", "<C-j>", "<cmd>cn<cr>zz", opts)
+keymap("n", "<C-k>", "<cmd>cp<cr>zz", opts)
 
 -- Append lines but keep cursor position
 keymap("n", "S", "mzJ`z", opts)
