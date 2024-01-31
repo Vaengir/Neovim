@@ -1,7 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "nvim-treesitter/nvim-treesitter-context",
+  },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
     local ts_configs = require("nvim-treesitter.configs")
