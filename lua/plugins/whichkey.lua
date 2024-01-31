@@ -82,8 +82,10 @@ return {
         name = "Git",
         d = { "<cmd>Git pull --rebase<cr>", "Pull remote Changes", },
         g = { "<cmd>Ge:<cr>", "Open Fugitive", },
+        h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Git Hunk", },
         p = { "<cmd>Git push<cr>", "Push local Changes", },
         s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
+        t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
       },
       ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
       o = {
