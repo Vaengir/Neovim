@@ -130,6 +130,7 @@ return {
         local make_input = function()
           vim.ui.input({ prompt = "Make argument: ", }, function(input)
             vim.cmd("make!" .. input)
+            vim.api.nvim_feedkeys("<cr>", "n", true)
           end)
         end
 
