@@ -21,11 +21,11 @@ autocmd("BufWritePre", {
   command = "%s/\\s\\+$//e",
 })
 
-autocmd("BufWritePre", {
+autocmd("QuickFixCmdPost", {
   group = WeiberleGroup,
-  callback = function(opts)
-    if vim.bo[opts.buf].filetype == 'rust' then
-      vim.cmd("compiler cargo")
-    end
+  callback = function()
+    vim.cmd("copen")
+    vim.api.nvim_feedkeys("zt", "n", true)
+    vim.api.nvim_feedkeys("<C-w>k", "n", true)
   end,
 })

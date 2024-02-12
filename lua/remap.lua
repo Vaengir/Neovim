@@ -18,15 +18,23 @@ keymap("n", "<A-j>", "<cmd>bn<cr>", opts)
 keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
-keymap("n", "<C-j>", "<cmd>cn<cr>zz", opts)
-keymap("n", "<C-k>", "<cmd>cp<cr>zz", opts)
+keymap("n", "<C-j>", function()
+  vim.cmd("cn")
+  vim.api.nvim_feedkeys("zz", "n", true)
+  vim.cmd("doautocmd QuickFixCmdPost")
+end, opts)
+keymap("n", "<C-k>", function()
+  vim.cmd("cp")
+  vim.api.nvim_feedkeys("zz", "n", true)
+  vim.cmd("doautocmd QuickFixCmdPost")
+end, opts)
 
 -- Append lines but keep cursor position
 keymap("n", "S", "mzJ`z", opts)
 
 -- Better Movements
-keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
-keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
+keymap({ "n", "o", "x", }, "<s-h>", "^", opts)
+keymap({ "n", "o", "x", }, "<s-l>", "g_", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
