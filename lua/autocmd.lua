@@ -20,12 +20,3 @@ autocmd("BufWritePre", {
   pattern = "*",
   command = "%s/\\s\\+$//e",
 })
-
-autocmd("QuickFixCmdPost", {
-  group = WeiberleGroup,
-  callback = function()
-    vim.cmd("copen")
-    vim.api.nvim_feedkeys("zt", "n", true)
-    vim.api.nvim_feedkeys("<C-w>k", "n", true)
-  end,
-})
