@@ -233,7 +233,6 @@ return {
         <>
 
         % End Chapter: <>
-
       ]],
       {
         i(1),
