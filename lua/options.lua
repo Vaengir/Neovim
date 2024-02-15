@@ -47,7 +47,7 @@ vim.opt.list = true
 vim.opt.listchars:append {
   leadmultispace = "▷ ",
   trail = "·",
-  lead = "·",
+  multispace = "·",
   extends = "◣",
   precedes = "◢",
   nbsp = "○",
