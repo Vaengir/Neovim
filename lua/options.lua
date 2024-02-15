@@ -36,10 +36,20 @@ local options = {
 
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- Allows undotree to have access to old undos
 vim.opt.nrformats:append({ 'alpha', })                         -- Allows letter incrementation
-vim.g.rust_recommended_style = false                           -- Disable default Rust style
 vim.g.markdown_recommended_style = 0                           -- Disable default markdown style
 vim.g.python_recommended_style = 0                             -- Disable default python style
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.opt.list = true
+vim.opt.listchars:append {
+  leadmultispace = "▷ ",
+  trail = "·",
+  lead = "·",
+  extends = "◣",
+  precedes = "◢",
+  nbsp = "○",
+  eol = "↵",
+}

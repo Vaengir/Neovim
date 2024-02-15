@@ -3,7 +3,7 @@ return {
   main = "ibl",
   event = { "BufReadPre", "BufNewFile", },
   version = "*",
-  opts = {
-    scope = { enabled = false, },
-  },
+  -- opts = {
+  --   scope = { enabled = false, },
+  -- },
 }
