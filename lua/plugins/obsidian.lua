@@ -22,7 +22,6 @@ return {
       },
     },
     notes_subdir = "Inbox",
-    detect_cwd = false,
     log_level = vim.log.levels.INFO,
     daily_notes = {
       folder = "Daily",
