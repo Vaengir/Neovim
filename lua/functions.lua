@@ -15,6 +15,7 @@ M.toggle_qf = function()
     vim.cmd("cclose")
   else
     vim.cmd("copen")
+    vim.cmd("wincmd p")
   end
 end
 
