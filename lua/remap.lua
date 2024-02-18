@@ -19,16 +19,48 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
 keymap("n", "<C-j>", function()
-  vim.cmd("cn")
-  vim.cmd("normal! zz")
-  vim.cmd("wincmd j")
-  vim.cmd("wincmd k")
+  local qf_list = vim.fn.getqflist()
+  local valid_idx = {}
+  for idx, item in ipairs(qf_list) do
+    if item.valid == 1 then
+      table.insert(valid_idx, idx)
+    end
+  end
+  if next(valid_idx) == nil then
+    print("Quickfix list is empty")
+    return nil
+  end
+  if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[# valid_idx] then
+    print("Already on last item of Quickfix list")
+    return nil
+  else
+    vim.cmd("cn")
+    vim.cmd("normal! zz")
+    vim.cmd("wincmd j")
+    vim.cmd("wincmd k")
+  end
 end, opts)
 keymap("n", "<C-k>", function()
-  vim.cmd("cp")
-  vim.cmd("normal! zz")
-  vim.cmd("wincmd j")
-  vim.cmd("wincmd k")
+  local qf_list = vim.fn.getqflist()
+  local valid_idx = {}
+  for idx, item in ipairs(qf_list) do
+    if item.valid == 1 then
+      table.insert(valid_idx, idx)
+    end
+  end
+  if next(valid_idx) == nil then
+    print("Quickfix list is empty")
+    return nil
+  end
+  if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[1] then
+    print("Already on first item of Quickfix list")
+    return nil
+  else
+    vim.cmd("cp")
+    vim.cmd("normal! zz")
+    vim.cmd("wincmd j")
+    vim.cmd("wincmd k")
+  end
 end, opts)
 
 -- Append lines but keep cursor position
