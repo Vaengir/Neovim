@@ -11,13 +11,10 @@ M.project_files = function()
 end
 
 M.toggle_qf = function()
-  for _, win in pairs(vim.fn.getwininfo()) do
-    if win["quickfix"] == 1 then
-      vim.cmd("cclose")
-    else
-      vim.cmd("copen")
-      vim.cmd("wincmd p")
-    end
+  if vim.fn.getqflist({ winid = 0, }).winid ~= 0 then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
   end
 end
 
