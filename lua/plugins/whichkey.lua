@@ -106,6 +106,7 @@ return {
         f = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
         n = { "<cmd>lua require('todo-comments').jump_next()<cr>", "Jump to next TODO", },
         p = { "<cmd>lua require('todo-comments').jump_prev()<cr>", "Jump to previous TODO", },
+        q = { "<cmd>TodoQuickfix<cr>", "Send TODOs to Quickfix", },
       },
       ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree", },
       ["w"] = { "<cmd>w!<cr>", "Save", },
