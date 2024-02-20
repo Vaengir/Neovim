@@ -18,6 +18,7 @@ keymap("n", "<A-j>", "<cmd>bn<cr>", opts)
 keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
+keymap("n", "<leader>bl", function() require("functions").toggle_qf() end, opts)
 keymap("n", "<C-j>", function()
   local qf_list = vim.fn.getqflist()
   local valid_idx = {}
