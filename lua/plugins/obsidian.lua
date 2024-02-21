@@ -31,10 +31,10 @@ return {
     completion = {
       nvim_cmp = true,
       min_chars = 2,
-      new_notes_location = "notes_subdir",
     },
     -- Needs to be here, otherwise it interferes with whichkey
     mappings = {},
+    new_notes_location = "notes_subdir",
     note_id_func = function(title)
       local suffix = ""
       if title ~= nil then
