@@ -1,4 +1,5 @@
 return {
+  whi
   "folke/which-key.nvim",
   event = "VeryLazy",
   init = function()
@@ -121,6 +122,7 @@ return {
         q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
         r = { "<cmd>Telescope lsp_references<cr>", "References", },
         s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
+        v = { "<cmd>Telescope help_tags<cr>", "Find Help Entries", },
         w = { function()
           local word = vim.fn.expand("<cword>")
           require("telescope.builtin").grep_string({ search = word, })
