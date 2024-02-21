@@ -1,5 +1,4 @@
 return {
-  whi
   "folke/which-key.nvim",
   event = "VeryLazy",
   init = function()
