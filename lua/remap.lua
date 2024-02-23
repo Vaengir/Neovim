@@ -37,6 +37,7 @@ keymap("n", "<C-j>", function()
   else
     vim.cmd("cn")
     vim.cmd("normal! zz")
+    -- Doesn't seem to work in 0.10
     vim.cmd("wincmd j")
     vim.cmd("wincmd k")
   end
@@ -59,6 +60,7 @@ keymap("n", "<C-k>", function()
   else
     vim.cmd("cp")
     vim.cmd("normal! zz")
+    -- Doesn't seem to work in 0.10
     vim.cmd("wincmd j")
     vim.cmd("wincmd k")
   end
