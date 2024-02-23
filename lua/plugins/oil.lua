@@ -50,9 +50,9 @@ return {
     },
     use_default_keymaps = true,
     view_options = {
-      show_hidden = true,
+      show_hidden = false,
       is_hidden_file = function(name, bufnr)
-        return vim.startswith(name, ".")
+        return name ~= ".." and vim.startswith(name, ".")
       end,
       is_always_hidden = function(name, bufnr)
         return false
