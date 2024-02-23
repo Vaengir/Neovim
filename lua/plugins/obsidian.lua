@@ -1,12 +1,12 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
-  lazy = true,
-  cmd = { "ObsidianBacklinks", "ObsidianFollowLink", "ObsidianToday", "ObsidianQuickSwitch", "ObsidianNew", "ObsidianOpen", "ObsidianSearch", "ObsidianTemplate", },
-  event = {
-    "BufReadPre " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
-    "BufNewFile " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
-  },
+  -- lazy = true,
+  -- cmd = { "ObsidianBacklinks", "ObsidianFollowLink", "ObsidianToday", "ObsidianQuickSwitch", "ObsidianNew", "ObsidianOpen", "ObsidianSearch", "ObsidianTemplate", },
+  -- event = {
+  --   "BufReadPre " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
+  --   "BufNewFile " .. vim.fn.expand "~" .. "/personal/obsidian/**.md",
+  -- },
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
