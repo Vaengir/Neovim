@@ -2,7 +2,8 @@ return {
   'stevearc/oil.nvim',
   dependencies = { "nvim-tree/nvim-web-devicons", },
   version = "*",
-  event = "Syntax",
+  cmd = "Oil",
+  event = "VimEnter */",
   opts = {
     default_file_explorer = true,
     columns = {
