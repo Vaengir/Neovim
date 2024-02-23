@@ -87,6 +87,10 @@ return {
         s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
         t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
       },
+      ["i"] = { function()
+        local bufnr = vim.api.nvim_get_current_buf()
+        vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+      end, "Toggle Inlay Hints", },
       ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
       o = {
         name = "Obsidian",
