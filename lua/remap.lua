@@ -20,6 +20,7 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 -- Quickfix list
 keymap("n", "<leader>bl", function() require("functions").toggle_qf() end, opts)
 keymap("n", "<C-j>", function()
+  local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
   local qf_list = vim.fn.getqflist()
   local valid_idx = {}
   for idx, item in ipairs(qf_list) do
@@ -37,12 +38,13 @@ keymap("n", "<C-j>", function()
   else
     vim.cmd("cn")
     vim.cmd("normal! zz")
-    -- Doesn't seem to work in 0.10
-    vim.cmd("wincmd j")
-    vim.cmd("wincmd k")
+    vim.api.nvim_win_call(qfwinnr, function()
+      vim.cmd("normal! zt")
+    end)
   end
 end, opts)
 keymap("n", "<C-k>", function()
+  local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
   local qf_list = vim.fn.getqflist()
   local valid_idx = {}
   for idx, item in ipairs(qf_list) do
@@ -60,9 +62,9 @@ keymap("n", "<C-k>", function()
   else
     vim.cmd("cp")
     vim.cmd("normal! zz")
-    -- Doesn't seem to work in 0.10
-    vim.cmd("wincmd j")
-    vim.cmd("wincmd k")
+    vim.api.nvim_win_call(qfwinnr, function()
+      vim.cmd("normal! zt")
+    end)
   end
 end, opts)
 
