@@ -378,7 +378,7 @@ return {
     )
   ),
 
-  s({ trig = "itemize", name = "Itemize", dscr = "Create itemize", },
+  s({ trig = "itemize", name = "Itemize", dscr = "Create bullet list", },
     fmta(
       [[
         \begin{itemize}
@@ -392,7 +392,7 @@ return {
     )
   ),
 
-  s({ trig = "enumerate", name = "Enumerate", dscr = "Create enumerate", },
+  s({ trig = "enumerate", name = "Enumerate", dscr = "Create numbered list", },
     fmta(
       [[
         \begin{enumerate}
@@ -406,7 +406,7 @@ return {
     )
   ),
 
-  s({ trig = "description", name = "Description", dscr = "Create description", },
+  s({ trig = "description", name = "Description", dscr = "Create highlighted list", },
     fmta(
       [[
         \begin{description}
