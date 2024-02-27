@@ -58,7 +58,7 @@ return {
         \begin{figure}[htb]
           \centering
           \includegraphics[<><>]{<>}
-          \caption[<>]{<> \footnotemark}
+          \caption[<>]{<>\footnotemark}
           \label{abb:<>}
         \end{figure}
         \footnotetext{<>\cite{<>}}
