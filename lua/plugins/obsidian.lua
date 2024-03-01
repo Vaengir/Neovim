@@ -16,10 +16,10 @@ return {
         name = "private",
         path = "~/personal/obsidian",
       },
-      {
-        name = "work",
-        path = "~/work/obsidian",
-      },
+      -- {
+      --   name = "work",
+      --   path = "~/work/obsidian",
+      -- },
     },
     notes_subdir = "Inbox",
     log_level = vim.log.levels.INFO,
