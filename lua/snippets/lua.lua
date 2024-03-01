@@ -28,7 +28,7 @@ local ms = ls.multi_snippet
 
 return {
 
-  s({ trig = "snip", name = "snippet", dscr = "create a new snippet", },
+  s({ trig = "snip", name = "Snippet", dscr = "Create a new snippet", },
     fmta(
       [[
         s({ trig = "<>", name = "<>", dscr = "<>", },
