@@ -380,7 +380,7 @@ return {
     )
   ),
 
-  s({ trig = "derive", name = "Derive attribute", dscr = "Create a derive attribute", },
+  s({ trig = "der", name = "Derive attribute", dscr = "Create a derive attribute", },
     fmta(
       [[
         #[derive(<>)]
