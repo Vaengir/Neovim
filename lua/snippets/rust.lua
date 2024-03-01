@@ -66,6 +66,7 @@ return {
   s({ trig = "struct", name = "Struct", dscr = "Create a struct", },
     fmta(
       [[
+        #[derive(Debug)]
         <>struct <> {
             <>,<>
         }
@@ -82,6 +83,7 @@ return {
   s({ trig = "enum", name = "Enum", dscr = "Create a enum", },
     fmta(
       [[
+        #[derive(Debug)]
         <>enum <> {
             <>,<>
         }
