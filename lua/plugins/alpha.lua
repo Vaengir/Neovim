@@ -52,7 +52,7 @@ return {
     }
 
     local function footer()
-      return "Weiberle17"
+      return "Væñgír"
     end
 
     dashboard.section.footer.val = footer()
