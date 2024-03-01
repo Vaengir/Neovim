@@ -165,6 +165,15 @@ return {
             name = "LSP",
             a = { require("actions-preview").code_actions, "Code Action", },
             c = { vim.lsp.buf.rename, "Rename using LSP", },
+            d = { function()
+              if vim.diagnostic.is_disabled(0) then
+                vim.diagnostic.enable(0)
+                print("Diagnostics enabled")
+              else
+                vim.diagnostic.disable(0)
+                print("Diagnostics disabled")
+              end
+            end, "Toggle Diagnostics", },
             f = { function()
               vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
               print("File formatted")
