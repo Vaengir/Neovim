@@ -8,24 +8,12 @@ return {
       opts = {},
     },
     { "aznhe21/actions-preview.nvim", event = "LspAttach", },
-    {
-      "stevearc/conform.nvim",
-      version = "*",
-      cmd = "ConformInfo",
-      event = "BufWritePre",
-      opts = {
-        formatters_by_ft = {
-          lua = { "stylua", },
-          rust = { "rustfmt", },
-        },
-      },
-    },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
     local lspconfig = require("lspconfig")
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require("cmp_nvim_lsp").default_capabilities())
+    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     -- Bash LSP
     lspconfig.bashls.setup {
