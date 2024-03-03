@@ -12,7 +12,8 @@ return {
   event = { "BufReadPre", "BufNewFile", },
   config = function()
     local lspconfig = require("lspconfig")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     -- Bash LSP
     lspconfig.bashls.setup {
@@ -71,6 +72,7 @@ return {
               indent_size = "2",
               max_line_length = "unset",
               trailing_table_separator = "always",
+              quote_style = "double",
             },
           },
           telemetry = {
@@ -182,7 +184,8 @@ return {
             i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
             n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
             p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
-            r = { require("telescope.builtin").lsp_references, "Show LSP References", },
+            r = { "<cmd>Telescope lsp_references<cr>", "Show LSP References", },
+            s = { "<cmd>Telescope lsp_document_symbols<cr>", "Show LSP References", },
             t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
           },
         }
