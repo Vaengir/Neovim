@@ -32,7 +32,7 @@ return {
     }
 
     local function getGuiFont()
-      return vim.api.nvim_get_option("guifont")
+      return vim.api.nvim_get_option_value("guifont", {})
     end
 
     local filetype = {
