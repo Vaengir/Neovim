@@ -82,7 +82,7 @@ return {
         end,
       },
       completion = {
-        completeopt = 'menu,menuone,noselect,noinsert',
+        completeopt = "menu,menuone,noselect,noinsert",
       },
       window = {
         completion = cmp.config.window.bordered(),

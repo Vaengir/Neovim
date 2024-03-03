@@ -35,12 +35,12 @@ return {
         return title
       else
         suffix = "Note"
-        return tostring(os.date('%Y-%m-%d %H-%M')) .. "-" .. suffix
+        return tostring(os.date("%Y-%m-%d %H-%M")) .. "-" .. suffix
       end
     end,
     disable_frontmatter = false,
     note_frontmatter_func = function(note)
-      local out = { id = note.id, tags = note.tags, date = os.date('%Y-%m-%d %H:%M'), }
+      local out = { id = note.id, tags = note.tags, date = os.date("%Y-%m-%d %H:%M"), }
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
         for k, v in pairs(note.metadata) do
           out[k] = v

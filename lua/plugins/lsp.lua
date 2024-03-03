@@ -52,10 +52,10 @@ return {
       settings = {
         Lua = {
           runtime = {
-            version = 'LuaJIT',
+            version = "LuaJIT",
           },
           diagnostics = {
-            globals = { 'vim', 'beautiful', 'awesome', 'client', },
+            globals = { "vim", "beautiful", "awesome", "client", },
           },
           workspace = {
             -- Make the server aware of Neovim runtime files
@@ -182,7 +182,7 @@ return {
             i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
             n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
             p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
-            r = { require('telescope.builtin').lsp_references, "Show LSP References", },
+            r = { require("telescope.builtin").lsp_references, "Show LSP References", },
             t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
           },
         }
