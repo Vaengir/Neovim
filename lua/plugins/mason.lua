@@ -16,7 +16,6 @@ return {
         "marksman",
         "pyright",
         "rust_analyzer",
-        "stylua",
         "texlab",
         "tsserver",
       },
