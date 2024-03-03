@@ -125,6 +125,7 @@ return {
         q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
         r = { "<cmd>Telescope lsp_references<cr>", "References", },
         s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
+        t = { "<cmd>Telescope builtin<cr>", "Select Telescope mode", },
         v = { "<cmd>Telescope help_tags<cr>", "Find Help Entries", },
         w = { function()
           local word = vim.fn.expand("<cword>")
