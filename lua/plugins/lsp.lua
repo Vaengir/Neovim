@@ -8,6 +8,18 @@ return {
       opts = {},
     },
     { "aznhe21/actions-preview.nvim", event = "LspAttach", },
+    {
+      "stevearc/conform.nvim",
+      version = "*",
+      cmd = "ConformInfo",
+      event = "BufWritePre",
+      opts = {
+        formatters_by_ft = {
+          lua = { "stylua", },
+          rust = { "rustfmt", },
+        },
+      },
+    },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
