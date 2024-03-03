@@ -35,7 +35,7 @@ return {
       dashboard.button("f", "󰈞  Find file", "<cmd>lua require('functions').project_files()<cr>"),
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("r", "󰄉  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("s", "󰊄  Find Strings", ":Telescope live_grep <CR>"),
       dashboard.button("l", "󰒲  Lazy", ":Lazy check<CR>"),
       dashboard.button("m", "󰒋  Mason", ":Mason<CR>"),
       dashboard.button("c", "  Configuration", ":e ~/.config/nvim/<CR>"),
