@@ -431,4 +431,26 @@ return {
       }
     )
   ),
+
+  s({ trig = "it", name = "Italicized text", dscr = "Create italicized text", },
+    fmta(
+      [[
+        \textit{<>}
+      ]],
+      {
+        i(1, "Italicized text"),
+      }
+    )
+  ),
+
+  s({ trig = "bf", name = "Bold text", dscr = "Create bold text", },
+    fmta(
+      [[
+        \textbf{<>}
+      ]],
+      {
+        i(1, "Bold text"),
+      }
+    )
+  ),
 }
