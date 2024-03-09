@@ -22,13 +22,8 @@ return {
       date_format = "%Y-%m-%d",
       template = "Daily.md",
     },
-    completion = {
-      nvim_cmp = true,
-      min_chars = 2,
-    },
     -- Needs to be here, otherwise it interferes with whichkey
     mappings = {},
-    new_notes_location = "notes_subdir",
     note_id_func = function(title)
       local suffix = ""
       if title ~= nil then
@@ -38,7 +33,6 @@ return {
         return tostring(os.date("%Y-%m-%d %H-%M")) .. "-" .. suffix
       end
     end,
-    disable_frontmatter = false,
     wiki_link_func = "prepend_note_id",
     note_frontmatter_func = function(note)
       local out = { id = note.id, tags = note.tags, date = os.date("%Y-%m-%d %H:%M"), }
@@ -64,30 +58,6 @@ return {
           vim.cmd "silent w"
         end)
       end,
-    },
-    ui = {
-      enable = true,
-      update_debounce = 200,
-      checkboxes = {
-        [" "] = { char = "󰄱", hl_group = "ObsidianTodo", },
-        ["x"] = { char = "", hl_group = "ObsidianDone", },
-        [">"] = { char = "", hl_group = "ObsidianRightArrow", },
-        ["~"] = { char = "󰰱", hl_group = "ObsidianTilde", },
-      },
-      external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon", },
-      reference_text = { hl_group = "ObsidianRefText", },
-      highlight_text = { hl_group = "ObsidianHighlightText", },
-      tags = { hl_group = "ObsidianTag", },
-      hl_groups = {
-        ObsidianTodo = { bold = true, fg = "#f78c6c", },
-        ObsidianDone = { bold = true, fg = "#89ddff", },
-        ObsidianRightArrow = { bold = true, fg = "#f78c6c", },
-        ObsidianTilde = { bold = true, fg = "#ff5370", },
-        ObsidianRefText = { underline = true, fg = "#c792ea", },
-        ObsidianExtLinkIcon = { fg = "#c792ea", },
-        ObsidianTag = { italic = true, fg = "#89ddff", },
-        ObsidianHighlightText = { bg = "#75662e", },
-      },
     },
   },
 }
