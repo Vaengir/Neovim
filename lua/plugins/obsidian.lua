@@ -39,6 +39,7 @@ return {
       end
     end,
     disable_frontmatter = false,
+    wiki_link_func = "prepend_note_id",
     note_frontmatter_func = function(note)
       local out = { id = note.id, tags = note.tags, date = os.date("%Y-%m-%d %H:%M"), }
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
