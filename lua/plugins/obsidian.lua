@@ -57,8 +57,13 @@ return {
       vim.fn.jobstart({ "open", url, })
     end,
     use_advanced_uri = true,
-    open_app_foreground = false,
-    finder = "telescope.nvim",
+    callbacks = {
+      leave_note = function(client, note)
+        vim.api.nvim_buf_call(note.bufnr or 0, function()
+          vim.cmd "silent w"
+        end)
+      end,
+    },
     ui = {
       enable = true,
       update_debounce = 200,
