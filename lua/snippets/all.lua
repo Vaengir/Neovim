@@ -39,10 +39,10 @@ end
 
 local marks = {
   date = function()
-    return fmt(" <{}>", i(1, os.date "%Y-%m-%d"))
+    return fmt("{}<{}>", { t { " ", }, i(1, os.date "%Y-%m-%d"), })
   end,
   empty = function()
-    return t ""
+    return t { "", }
   end,
 }
 
@@ -59,8 +59,8 @@ local todo_snippet_nodes = function(aliases, opts)
       return get_cstring(opts.ctype)[1]
     end),
     c(1, aliases_nodes),
-    i(3),
-    c(2, mark_nodes),
+    i(2),
+    c(3, mark_nodes),
     f(function()
       return get_cstring(opts.ctype)[2]
     end),

@@ -1,5 +1,7 @@
 local M = {}
 
+-- TODO: Remove obsidian part
+-- create function for qflist here
 M.project_files = function()
   local opts = {}
   local obsidian = os.execute("ls -la | grep -q .obsidian")
