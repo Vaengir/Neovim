@@ -20,6 +20,7 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 -- Quickfix list
 keymap("n", "<leader>bl", function() require("functions").toggle_qf() end, opts)
 keymap("n", "<C-j>", function()
+  -- TODO: Extract into function to make it more readable <2024-03-12>
   local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
   local qf_list = vim.fn.getqflist()
   local valid_idx = {}
@@ -32,9 +33,15 @@ keymap("n", "<C-j>", function()
     print("Quickfix list is empty")
     return nil
   end
-  if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[# valid_idx] then
-    print("Already on last item of Quickfix list")
-    return nil
+  if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[#valid_idx] then
+    if #valid_idx == 1 then
+      vim.cmd(".cc")
+      vim.cmd("normal! zz")
+      return nil
+    else
+      print("Already on last item of Quickfix list")
+      return nil
+    end
   else
     vim.cmd("cn")
     vim.cmd("normal! zz")
