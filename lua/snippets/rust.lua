@@ -384,6 +384,15 @@ return {
     )
   ),
 
+  s({ trig = "write", name = "Write macro", dscr = "Create a write macro", },
+    fmta(
+      [[
+        write!(<>, "<>")<>
+      ]],
+      {
+        i(2, "f"),
+        i(3),
+        c(1, { t { "", }, t { ";", }, }),
       }
     )
   ),
