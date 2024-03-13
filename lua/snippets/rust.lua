@@ -291,14 +291,14 @@ return {
     )
   ),
 
-  s({ trig = "prl", name = "println!", dscr = "Print a line", },
+  s({ trig = "prl", name = "Println macro", dscr = "Print a line", },
     fmta(
       [[
       println!("<>")<>
     ]],
       {
-        i(1),
-        c(2, { t { "", }, t { ";", }, }),
+        i(2),
+        c(1, { t { "", }, t { ";", }, }),
       }
     )
   ),
@@ -363,10 +363,11 @@ return {
   s({ trig = "panic", name = "Panic macro", dscr = "Create a panic macro", },
     fmta(
       [[
-        panic!("<>");
+        panic!("<>")<>
       ]],
       {
-        i(1),
+        i(2),
+        c(1, { t { "", }, t { ";", }, }),
       }
     )
   ),
@@ -374,10 +375,15 @@ return {
   s({ trig = "format", name = "Format macro", dscr = "Create a format macro", },
     fmta(
       [[
-        format!("<>");
+        format!("<>")<>
       ]],
       {
-        i(1),
+        i(2),
+        c(1, { t { "", }, t { ";", }, }),
+      }
+    )
+  ),
+
       }
     )
   ),
