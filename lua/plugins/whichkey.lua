@@ -122,6 +122,8 @@ return {
         f = { "<cmd>lua require('functions').project_files()<cr>", "Find Project Files", },
         h = { "<cmd>Telescope find_files hidden=true<cr>", "Find Hidden Files", },
         j = { "<cmd>Telescope jumplist<cr>", "Jumplist", },
+        k = { "<cmd>Telescope lsp_document_symbols<cr>", "Find LSP elements in file", },
+        o = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
         q = { "<cmd>Telescope quickfix<cr>", "Quickfixlist", },
         r = { "<cmd>Telescope lsp_references<cr>", "References", },
         s = { "<cmd>Telescope live_grep<cr>", "Find Strings", },
