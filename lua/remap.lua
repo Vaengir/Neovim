@@ -20,19 +20,7 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 -- Quickfix list
 keymap("n", "<leader>bl", function() require("functions").toggle_qf() end, opts)
 keymap("n", "<C-j>", function()
-  -- TODO: Extract into function to make it more readable <2024-03-12>
-  local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
-  local qf_list = vim.fn.getqflist()
-  local valid_idx = {}
-  for idx, item in ipairs(qf_list) do
-    if item.valid == 1 then
-      table.insert(valid_idx, idx)
-    end
-  end
-  if next(valid_idx) == nil then
-    print("Quickfix list is empty")
-    return nil
-  end
+  local valid_idx, qfwinnr = unpack(require("functions").qf_infos())
   if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[#valid_idx] then
     if #valid_idx == 1 then
       vim.cmd(".cc")
@@ -51,18 +39,7 @@ keymap("n", "<C-j>", function()
   end
 end, opts)
 keymap("n", "<C-k>", function()
-  local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
-  local qf_list = vim.fn.getqflist()
-  local valid_idx = {}
-  for idx, item in ipairs(qf_list) do
-    if item.valid == 1 then
-      table.insert(valid_idx, idx)
-    end
-  end
-  if next(valid_idx) == nil then
-    print("Quickfix list is empty")
-    return nil
-  end
+  local valid_idx, qfwinnr = unpack(require("functions").qf_infos())
   if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[1] then
     print("Already on first item of Quickfix list")
     return nil

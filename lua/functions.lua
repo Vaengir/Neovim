@@ -19,4 +19,20 @@ M.toggle_qf = function()
   end
 end
 
+M.qf_infos = function()
+  local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
+  local qf_list = vim.fn.getqflist()
+  local valid_idx = {}
+  for idx, item in ipairs(qf_list) do
+    if item.valid == 1 then
+      table.insert(valid_idx, idx)
+    end
+  end
+  if next(valid_idx) == nil then
+    print("Quickfix list is empty")
+    return nil
+  end
+  return { valid_idx, qfwinnr, }
+end
+
 return M
