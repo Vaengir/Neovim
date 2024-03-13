@@ -1,17 +1,12 @@
 local M = {}
 
--- TODO: Remove obsidian part
--- create function for qflist here
 M.project_files = function()
   local opts = {}
-  local obsidian = os.execute("ls -la | grep -q .obsidian")
-  local git = os.execute("git rev-parse --is-inside-work-tree")
-  if obsidian == 0 then
-    vim.cmd("ObsidianQuickSwitch")
-  elseif git == 0 then
-    require "telescope.builtin".git_files(opts)
+  vim.fn.system("git rev-parse --is-inside-work-tree")
+  if vim.v.shell_error == 0 then
+    require("telescope.builtin").git_files(opts)
   else
-    require "telescope.builtin".find_files(opts)
+    require("telescope.builtin").find_files(opts)
   end
 end
 
