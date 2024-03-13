@@ -185,7 +185,7 @@ return {
             n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
             p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
             r = { "<cmd>Telescope lsp_references<cr>", "Show LSP References", },
-            s = { "<cmd>Telescope lsp_document_symbols<cr>", "Show LSP References", },
+            s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find LSP elements in file", },
             t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
           },
         }
