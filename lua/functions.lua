@@ -30,7 +30,6 @@ M.qf_infos = function()
   end
   if next(valid_idx) == nil then
     print("Quickfix list is empty")
-    return nil
   end
   return { valid_idx, qfwinnr, }
 end
