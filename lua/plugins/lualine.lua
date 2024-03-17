@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = "letieu/harpoon-lualine",
   config = function()
     local lualine = require("lualine")
 
@@ -64,7 +65,8 @@ return {
       options = {
         icons_enabled = true,
         theme = "onenord",
-        component_separators = { left = "", right = "", },
+        component_separators = { left = " ", right = "", },
+        -- component_separators = { left = "", right = "", },
         section_separators = { left = "", right = "", },
         disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", },
         always_divide_middle = true,
@@ -72,9 +74,9 @@ return {
       sections = {
         lualine_a = { branch, diagnostics, },
         lualine_b = { mode, },
-        lualine_c = { "filename", },
+        lualine_c = { "filename", "%=", { "harpoon2", separator = " ", }, },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
-        lualine_x = { --[[ {getGuiFont}, ]] diff, "encoding", filetype, },
+        lualine_x = { --[[ {getGuiFont}, diff, ]] "encoding", filetype, },
         lualine_y = { cursor_position, },
         lualine_z = { progress, },
       },
