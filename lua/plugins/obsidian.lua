@@ -15,10 +15,10 @@ return {
       --   path = "~/work/obsidian",
       -- },
     },
-    notes_subdir = "Inbox",
+    notes_subdir = "98-Inbox",
     log_level = vim.log.levels.INFO,
     daily_notes = {
-      folder = "Daily",
+      folder = "05-Daily",
       date_format = "%Y-%m-%d",
       template = "Daily.md",
     },
@@ -44,7 +44,7 @@ return {
       return out
     end,
     templates = {
-      subdir = "Templates",
+      subdir = "99-Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
     },
