@@ -141,7 +141,7 @@ return {
       h = {
         name = "Harpoon",
         h = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Quick Menu", },
-        m = { function() harpoon:list():append() end, "Mark File", },
+        m = { function() harpoon:list():add() end, "Mark File", },
         f = { function() harpoon:list():select(1) end, "Go To File 1", },
         d = { function() harpoon:list():select(2) end, "Go To File 2", },
         s = { function() harpoon:list():select(3) end, "Go To File 3", },
