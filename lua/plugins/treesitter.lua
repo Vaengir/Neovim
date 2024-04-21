@@ -4,6 +4,10 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
+    {
+      "yorickpeterse/nvim-tree-pairs",
+      opts = {},
+    },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
@@ -30,7 +34,7 @@ return {
       auto_install = true,
       highlight = {
         enable = true,
-        disable = function (_, buf)
+        disable = function(_, buf)
           local max_filesize = 100 * 1024 -- 100KB
           local filename = vim.api.nvim_buf_get_name(buf)
           local ok, stats = pcall(vim.uv.fs_stat, filename)
