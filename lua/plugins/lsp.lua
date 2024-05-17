@@ -189,13 +189,8 @@ return {
             a = { require("actions-preview").code_actions, "Code Action", },
             c = { vim.lsp.buf.rename, "Rename using LSP", },
             d = { function()
-              if vim.diagnostic.is_disabled(0) then
-                vim.diagnostic.enable(0)
-                print("Diagnostics enabled")
-              else
-                vim.diagnostic.disable(0)
-                print("Diagnostics disabled")
-              end
+              vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+              print("Diagnostics toggled")
             end, "Toggle Diagnostics", },
             f = { function()
               vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
