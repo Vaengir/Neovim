@@ -64,9 +64,6 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
--- Clear Searches
-keymap("n", "<CR>", "<cmd>nohl<cr>", opts)
-
 -- Allow Ctrl+Backslash to delete entire words
 keymap("i", "<C-H>", "<C-W>", opts)
 
