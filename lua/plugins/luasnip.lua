@@ -19,6 +19,7 @@ return {
     ls.setup({
       keep_roots = true,
       link_roots = false,
+      exit_roots = true,
       link_children = true,
       update_events = "TextChanged,TextChangedI",
       delete_check_events = "TextChanged",
