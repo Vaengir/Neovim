@@ -84,6 +84,7 @@ return {
       completion = {
         completeopt = "menu,menuone,noselect,noinsert",
       },
+      preselect = cmp.PreselectMode.None,
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
