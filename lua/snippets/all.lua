@@ -26,14 +26,11 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
-local calculate_comment_string = require("Comment.ft").calculate
-local utils = require("Comment.utils")
-
----@param ctype integer
 ---@return table comment_strings
-local get_cstring = function(ctype)
-  local cstring = calculate_comment_string { ctype = ctype, range = utils.get_region(), } or vim.bo.commentstring
-  local left, right = utils.unwrap_cstr(cstring)
+local get_cstring = function()
+  local ft = vim.bo.filetype
+  local cstring = vim.filetype.get_option(ft, "commentstring")
+  local left, right = string.match(cstring, "(.*)%%s(.*)")
   return { left, right, }
 end
 
@@ -56,13 +53,13 @@ local todo_snippet_nodes = function(aliases, opts)
   end
   local comment_node = fmta("<> <>: <><><>", {
     f(function()
-      return get_cstring(opts.ctype)[1]
+      return get_cstring()[1]
     end),
     c(1, aliases_nodes),
     i(2),
     c(3, mark_nodes),
     f(function()
-      return get_cstring(opts.ctype)[2]
+      return get_cstring()[2]
     end),
   })
   return comment_node
