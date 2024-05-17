@@ -10,6 +10,9 @@ return {
         act_as_tab = false,
       },
     },
+    {
+      "numToStr/Comment.nvim",
+    },
   },
   event = "InsertEnter",
   config = function()
