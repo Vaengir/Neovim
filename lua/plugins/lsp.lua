@@ -179,10 +179,10 @@ return {
               make_input()
               vim.cmd("cw")
             end, "Run make command", },
-            k = { function()
+            k = { require("functions").toggle_qf, "Toggle Quickfix List", },
+            l = { function()
               makeprg_input()
             end, "Configure make command", },
-            l = { require("functions").toggle_qf, "Toggle Quickfix List", },
           },
           k = {
             name = "LSP",
