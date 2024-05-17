@@ -1,11 +1,8 @@
-local augroup = vim.api.nvim_create_augroup
-local WeiberleGroup = augroup("WeiberleGroup", {})
-
 local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
+local augroup = vim.api.nvim_create_augroup
 
 autocmd("TextYankPost", {
-  group = yank_group,
+  group = augroup("HighlightYank", {}),
   pattern = "*",
   callback = function()
     vim.highlight.on_yank({
@@ -16,13 +13,13 @@ autocmd("TextYankPost", {
 })
 
 autocmd("BufWritePre", {
-  group = WeiberleGroup,
+  group = augroup("TrailingWhitespace", {}),
   pattern = "*",
   command = "%s/\\s\\+$//e",
 })
 
-vim.api.nvim_create_autocmd("CursorMoved", {
-  group = vim.api.nvim_create_augroup("auto-hlsearch", { clear = true, }),
+autocmd("CursorMoved", {
+  group = augroup("auto-hlsearch", {}),
   callback = function()
     if vim.v.hlsearch == 1 and vim.fn.searchcount().exact_match == 0 then
       vim.schedule(function() vim.cmd.nohlsearch() end)
