@@ -26,3 +26,12 @@ autocmd("CursorMoved", {
     end
   end,
 })
+
+-- Disable 'o' adding a comment
+autocmd("FileType", {
+  group = augroup("format_options", {}),
+  pattern = { "*", },
+  callback = function()
+    vim.opt.formatoptions:remove({ "o", })
+  end,
+})
