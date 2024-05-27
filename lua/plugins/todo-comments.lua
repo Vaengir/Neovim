@@ -3,5 +3,9 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", },
   cmd = { "TodoTelescope", },
   event = "BufReadPost",
-  opts = {},
+  opts = {
+    keywords = {
+      TEST = { icon = " ", color = "test", alt = { "TESTING", "PASSED", "FAILED", }, },
+    },
+  },
 }
