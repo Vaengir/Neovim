@@ -88,8 +88,7 @@ return {
         t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
       },
       ["i"] = { function()
-        local bufnr = vim.api.nvim_get_current_buf()
-        vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(0))
       end, "Toggle Inlay Hints", },
       ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
       o = {
