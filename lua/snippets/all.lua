@@ -91,6 +91,7 @@ local todo_snippet_specs = {
   { { trig = "warn", },  { "WARN", "WARNING", "XXX", }, },
   { { trig = "perf", },  { "PERF", "PERFORMANCE", "OPTIM", "OPTIMIZE", }, },
   { { trig = "note", },  { "NOTE", "INFO", }, },
+  { { trig = "test", },  { "TEST", "TESTING", "PASSED", "FAILED", }, },
   -- Block commented todo-comments
   { { trig = "todob", }, "TODO",                                          { ctype = 2, }, },
   { { trig = "fixb", },  { "FIX", "BUG", "ISSUE", "FIXIT", },             { ctype = 2, }, },
@@ -98,6 +99,7 @@ local todo_snippet_specs = {
   { { trig = "warnb", }, { "WARN", "WARNING", "XXX", },                   { ctype = 2, }, },
   { { trig = "perfb", }, { "PERF", "PERFORMANCE", "OPTIM", "OPTIMIZE", }, { ctype = 2, }, },
   { { trig = "noteb", }, { "NOTE", "INFO", },                             { ctype = 2, }, },
+  { { trig = "testb", }, { "TEST", "TESTING", "PASSED", "FAILED", },      { ctype = 2, }, },
 }
 
 local todo_comment_snippets = {}
