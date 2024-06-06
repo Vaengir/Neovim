@@ -100,6 +100,7 @@ return {
       sources = {
         { name = "vim-dadbod-completion", },
         { name = "buffer", },
+        { name = "luasnip", },
       },
     })
   end,
