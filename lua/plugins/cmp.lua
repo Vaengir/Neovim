@@ -8,6 +8,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
+    "kristijanhusak/vim-dadbod-completion",
   },
   event = { "InsertEnter", "CmdlineEnter", },
   config = function()
@@ -92,6 +93,13 @@ return {
       experimental = {
         native_menu = false,
         ghost_text = true,
+      },
+    })
+
+    cmp.setup.filetype({ "sql", }, {
+      sources = {
+        { name = "vim-dadbod-completion", },
+        { name = "buffer", },
       },
     })
   end,

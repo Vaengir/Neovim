@@ -57,8 +57,8 @@ end, opts)
 keymap("n", "S", "mzJ`z", opts)
 
 -- Better Movements
-keymap({ "n", "o", "x", }, "<s-h>", "^", opts)
-keymap({ "n", "o", "x", }, "<s-l>", "g_", opts)
+keymap({ "n", "o", "x", }, "<S-h>", "^", opts)
+keymap({ "n", "o", "x", }, "<S-l>", "g_", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)

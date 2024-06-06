@@ -78,42 +78,6 @@ return {
       ["c"] = { "<cmd>bd<cr>", "Close Buffer", },
       ["d"] = { "\"_d", "Delete to void register", },
       ["e"] = { "<cmd>Oil<cr>", "Explorer", },
-      g = {
-        name = "Git",
-        d = { "<cmd>Git pull --rebase<cr>", "Pull remote Changes", },
-        g = { "<cmd>Ge:<cr>", "Open Fugitive", },
-        h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Git Hunk", },
-        p = { "<cmd>Git push<cr>", "Push local Changes", },
-        s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
-        t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
-      },
-      ["i"] = { function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(0))
-      end, "Toggle Inlay Hints", },
-      ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
-      o = {
-        name = "Obsidian",
-        b = { "<cmd>ObsidianBacklinks<cr>", "Location List of References", },
-        d = { "<cmd>ObsidianToday<cr>", "Daily Note", },
-        f = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
-        l = { "<cmd>ObsidianFollowLink<cr>", "Follow Link", },
-        n = { "<cmd>ObsidianNew<cr>", "Create new Note", },
-        o = { "<cmd>ObsidianOpen<cr>", "Open Note in Obsidian app", },
-        s = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
-        t = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
-      },
-      ["q"] = { "<cmd>q!<cr>", "Quit", },
-      ["r"] = { "<cmd>LspRestart<cr>", "Restart Lsp Servers", },
-      ["t"] = {
-        name = "TODOs",
-        f = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
-        n = { "<cmd>lua require('todo-comments').jump_next()<cr>", "Jump to next TODO", },
-        p = { "<cmd>lua require('todo-comments').jump_prev()<cr>", "Jump to previous TODO", },
-        q = { "<cmd>TodoQuickFix<cr>", "Send TODOs to Quickfix", },
-      },
-      ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree", },
-      ["w"] = { "<cmd>w!<cr>", "Save", },
-      ["z"] = { "<cmd>ZenMode<cr>", "ZenMode", },
       f = {
         name = "Telescope",
         b = { "<cmd>Telescope buffers<cr>", "Show Buffers", },
@@ -137,6 +101,15 @@ return {
           require("telescope.builtin").grep_string({ search = word, })
         end, "Find WORD", },
       },
+      g = {
+        name = "Git",
+        d = { "<cmd>Git pull --rebase<cr>", "Pull remote Changes", },
+        g = { "<cmd>Ge:<cr>", "Open Fugitive", },
+        h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Git Hunk", },
+        p = { "<cmd>Git push<cr>", "Push local Changes", },
+        s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
+        t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
+      },
       h = {
         name = "Harpoon",
         h = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Quick Menu", },
@@ -146,12 +119,40 @@ return {
         s = { function() harpoon:list():select(3) end, "Go To File 3", },
         a = { function() harpoon:list():select(4) end, "Go To File 4", },
       },
+      ["i"] = { function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(0))
+      end, "Toggle Inlay Hints", },
       l = {
         name = "VimTex",
         i = { "<cmd>VimtexInfo<cr>", "VimTex Info", },
         l = { "<cmd>VimtexCompile<cr>", "VimTex Compile", },
         s = { "<cmd>VimtexCompileSS<cr>", "VimTex Compile Once", },
       },
+      ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview", },
+      o = {
+        name = "Obsidian",
+        b = { "<cmd>ObsidianBacklinks<cr>", "Location List of References", },
+        d = { "<cmd>ObsidianToday<cr>", "Daily Note", },
+        f = { "<cmd>ObsidianQuickSwitch<cr>", "Find Notes", },
+        l = { "<cmd>ObsidianFollowLink<cr>", "Follow Link", },
+        n = { "<cmd>ObsidianNew<cr>", "Create new Note", },
+        o = { "<cmd>ObsidianOpen<cr>", "Open Note in Obsidian app", },
+        s = { "<cmd>ObsidianSearch<cr>", "Find Text in Notes", },
+        t = { "<cmd>ObsidianTemplate<cr>", "Insert Template", },
+      },
+      ["q"] = { "<cmd>q!<cr>", "Quit", },
+      ["r"] = { "<cmd>LspRestart<cr>", "Restart Lsp Servers", },
+      ["s"] = { "<cmd>DBUIToggle<cr>", "Toggle Dadbod-UI", },
+      t = {
+        name = "TODOs",
+        f = { "<cmd>TodoTelescope<cr>", "Show TODOs", },
+        n = { "<cmd>lua require('todo-comments').jump_next()<cr>", "Jump to next TODO", },
+        p = { "<cmd>lua require('todo-comments').jump_prev()<cr>", "Jump to previous TODO", },
+        q = { "<cmd>TodoQuickFix<cr>", "Send TODOs to Quickfix", },
+      },
+      ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree", },
+      ["w"] = { "<cmd>w!<cr>", "Save", },
+      ["z"] = { "<cmd>ZenMode<cr>", "ZenMode", },
     }
 
     which_key.register(mappings, opts)
