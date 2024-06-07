@@ -11,5 +11,10 @@
 
 (fenced_code_block
   (info_string
+    (language) @conceal (#eq? @conceal "sh")
+    (#set! conceal "󱆃 ")))
+
+(fenced_code_block
+  (info_string
     (language) @conceal (#eq? @conceal "bash")
     (#set! conceal "󱆃 ")))
