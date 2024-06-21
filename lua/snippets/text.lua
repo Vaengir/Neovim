@@ -55,7 +55,7 @@ return {
       ]],
       {
         extras.partial(os.date, "%Y"),
-        i(0, "Væñgír"),
+        i(0, "Væñgír <vaengir@gmx.de>"),
       }
     )
   ),
