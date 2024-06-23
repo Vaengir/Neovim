@@ -10,5 +10,6 @@ return {
       changedelete = { text = "~ ", },
       untracked = { text = "┆ ", },
     },
+    attach_to_untracked = true,
   },
 }
