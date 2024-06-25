@@ -50,8 +50,15 @@ end
 local format_dat_sql = function(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
 
-  if vim.bo[bufnr].filetype ~= "typescript" then
-    vim.notify "can only be used in typescript"
+  local queries = {
+    typescript =
+    [[
+((template_string) @sql)
+    ]],
+  }
+
+  if not queries[vim.bo[bufnr].filetype] then
+    vim.notify("This command can only be used for configured filetypes - Typescript")
     return
   end
 
@@ -60,12 +67,10 @@ local format_dat_sql = function(bufnr)
   local root = tree:root()
   local lang = parser:lang()
 
+  local query = queries[lang]
   local embedded_sql = vim.treesitter.query.parse(
     lang,
-    [[
-((template_string) @sql
-  (#offset! @sql 0 1 0 -1))
-    ]]
+    query
   )
 
   local changes = {}

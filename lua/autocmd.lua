@@ -1,5 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local usercmd = vim.api.nvim_create_user_command
+local functions = require("functions")
 
 autocmd("TextYankPost", {
   group = augroup("HighlightYank", {}),
@@ -35,3 +37,7 @@ autocmd("FileType", {
     vim.opt.formatoptions:remove({ "o", })
   end,
 })
+
+usercmd("SqlMagic", function()
+  functions.format_dat_sql()
+end, {})
