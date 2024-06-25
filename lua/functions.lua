@@ -34,4 +34,79 @@ M.qf_infos = function()
   return { valid_idx, qfwinnr, }
 end
 
+local run_formatter = function(text)
+  text = text:gsub("`", "")
+  local split = vim.split(text, "\n")
+  local result = table.concat(split, "\n")
+
+  local j = require("plenary.job"):new {
+    command = "sleek",
+    args = { "-U", "-i", "2", },
+    writer = { result, },
+  }
+  return j:sync()
+end
+
+local format_dat_sql = function(bufnr)
+  bufnr = bufnr or vim.api.nvim_get_current_buf()
+
+  if vim.bo[bufnr].filetype ~= "typescript" then
+    vim.notify "can only be used in typescript"
+    return
+  end
+
+  local parser = vim.treesitter.get_parser()
+  local tree = parser:parse()[1]
+  local root = tree:root()
+  local lang = parser:lang()
+
+  local embedded_sql = vim.treesitter.query.parse(
+    lang,
+    [[
+((template_string) @sql
+  (#offset! @sql 0 1 0 -1))
+    ]]
+  )
+
+  local changes = {}
+  for id, node in embedded_sql:iter_captures(root, bufnr) do
+    local name = embedded_sql.captures[id]
+    if name == "sql" then
+      -- { start row, start col, end row, end col }
+      local range = { node:range(), }
+      local indentation = string.rep(" ", range[2])
+
+      -- Run the formatter, based on the node text
+      local formatted = run_formatter(vim.treesitter.get_node_text(node, bufnr))
+
+      -- Add some indentation (can be anything you like!)
+      for idx, line in ipairs(formatted) do
+        if idx ~= 1 and line ~= "" then
+          formatted[idx] = indentation .. line
+        end
+      end
+
+      -- Keep track of changes
+      --    But insert them in reverse order of the file,
+      --    so that when we make modifications, we don't have
+      --    any out of date line numbers
+      table.insert(changes, 1, {
+        start_row = range[1],
+        start_col = range[2] + 1,
+        end_row = range[3],
+        end_col = range[4] - 1,
+        formatted = formatted,
+      })
+    end
+  end
+
+  for _, change in ipairs(changes) do
+    vim.api.nvim_buf_set_text(bufnr, change.start_row, change.start_col, change.end_row, change.end_col, change.formatted)
+  end
+end
+
+vim.api.nvim_create_user_command("SqlMagic", function()
+  format_dat_sql()
+end, {})
+
 return M
