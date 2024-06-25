@@ -47,7 +47,7 @@ local run_formatter = function(text)
   return j:sync()
 end
 
-local format_dat_sql = function(bufnr)
+M.format_dat_sql = function(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
 
   local queries = {
