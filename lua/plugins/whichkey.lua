@@ -107,6 +107,7 @@ return {
         g = { "<cmd>Ge:<cr>", "Open Fugitive", },
         h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Git Hunk", },
         p = { "<cmd>Git push<cr>", "Push local Changes", },
+        r = { "<cmd>Gitsigns refresh<cr>", "Refresh Gitsigns", },
         s = { "<cmd>Git submodule update --remote<cr>", "Update submodules", },
         t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Preview Git Hunk", },
       },
