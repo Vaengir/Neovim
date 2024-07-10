@@ -36,7 +36,6 @@ local options = {
 
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- Allows undotree to have access to old undos
 vim.opt.nrformats:append({ "alpha", })                         -- Allows letter incrementation
-vim.g.dispatch_no_maps = 1                                     -- Disable dispatch keybinds
 vim.g.markdown_recommended_style = 0                           -- Disable default markdown style
 vim.g.python_recommended_style = 0                             -- Disable default python style
 
