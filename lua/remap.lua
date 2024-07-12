@@ -58,6 +58,7 @@ keymap("n", "S", "mzJ`z", opts)
 -- Better Movements
 keymap({ "n", "o", "x", }, "<S-h>", "^", opts)
 keymap({ "n", "o", "x", }, "<S-l>", "g_", opts)
+keymap({ "n", "o", "x", }, "<S-m>", "%", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
@@ -72,6 +73,9 @@ keymap("x", ">", ">gv", opts)
 
 -- Keep yanked Text after pasting over
 keymap("x", "p", "P", opts)
+
+-- Delete single character without copying into register
+keymap("n", "x", "\"_x", opts)
 
 -- Yank to system clipboard
 keymap({ "n", "x", }, "<leader>y", "\"+y", opts)
