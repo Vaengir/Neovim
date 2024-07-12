@@ -18,7 +18,6 @@ keymap("n", "<A-j>", "<cmd>bn<cr>", opts)
 keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
-keymap("n", "<leader>bl", function() require("functions").toggle_qf() end, opts)
 keymap("n", "<C-j>", function()
   local valid_idx, qfwinnr = unpack(require("functions").qf_infos())
   if (vim.fn.getqflist({ idx = 0, }).idx == valid_idx[#valid_idx] and #valid_idx ~= 1) or #valid_idx == 0 then
@@ -75,12 +74,10 @@ keymap("x", ">", ">gv", opts)
 keymap("x", "p", "P", opts)
 
 -- Yank to system clipboard
-keymap("n", "<leader>y", "\"+y", opts)
-keymap("x", "<leader>y", "\"+y", opts)
+keymap({ "n", "x", }, "<leader>y", "\"+y", opts)
 
 -- Paste to system clipboard
-keymap("n", "<leader>p", "\"+p", opts)
-keymap("x", "<leader>p", "\"+p", opts)
+keymap({ "n", "x", }, "<leader>p", "\"+p", opts)
 
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
