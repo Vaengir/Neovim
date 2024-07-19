@@ -82,12 +82,6 @@ keymap("x", "p", "P", opts)
 -- Delete single character without copying into register
 keymap("n", "x", "\"_x", opts)
 
--- Yank to system clipboard
-keymap({ "n", "x", }, "<leader>y", "\"+y", opts)
-
--- Paste to system clipboard
-keymap({ "n", "x", }, "<leader>p", "\"+p", opts)
-
 -- Move text up and down
 keymap("x", "J", ":move '>+1<cr>gv=gv", opts)
 keymap("x", "K", ":move '<-2<cr>gv=gv", opts)

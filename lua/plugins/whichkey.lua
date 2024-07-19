@@ -48,8 +48,10 @@ return {
   },
   keys = {
     { "<leader>c", "<cmd>bd<cr>", desc = "Close Buffer", },
-    { "<leader>d", "\"_d",        desc = "Delete to void register", },
-    { "<leader>q", "<cmd>q!<cr>", desc = "Quit", },
-    { "<leader>w", "<cmd>w!<cr>", desc = "Save", },
+    { "<leader>d", "\"_d",        desc = "Delete to void register",     mode = { "n", "x", }, },
+    { "<leader>q", "<cmd>q!<cr>", desc = "Quit",                        mode = { "n", "x", }, },
+    { "<leader>w", "<cmd>w!<cr>", desc = "Save",                        mode = { "n", "x", }, },
+    { "<leader>y", "\"_+y",       desc = "Yank to system clipboard",    mode = { "n", "x", }, },
+    { "<leader>y", "\"_+p",       desc = "Paste from system clipboard", mode = { "n", "x", }, },
   },
 }
