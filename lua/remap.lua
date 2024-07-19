@@ -65,9 +65,9 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
 -- Whole file keymaps
-keymap("n", "yig", ":%y<CR>", opts)
+keymap("n", "yig", ":%y<cr>", opts)
 keymap("n", "vig", "ggVG", opts)
-keymap("n", "cig", ":%d<CR>i", opts)
+keymap("n", "cig", ":%d<cr>i", opts)
 
 -- Allow Ctrl+Backslash to delete entire words
 keymap("i", "<C-H>", "<C-W>", opts)
@@ -89,8 +89,8 @@ keymap({ "n", "x", }, "<leader>y", "\"+y", opts)
 keymap({ "n", "x", }, "<leader>p", "\"+p", opts)
 
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv=gv", opts)
+keymap("x", "J", ":move '>+1<cr>gv=gv", opts)
+keymap("x", "K", ":move '<-2<cr>gv=gv", opts)
 
 -- Adds relative jumps of more than 3 lines to the jumplist
 keymap("n", "j", "(v:count >= 3 ? 'm`' . v:count: '') . 'j'", opts)

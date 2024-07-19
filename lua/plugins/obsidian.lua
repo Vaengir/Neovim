@@ -60,4 +60,15 @@ return {
       end,
     },
   },
+  keys = {
+    { "<leader>fo", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes", },
+    { "<leader>ob", "<cmd>ObsidianBacklinks<cr>",   desc = "Location List of References", },
+    { "<leader>od", "<cmd>ObsidianToday<cr>",       desc = "Daily Note", },
+    { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes", },
+    { "<leader>ol", "<cmd>ObsidianFollowLink<cr>",  desc = "Follow Link", },
+    { "<leader>on", "<cmd>ObsidianNew<cr>",         desc = "Create new Note", },
+    { "<leader>oo", "<cmd>ObsidianOpen<cr>",        desc = "Open Note in Obsidian app", },
+    { "<leader>os", "<cmd>ObsidianSearch<cr>",      desc = "Find Text in Notes", },
+    { "<leader>ot", "<cmd>ObsidianTemplate<cr>",    desc = "Insert Template", },
+  },
 }

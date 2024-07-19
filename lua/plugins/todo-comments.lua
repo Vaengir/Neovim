@@ -8,4 +8,10 @@ return {
       TEST = { icon = " ", color = "test", alt = { "TESTING", "PASSED", "FAILED", }, },
     },
   },
+  keys = {
+    { "<leader>tf", "<cmd>TodoTelescope<cr>",                            desc = "Show TODOs", },
+    { "<leader>tn", "<cmd>lua require('todo-comments').jump_next()<cr>", desc = "Jump to next TODO", },
+    { "<leader>tp", "<cmd>lua require('todo-comments').jump_prev()<cr>", desc = "Jump to previous TODO", },
+    { "<leader>tq", "<cmd>TodoQuickFix<cr>",                             desc = "Send TODOs to Quickfix", },
+  },
 }

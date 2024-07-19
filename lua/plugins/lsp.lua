@@ -163,50 +163,51 @@ return {
           end)
         end
 
-        local opts = {
-          mode = "n",
-          prefix = "<leader>",
-          buffer = ev.buf,
-          silent = true,
-          noremap = true,
-          nowait = true,
-        }
-
-        local mappings = {
-          b = {
-            name = "Build",
-            j = { function()
+        whichkey.add({
+          { "<leader>r",  "<cmd>LspRestart<cr>",          desc = "Restart Lsp Servers", },
+          {
+            "<leader>bj",
+            function()
               make_input()
               vim.cmd("cw")
-            end, "Run make command", },
-            k = { require("functions").toggle_qf, "Toggle Quickfix List", },
-            l = { function()
-              makeprg_input()
-            end, "Configure make command", },
+            end,
+            desc = "Run make command",
           },
-          k = {
-            name = "LSP",
-            a = { require("actions-preview").code_actions, "Code Action", },
-            c = { vim.lsp.buf.rename, "Rename using LSP", },
-            d = { function()
+          { "<leader>bk", require("functions").toggle_qf, desc = "Toggle Quickfix List", },
+          {
+            "<leader>bl",
+            function()
+              makeprg_input()
+            end,
+            desc = "Configure make command",
+          },
+          { "<leader>ka", require("actions-preview").code_actions, desc = "Code Action", },
+          { "<leader>kc", vim.lsp.buf.rename,                      desc = "Rename using LSP", },
+          {
+            "<leader>kd",
+            function()
               vim.diagnostic.enable(not vim.diagnostic.is_enabled())
               print("Diagnostics toggled")
-            end, "Toggle Diagnostics", },
-            f = { function()
+            end,
+            desc = "Toggle Diagnostics",
+          },
+          {
+            "<leader>kf",
+            function()
               vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
               print("File formatted")
-            end, "Format", },
-            h = { vim.lsp.buf.signature_help, "Open signature help", },
-            i = { vim.lsp.buf.implementation, "Open LSP Implementation", },
-            n = { vim.diagnostic.goto_next, "Goto next LSP Diagnostic", },
-            p = { vim.diagnostic.goto_prev, "Goto previous LSP Diagnostic", },
-            r = { "<cmd>Telescope lsp_references<cr>", "Show LSP References", },
-            s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find LSP elements in file", },
-            t = { "<cmd>Telescope diagnostics<cr>", "Show LSP diagnostics", },
+            end,
+            desc = "Format",
           },
-        }
-
-        whichkey.register(mappings, opts)
+          { "<leader>kh", vim.lsp.buf.signature_help,                                     desc = "Open signature ", },
+          { "<leader>ki", vim.lsp.buf.implementation,                                     desc = "Open LSP Implementation", },
+          { "<leader>kI", vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()), desc = "Toggle Inlay Hints", },
+          { "<leader>kn", vim.diagnostic.goto_next,                                       desc = "Goto next LSP Diagnostic", },
+          { "<leader>kp", vim.diagnostic.goto_prev,                                       desc = "Goto previous LSP Diagnostic", },
+          { "<leader>kr", "<cmd>Telescope lsp_references<cr>",                            desc = "Show LSP References", },
+          { "<leader>ks", "<cmd>Telescope lsp_document_symbols<cr>",                      desc = "Find LSP elements in file", },
+          { "<leader>kt", "<cmd>Telescope diagnostics<cr>",                               desc = "Show LSP diagnostics", },
+        })
       end,
     })
   end,

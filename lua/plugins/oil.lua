@@ -102,4 +102,7 @@ return {
       },
     },
   },
+  keys = {
+    { "<leader>e", "<cmd>Oil<cr>", desc = "Explorer", },
+  },
 }

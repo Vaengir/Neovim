@@ -24,4 +24,7 @@ return {
       require("ibl").overwrite { enabled = true, }
     end,
   },
+  keys = {
+    { "<leader>z", "<cmd>ZenMode<cr>", desc = "ZenMode", },
+  },
 }

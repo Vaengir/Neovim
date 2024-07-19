@@ -5,10 +5,10 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
       cond = function()
-        return vim.fn.executable 'make' == 1
+        return vim.fn.executable "make" == 1
       end,
     },
   },
@@ -32,4 +32,33 @@ return {
       },
     }
   end,
+  keys = {
+    { "<leader>fb", "<cmd>Telescope buffers<cr>",                        desc = "Show Buffers", },
+    { "<leader>fd", "<cmd>Telescope git_status<cr>",                     desc = "Show Git Diff", },
+    { "<leader>ff", "<cmd>lua require('functions').project_files()<cr>", desc = "Find Project Files", },
+    { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>",         desc = "Find Hidden Files", },
+    { "<leader>fj", "<cmd>Telescope jumplist<cr>",                       desc = "Jumplist", },
+    { "<leader>fk", "<cmd>Telescope lsp_document_symbols<cr>",           desc = "Find LSP elements in file", },
+    { "<leader>fq", "<cmd>Telescope quickfix<cr>",                       desc = "Quickfixlist", },
+    { "<leader>fr", "<cmd>Telescope lsp_references<cr>",                 desc = "References", },
+    { "<leader>fs", "<cmd>Telescope live_grep<cr>",                      desc = "Find Strings", },
+    { "<leader>ft", "<cmd>Telescope builtin<cr>",                        desc = "Select Telescope mode", },
+    { "<leader>fv", "<cmd>Telescope help_tags<cr>",                      desc = "Find Help Entries", },
+    {
+      "<leader>fw",
+      function()
+        local word = vim.fn.expand("<cword>")
+        require("telescope.builtin").grep_string({ search = word, })
+      end,
+      desc = "Find word",
+    },
+    {
+      "<leader>fW",
+      function()
+        local word = vim.fn.expand("<cWORD>")
+        require("telescope.builtin").grep_string({ search = word, })
+      end,
+      desc = "Find WORD",
+    },
+  },
 }
