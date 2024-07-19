@@ -52,6 +52,6 @@ return {
     { "<leader>q", "<cmd>q!<cr>", desc = "Quit",                        mode = { "n", "x", }, },
     { "<leader>w", "<cmd>w!<cr>", desc = "Save",                        mode = { "n", "x", }, },
     { "<leader>y", "\"_+y",       desc = "Yank to system clipboard",    mode = { "n", "x", }, },
-    { "<leader>y", "\"_+p",       desc = "Paste from system clipboard", mode = { "n", "x", }, },
+    { "<leader>p", "\"_+p",       desc = "Paste from system clipboard", mode = { "n", "x", }, },
   },
 }
