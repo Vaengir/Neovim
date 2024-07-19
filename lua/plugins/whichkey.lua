@@ -28,6 +28,9 @@ return {
       width = { min = 20, max = 50, },
       spacing = 3,
     },
+    icons = {
+      mappings = false,
+    },
     disable = {
       buftypes = {},
       filetypes = { "TelescopePrompt", },
@@ -44,9 +47,9 @@ return {
     },
   },
   keys = {
-    { "<leader>c", "<cmd>bd<cr>",         desc = "Close Buffer", },
-    { "<leader>d", "\"_d",                desc = "Delete to void register", },
-    { "<leader>q", "<cmd>q!<cr>",         desc = "Quit", },
-    { "<leader>w", "<cmd>w!<cr>",         desc = "Save", },
+    { "<leader>c", "<cmd>bd<cr>", desc = "Close Buffer", },
+    { "<leader>d", "\"_d",        desc = "Delete to void register", },
+    { "<leader>q", "<cmd>q!<cr>", desc = "Quit", },
+    { "<leader>w", "<cmd>w!<cr>", desc = "Save", },
   },
 }
