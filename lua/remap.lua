@@ -64,6 +64,11 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
+-- Whole file keymaps
+keymap("n", "yig", ":%y<CR>", opts)
+keymap("n", "vig", "ggVG", opts)
+keymap("n", "cig", ":%d<CR>i", opts)
+
 -- Allow Ctrl+Backslash to delete entire words
 keymap("i", "<C-H>", "<C-W>", opts)
 
