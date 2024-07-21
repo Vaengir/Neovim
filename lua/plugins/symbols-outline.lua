@@ -3,8 +3,7 @@ return {
   cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose", },
   opts = {
     position = "left",
-    relative_width = false,
-    width = 45,
+    width = 15,
     show_relative_numbers = true,
     autofold_depth = 1,
   },
