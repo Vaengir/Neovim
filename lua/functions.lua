@@ -51,6 +51,10 @@ M.format_dat_sql = function(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
 
   local queries = {
+    sql =
+    [[
+((statement) @sql)
+    ]],
     typescript =
     [[
 ((template_string) @sql)
@@ -58,7 +62,7 @@ M.format_dat_sql = function(bufnr)
   }
 
   if not queries[vim.bo[bufnr].filetype] then
-    vim.notify("This command can only be used for configured filetypes - Typescript")
+    vim.notify("This command can only be used for configured filetypes - Typescript, SQL")
     return
   end
 
@@ -95,13 +99,23 @@ M.format_dat_sql = function(bufnr)
       --    But insert them in reverse order of the file,
       --    so that when we make modifications, we don't have
       --    any out of date line numbers
-      table.insert(changes, 1, {
-        start_row = range[1],
-        start_col = range[2] + 1,
-        end_row = range[3],
-        end_col = range[4] - 1,
-        formatted = formatted,
-      })
+      if lang == "typescript" then
+        table.insert(changes, 1, {
+          start_row = range[1],
+          start_col = range[2] + 1,
+          end_row = range[3],
+          end_col = range[4] - 1,
+          formatted = formatted,
+        })
+      elseif lang == "sql" then
+        table.insert(changes, 1, {
+          start_row = range[1],
+          start_col = range[2],
+          end_row = range[3],
+          end_col = range[4],
+          formatted = formatted,
+        })
+      end
     end
   end
 
