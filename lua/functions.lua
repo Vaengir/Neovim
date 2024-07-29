@@ -51,6 +51,17 @@ M.format_dat_sql = function(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
 
   local queries = {
+    rust =
+    [[
+(macro_invocation
+  (scoped_identifier
+    path: (identifier) @path (#eq? @path "sqlx")
+    name: (identifier) @name (#eq? @name "query_as"))
+
+  (token_tree
+    (raw_string_literal
+      (string_content) @sql)))
+      ]],
     sql =
     [[
 ((statement) @sql)
@@ -62,7 +73,7 @@ M.format_dat_sql = function(bufnr)
   }
 
   if not queries[vim.bo[bufnr].filetype] then
-    vim.notify("This command can only be used for configured filetypes - Typescript, SQL")
+    vim.notify("This command can only be used for configured filetypes - Typescript, SQL, Rust")
     return
   end
 
@@ -107,7 +118,7 @@ M.format_dat_sql = function(bufnr)
           end_col = range[4] - 1,
           formatted = formatted,
         })
-      elseif lang == "sql" then
+      elseif lang == "sql" or lang == "rust" then
         table.insert(changes, 1, {
           start_row = range[1],
           start_col = range[2],
