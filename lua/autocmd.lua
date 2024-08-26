@@ -38,6 +38,17 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("FileType", {
+  group = augroup("quickfix", {}),
+  pattern = { "qf", },
+  callback = function(ev)
+    local winid = vim.fn.bufwinid(ev.buf)
+    local height = math.floor(vim.o.lines / 3)
+    print(winid, height)
+    vim.api.nvim_win_set_height(winid, height)
+  end,
+})
+
 usercmd("SqlMagic", function()
   functions.format_dat_sql()
 end, {})

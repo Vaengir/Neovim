@@ -173,7 +173,6 @@ return {
             end,
             desc = "Run make command",
           },
-          { "<leader>bk", require("functions").toggle_qf, desc = "Toggle Quickfix List", },
           {
             "<leader>bl",
             function()

@@ -10,15 +10,6 @@ M.project_files = function()
   end
 end
 
-M.toggle_qf = function()
-  if vim.fn.getqflist({ winid = 0, }).winid ~= 0 then
-    vim.cmd("cclose")
-  else
-    vim.cmd("copen")
-    vim.cmd("wincmd p")
-  end
-end
-
 M.qf_infos = function()
   local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
   local qf_list = vim.fn.getqflist()
