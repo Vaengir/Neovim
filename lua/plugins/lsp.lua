@@ -153,7 +153,6 @@ return {
         local make_input = function()
           vim.ui.input({ prompt = "Make argument: ", }, function(input)
             vim.cmd("Make! " .. input)
-            vim.api.nvim_feedkeys("<cr>", "n", true)
           end)
         end
 
@@ -164,12 +163,11 @@ return {
         end
 
         whichkey.add({
-          { "<leader>r",  "<cmd>LspRestart<cr>",          desc = "Restart Lsp Servers", },
+          { "<leader>r",  "<cmd>LspRestart<cr>",                   desc = "Restart Lsp Servers", },
           {
             "<leader>bj",
             function()
               make_input()
-              vim.cmd("cw")
             end,
             desc = "Run make command",
           },
