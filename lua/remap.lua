@@ -19,37 +19,10 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
 keymap("n", "<C-j>", function()
-  local valid_idx, qfwinnr = unpack(require("functions").qf_infos())
-  if (vim.fn.getqflist({ idx = 0, }).idx == valid_idx[#valid_idx] and #valid_idx ~= 1) or #valid_idx == 0 then
-    print("Already on last item of Quickfix list")
-    return nil
-  else
-    print(#valid_idx)
-    if #valid_idx == 1 then
-      vim.cmd(".cc")
-      vim.cmd("normal! zz")
-      return nil
-    else
-      vim.cmd("cn")
-      vim.cmd("normal! zz")
-      vim.api.nvim_win_call(qfwinnr, function()
-        vim.cmd("normal! zt")
-      end)
-    end
-  end
+  require("functions").custom_cn()
 end, opts)
 keymap("n", "<C-k>", function()
-  local valid_idx, qfwinnr = unpack(require("functions").qf_infos())
-  if vim.fn.getqflist({ idx = 0, }).idx == valid_idx[1] or #valid_idx == 0 then
-    print("Already on first item of Quickfix list")
-    return nil
-  else
-    vim.cmd("cp")
-    vim.cmd("normal! zz")
-    vim.api.nvim_win_call(qfwinnr, function()
-      vim.cmd("normal! zt")
-    end)
-  end
+  require("functions").custom_cp()
 end, opts)
 
 -- Append lines but keep cursor position

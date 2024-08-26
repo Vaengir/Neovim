@@ -10,7 +10,9 @@ M.project_files = function()
   end
 end
 
+---@return { multiple_valid_idx: boolean, qfwinnr: number }
 M.qf_infos = function()
+  ---@type number
   local qfwinnr = vim.fn.getqflist({ winid = 0, }).winid
   local qf_list = vim.fn.getqflist()
   local valid_idx = {}
@@ -22,7 +24,40 @@ M.qf_infos = function()
   if next(valid_idx) == nil then
     print("Quickfix list is empty")
   end
-  return { valid_idx, qfwinnr, }
+  local multiple_valid_idx = #valid_idx > 1
+  return { multiple_valid_idx, qfwinnr, }
+end
+
+M.custom_cn = function()
+  local qf_infos = require("functions").qf_infos()
+  if not qf_infos[1] then
+    vim.cmd(".cc")
+    vim.cmd("normal! zz")
+    return nil
+  else
+    local ok, _ = pcall(vim.cmd.cn)
+    if not ok then
+      print("Already on last item of Quickfix list")
+      return nil
+    end
+    vim.cmd("normal! zz")
+    vim.api.nvim_win_call(qf_infos[2], function()
+      vim.cmd("normal! zt")
+    end)
+  end
+end
+
+M.custom_cp = function()
+  local qf_infos = require("functions").qf_infos()
+  local ok, _ = pcall(vim.cmd.cp)
+  if not ok then
+    print("Already on first item of Quickfix list")
+    return nil
+  end
+  vim.cmd("normal! zz")
+  vim.api.nvim_win_call(qf_infos[2], function()
+    vim.cmd("normal! zt")
+  end)
 end
 
 local run_formatter = function(text)
