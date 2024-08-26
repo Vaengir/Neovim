@@ -1,5 +1,6 @@
 return {
-  "stevearc/quicker.nvim",
+  "vaengir/quicker.nvim",
+  version = "*",
   event = "FileType qf",
   opts = {},
   keys = {
