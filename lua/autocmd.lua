@@ -44,7 +44,6 @@ autocmd("FileType", {
   callback = function(ev)
     local winid = vim.fn.bufwinid(ev.buf)
     local height = math.floor(vim.o.lines / 3)
-    print(winid, height)
     vim.api.nvim_win_set_height(winid, height)
   end,
 })
