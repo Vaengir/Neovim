@@ -8,6 +8,11 @@ return {
       "yorickpeterse/nvim-tree-pairs",
       opts = {},
     },
+    {
+      "rayliwell/tree-sitter-rstml",
+      build = ":TSUpdate",
+      opts = {},
+    },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
