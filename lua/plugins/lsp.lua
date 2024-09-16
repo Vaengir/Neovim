@@ -163,7 +163,8 @@ return {
         end
 
         whichkey.add({
-          { "<leader>r",  "<cmd>LspRestart<cr>",                   desc = "Restart Lsp Servers", },
+          { "<leader>r",  "<cmd>LspRestart<cr>",    desc = "Restart Lsp Servers", },
+          { "<leader>bb", "<cmd>AbortDispatch<cr>", desc = "Run make command", },
           {
             "<leader>bj",
             function()
