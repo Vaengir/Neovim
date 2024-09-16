@@ -143,6 +143,10 @@ return {
     t "Neovim update"
   ),
 
+  s({ trig = "plug", name = "Plugin Update", dscr = "The Neovim lazy-lock.json was updated", },
+    t "Plugin update"
+  ),
+
   s({ trig = "awe", name = "AwesomeWM Update", dscr = "The AwesomeWM submodule was updated", },
     t "AwesomeWM update"
   ),
