@@ -5,8 +5,10 @@ return {
     disable = {
       float_background = true,
     },
-    inverse = {
-      match_paren = true,
+    custom_highlights = {
+      -- Override the background of the matching paren
+      -- MatchParen = { fg = colors.yellow, bg = colors.light_gray, style = "bold" },
+      MatchParen = { fg = "#EBCB8B", bg = "#6C7A96", style = "bold" },
     },
   },
 }
