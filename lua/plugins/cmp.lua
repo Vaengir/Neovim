@@ -42,6 +42,26 @@ return {
       TypeParameter = "󰊄",
     }
 
+    local confirm = function(entry)
+      local behavior = cmp.ConfirmBehavior.Replace
+      if entry then
+        local completion_item = entry.completion_item
+        local newText = ""
+        if completion_item.textEdit then
+          newText = completion_item.textEdit.newText
+        elseif type(completion_item.insertText) == "string" and completion_item.insertText ~= "" then
+          newText = completion_item.insertText
+        else
+          newText = completion_item.word or completion_item.label or ""
+        end
+        local diff_after = math.max(0, entry.replace_range["end"].character + 1) - entry.context.cursor.col
+        if entry.context.cursor_after_line:sub(1, diff_after) ~= newText:sub(-diff_after) then
+          behavior = cmp.ConfirmBehavior.Insert
+        end
+      end
+      cmp.confirm({ select = true, behavior = behavior, })
+    end
+
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -52,9 +72,19 @@ return {
         ["<TAB>"] = nil,
         ["<S-TAB>"] = nil,
         ["<CR>"] = nil,
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, }),
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, }),
-        ["<C-y>"] = cmp.mapping.confirm({ select = true, }),
+        ["<C-y>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            local entry = cmp.get_selected_entry()
+            confirm(entry)
+          else
+            fallback()
+          end
+        end, { "i", "s", }),
       },
       sources = cmp.config.sources({
         { name = "luasnip", },
