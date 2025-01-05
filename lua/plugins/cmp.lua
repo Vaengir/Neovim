@@ -70,13 +70,13 @@ return {
         { name = "path", },
       }),
       formatting = {
-        fields = { "kind", "abbr", "menu", },
         format = function(entry, vim_item)
           vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
           vim_item.menu = ({
             nvim_lsp = "[LSP]",
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
+            nvim_lua = "[Lua]",
             path = "[Path]",
           })[entry.source.name]
           return vim_item
@@ -87,7 +87,9 @@ return {
       },
       preselect = cmp.PreselectMode.None,
       window = {
-        completion = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          scrollbar = false,
+        }),
         documentation = cmp.config.window.bordered(),
       },
       experimental = {
