@@ -48,6 +48,29 @@ autocmd("FileType", {
   end,
 })
 
+autocmd({ "InsertEnter", "CursorMovedI", }, {
+  callback = function()
+    if vim.api.nvim_get_mode().mode ~= "i" then
+      return
+    end
+    local cmploaded, config = pcall(require, "cmp.config")
+    if cmploaded then
+      local cursor_column = vim.fn.col(".")
+      local current_line_contents = vim.fn.getline(".")
+      local character_after_cursor = current_line_contents:sub(cursor_column, cursor_column)
+      local should_enable_ghost_text = character_after_cursor == "" or vim.fn.match(character_after_cursor, [[\k]]) == -1
+      local current = config.get().experimental.ghost_text
+      if current ~= should_enable_ghost_text then
+        config.set_global({
+          experimental = {
+            ghost_text = should_enable_ghost_text,
+          },
+        })
+      end
+    end
+  end,
+})
+
 usercmd("SqlMagic", function()
   functions.format_dat_sql()
 end, {})
