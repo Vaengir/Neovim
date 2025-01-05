@@ -161,8 +161,4 @@ M.format_dat_sql = function(bufnr)
   end
 end
 
-vim.api.nvim_create_user_command("SqlMagic", function()
-  M.format_dat_sql()
-end, {})
-
 return M
