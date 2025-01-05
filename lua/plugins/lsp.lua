@@ -185,7 +185,7 @@ return {
             "<leader>kd",
             function()
               vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-              print("Diagnostics toggled")
+              vim.notify("Diagnostics toggled\n", vim.log.levels.INFO)
             end,
             desc = "Toggle Diagnostics",
           },
@@ -193,7 +193,7 @@ return {
             "<leader>kf",
             function()
               vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
-              print("File formatted")
+              vim.notify("File formatted\n", vim.log.levels.INFO)
             end,
             desc = "Format",
           },

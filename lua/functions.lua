@@ -29,7 +29,7 @@ end
 M.custom_cn = function()
   local qf_infos = require("functions").qf_infos()
   if qf_infos[1] then
-    print("Quickfix list is empty")
+    vim.notify("Quickfix list is empty\n", vim.log.levels.WARN)
     return nil
   end
   if not qf_infos[2] then
@@ -39,7 +39,7 @@ M.custom_cn = function()
   else
     local ok, _ = pcall(vim.cmd.cn)
     if not ok then
-      print("Already on last item of Quickfix list")
+      vim.notify("Already on last item of Quickfix list\n", vim.log.levels.WARN)
       return nil
     end
     vim.cmd("normal! zz")
@@ -52,12 +52,12 @@ end
 M.custom_cp = function()
   local qf_infos = require("functions").qf_infos()
   if qf_infos[1] then
-    print("Quickfix list is empty")
+    vim.notify("Quickfix list is empty\n", vim.log.levels.WARN)
     return nil
   end
   local ok, _ = pcall(vim.cmd.cp)
   if not ok then
-    print("Already on first item of Quickfix list")
+    vim.notify("Already on first item of Quickfix list\n", vim.log.levels.WARN)
     return nil
   end
   vim.cmd("normal! zz")
@@ -105,7 +105,7 @@ M.format_dat_sql = function(bufnr)
   }
 
   if not queries[vim.bo[bufnr].filetype] then
-    vim.notify("This command can only be used for configured filetypes - Typescript, SQL, Rust")
+    vim.notify("This command can only be used for configured filetypes - Typescript, SQL, Rust(broken)\n", vim.log.levels.ERROR)
     return
   end
 
