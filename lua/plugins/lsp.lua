@@ -114,6 +114,11 @@ return {
           checkOnSave = {
             command = "clippy",
           },
+          semanticHighlighting = {
+            strings = {
+              enable = false,
+            },
+          },
         },
       },
     }
