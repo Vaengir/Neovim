@@ -9,6 +9,16 @@ return {
       build = ":TSUpdate",
       opts = {},
     },
+    {
+      "aaronik/treewalker.nvim",
+      opts = {},
+      keys = {
+        { "<C-S-H>", "<cmd>Treewalker Left<cr>",  desc = "Treewalk left", },
+        { "<C-S-J>", "<cmd>Treewalker Down<cr>",  desc = "Treewalk down", },
+        { "<C-S-K>", "<cmd>Treewalker Up<cr>",    desc = "Treewalk up", },
+        { "<C-S-L>", "<cmd>Treewalker Right<cr>", desc = "Treewalk right", },
+      },
+    },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
