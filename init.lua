@@ -12,9 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("autocmd")
+require("functions")
 require("options")
 require("remap")
-require("functions")
+require("statuscolumn")
 require("lazy").setup({
   spec = "plugins",
   change_detection = { notify = false, },
