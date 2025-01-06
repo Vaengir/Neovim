@@ -83,6 +83,18 @@ M.format_dat_sql = function(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
 
   local queries = {
+    rust_with_rstml =
+    [[
+(call_expression
+  function: (field_expression
+    value: (macro_invocation
+      macro: (scoped_identifier
+        path: (identifier) @path (#eq? @path "sqlx")
+        name: (identifier) @name (#eq? @name "query_as")))))
+  (token_tree
+    (raw_string_literal
+      (string_content) @sql))
+      ]],
     rust =
     [[
 (macro_invocation
@@ -104,8 +116,8 @@ M.format_dat_sql = function(bufnr)
     ]],
   }
 
-  if not queries[vim.bo[bufnr].filetype] then
-    vim.notify("This command can only be used for configured filetypes - Typescript, SQL, Rust(broken)\n", vim.log.levels.ERROR)
+  if not queries[vim.bo[bufnr].filetype] and not queries["rust_with_rstml"] then
+    vim.notify("This command can only be used for configured filetypes:\n - Typescript\n- SQL\n- Rust\n- rust_with_rstml((using the tree-sitter-rstml)[https://github.com/rayliwell/tree-sitter-rstml])\n", vim.log.levels.ERROR)
     return
   end
 
@@ -150,7 +162,7 @@ M.format_dat_sql = function(bufnr)
           end_col = range[4] - 1,
           formatted = formatted,
         })
-      elseif lang == "sql" or lang == "rust" then
+      else
         table.insert(changes, 1, {
           start_row = range[1],
           start_col = range[2],
