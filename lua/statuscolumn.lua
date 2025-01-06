@@ -74,27 +74,6 @@ M.number = function()
   return ""
 end
 
----To display pretty fold's icons in `statuscolumn` and show it according to `fillchars`
-M.foldcolumn = function()
-  local chars = vim.opt.fillchars:get()
-  local fc = "%#FoldColumn#"
-  local clf = "%#CursorLineFold#"
-  local hl = vim.fn.line(".") == vim.v.lnum and clf or fc
-  local text = " "
-  if vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1) then
-    if vim.fn.foldclosed(vim.v.lnum) == -1 then
-      text = hl .. (chars.foldopen or " ")
-    else
-      text = hl .. (chars.foldclose or " ")
-    end
-  elseif vim.fn.foldlevel(vim.v.lnum) == 0 then
-    text = hl .. " "
-  else
-    text = hl .. (chars.foldsep or " ")
-  end
-  return text
-end
-
 M.join_sections = function(sections)
   local res = ""
   for _, section in ipairs(sections) do
@@ -107,8 +86,7 @@ end
 
 M.stc = {
   { "%s", },
-  { "%=", M.number, },
-  { " ",  M.foldcolumn, " ", },
+  { "%=", M.number, "  ", },
 }
 
 M.build_stc = function()
