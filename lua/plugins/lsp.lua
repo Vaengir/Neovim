@@ -173,6 +173,7 @@ return {
           {
             "<leader>bj",
             function()
+              vim.cmd.cclose()
               make_input()
             end,
             desc = "Run make command",
