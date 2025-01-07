@@ -7,6 +7,7 @@ return {
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-calc",
     "saadparwaiz1/cmp_luasnip",
     "kristijanhusak/vim-dadbod-completion",
   },
@@ -98,6 +99,7 @@ return {
           },
         },
         { name = "path", },
+        { name = "calc", },
       }),
       formatting = {
         format = function(entry, vim_item)
