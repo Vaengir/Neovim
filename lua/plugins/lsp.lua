@@ -199,7 +199,7 @@ return {
             "<leader>kf",
             function()
               vim.lsp.buf.format({ async = false, timeout_ms = 10000, })
-              vim.notify("File formatted\n", vim.log.levels.INFO)
+              vim.notify("File formatted", vim.log.levels.INFO)
             end,
             desc = "Format",
           },

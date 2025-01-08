@@ -29,7 +29,7 @@ end
 M.custom_cn = function()
   local qf_infos = require("functions").qf_infos()
   if qf_infos[1] then
-    vim.notify("Quickfix list is empty\n", vim.log.levels.WARN)
+    vim.notify("Quickfix list is empty", vim.log.levels.WARN)
     return nil
   end
   if not qf_infos[2] then
@@ -39,7 +39,7 @@ M.custom_cn = function()
   else
     local ok, _ = pcall(vim.cmd.cn)
     if not ok then
-      vim.notify("Already on last item of Quickfix list\n", vim.log.levels.WARN)
+      vim.notify("Already on last item of Quickfix list", vim.log.levels.WARN)
       return nil
     end
     vim.cmd("normal! zz")
@@ -52,12 +52,12 @@ end
 M.custom_cp = function()
   local qf_infos = require("functions").qf_infos()
   if qf_infos[1] then
-    vim.notify("Quickfix list is empty\n", vim.log.levels.WARN)
+    vim.notify("Quickfix list is empty", vim.log.levels.WARN)
     return nil
   end
   local ok, _ = pcall(vim.cmd.cp)
   if not ok then
-    vim.notify("Already on first item of Quickfix list\n", vim.log.levels.WARN)
+    vim.notify("Already on first item of Quickfix list", vim.log.levels.WARN)
     return nil
   end
   vim.cmd("normal! zz")
