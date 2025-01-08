@@ -9,6 +9,9 @@ return {
   {
     "tpope/vim-fugitive",
     cmd = { "Git", "Ge", },
+    dependencies = {
+      "jecaro/fugitive-difftool.nvim",
+    },
     keys = {
       { "<leader>gd", "<cmd>Git pull --rebase<cr>",             desc = "Pull remote Changes", },
       { "<leader>gg", "<cmd>Ge:<cr>",                           desc = "Open Fugitive", },
