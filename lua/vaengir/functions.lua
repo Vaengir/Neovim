@@ -122,6 +122,10 @@ M.format_dat_sql = function(bufnr)
   end
 
   local parser = vim.treesitter.get_parser()
+  if parser == nil then
+    vim.notify("No Treesitter parser available.", vim.log.levels.ERROR)
+    return
+  end
   local tree = parser:parse()[1]
   local root = tree:root()
   local lang = parser:lang()
