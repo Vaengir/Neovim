@@ -93,6 +93,6 @@ M.build_stc = function()
   return vim.v.virtnum ~= 0 and "" or M.join_sections(M.stc)
 end
 
-vim.o.statuscolumn = '%{%v:lua.require("statuscolumn").build_stc()%}'
+vim.o.statuscolumn = '%{%v:lua.require("vaengir.statuscolumn").build_stc()%}'
 
 return M

@@ -19,10 +19,10 @@ keymap("n", "<A-k>", "<cmd>bp<cr>", opts)
 
 -- Quickfix list
 keymap("n", "<C-j>", function()
-  require("functions").custom_cn()
+  require("vaengir.functions").custom_cn()
 end, opts)
 keymap("n", "<C-k>", function()
-  require("functions").custom_cp()
+  require("vaengir.functions").custom_cp()
 end, opts)
 
 -- Append lines but keep cursor position

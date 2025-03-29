@@ -36,7 +36,7 @@ return {
       settings = {
         java = {
           format = {
-            settings = { url = "~/.config/nvim/lua/weiberle/jdtls/formatter.xml", },
+            settings = { url = "~/.config/nvim/lua/vaengir/jdtls/formatter.xml", },
           },
         },
       },
@@ -202,8 +202,8 @@ return {
           { "<leader>kh", vim.lsp.buf.signature_help,                                                    desc = "Open signature ", },
           { "<leader>ki", vim.lsp.buf.implementation,                                                    desc = "Open LSP Implementation", },
           { "<leader>kI", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Toggle Inlay Hints", },
-          { "<leader>kn", function() functions.jumpWithVirtLineDiags(1) end,                             desc = "Goto next LSP Diagnostic", },
-          { "<leader>kp", function() functions.jumpWithVirtLineDiags(-1) end,                            desc = "Goto previous LSP Diagnostic", },
+          { "<leader>kn", function() require("vaengir.functions").jumpWithVirtLineDiags(1) end,          desc = "Goto next LSP Diagnostic", },
+          { "<leader>kp", function() require("vaengir.functions").jumpWithVirtLineDiags(-1) end,         desc = "Goto previous LSP Diagnostic", },
           { "<leader>kr", "<cmd>Telescope lsp_references<cr>",                                           desc = "Show LSP References", },
           { "<leader>ks", "<cmd>Telescope lsp_document_symbols<cr>",                                     desc = "Find LSP elements in file", },
           { "<leader>kt", "<cmd>Telescope diagnostics<cr>",                                              desc = "Show LSP diagnostics", },

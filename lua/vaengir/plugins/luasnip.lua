@@ -40,7 +40,7 @@ return {
       enable_autosnippets = true,
     })
 
-    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets", })
+    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/vaengir/snippets", })
 
     vim.keymap.set({ "i", "s", }, "<c-k>", function()
       if ls.expand_or_jumpable() then

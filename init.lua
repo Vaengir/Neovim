@@ -11,12 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("autocmd")
-require("functions")
-require("options")
-require("remap")
-require("statuscolumn")
+require("vaengir.autocmd")
+require("vaengir.options")
+require("vaengir.remap")
+require("vaengir.statuscolumn")
 require("lazy").setup({
-  spec = "plugins",
+  spec = "vaengir.plugins",
   change_detection = { notify = false, },
 })

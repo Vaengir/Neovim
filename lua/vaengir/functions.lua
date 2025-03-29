@@ -27,7 +27,7 @@ M.qf_infos = function()
 end
 
 M.custom_cn = function()
-  local qf_infos = require("functions").qf_infos()
+  local qf_infos = require("vaengir.functions").qf_infos()
   if qf_infos[1] then
     vim.notify("Quickfix list is empty", vim.log.levels.WARN)
     return nil
@@ -50,7 +50,7 @@ M.custom_cn = function()
 end
 
 M.custom_cp = function()
-  local qf_infos = require("functions").qf_infos()
+  local qf_infos = require("vaengir.functions").qf_infos()
   if qf_infos[1] then
     vim.notify("Quickfix list is empty", vim.log.levels.WARN)
     return nil
