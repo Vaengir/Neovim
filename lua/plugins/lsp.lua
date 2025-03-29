@@ -139,10 +139,6 @@ return {
     vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo", })
     vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint", })
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded",
-    })
-
     -- On attach
     local whichkey = require("which-key")
     local autocmd = vim.api.nvim_create_autocmd
@@ -153,7 +149,7 @@ return {
         local options = { noremap = true, silent = true, }
         keymap(ev.buf, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", options)
         keymap(ev.buf, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", options)
-        keymap(ev.buf, "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", options)
+        keymap(ev.buf, "n", "K", "<cmd>lua vim.lsp.buf.hover({ border = 'rounded', })<cr>", options)
 
         local make_input = function()
           vim.ui.input({ prompt = "Make argument: ", }, function(input)
@@ -203,14 +199,14 @@ return {
             end,
             desc = "Format",
           },
-          { "<leader>kh", vim.lsp.buf.signature_help,                                                    desc = "Open signature ", },
-          { "<leader>ki", vim.lsp.buf.implementation,                                                    desc = "Open LSP Implementation", },
-          { "<leader>kI", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Toggle Inlay Hints", },
-          { "<leader>kn", vim.diagnostic.goto_next,                                                      desc = "Goto next LSP Diagnostic", },
-          { "<leader>kp", vim.diagnostic.goto_prev,                                                      desc = "Goto previous LSP Diagnostic", },
-          { "<leader>kr", "<cmd>Telescope lsp_references<cr>",                                           desc = "Show LSP References", },
-          { "<leader>ks", "<cmd>Telescope lsp_document_symbols<cr>",                                     desc = "Find LSP elements in file", },
-          { "<leader>kt", "<cmd>Telescope diagnostics<cr>",                                              desc = "Show LSP diagnostics", },
+          { "<leader>kh", vim.lsp.buf.signature_help,                                                           desc = "Open signature ", },
+          { "<leader>ki", vim.lsp.buf.implementation,                                                           desc = "Open LSP Implementation", },
+          { "<leader>kI", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,        desc = "Toggle Inlay Hints", },
+          { "<leader>kn", function() vim.diagnostic.jump({ count = 1, float = { border = "rounded", }, }) end,  desc = "Goto next LSP Diagnostic", },
+          { "<leader>kp", function() vim.diagnostic.jump({ count = -1, float = { border = "rounded", }, }) end, desc = "Goto previous LSP Diagnostic", },
+          { "<leader>kr", "<cmd>Telescope lsp_references<cr>",                                                  desc = "Show LSP References", },
+          { "<leader>ks", "<cmd>Telescope lsp_document_symbols<cr>",                                            desc = "Find LSP elements in file", },
+          { "<leader>kt", "<cmd>Telescope diagnostics<cr>",                                                     desc = "Show LSP diagnostics", },
         })
       end,
     })
