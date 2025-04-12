@@ -1,5 +1,5 @@
 return {
-  dir = "~/vaengir/symbols-outline.nvim",
+  "vaengir/symbols-outline.nvim",
   cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose", },
   opts = {
     position = "left",
