@@ -11,27 +11,26 @@ return {
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
-    local lspconfig = require("lspconfig")
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     -- Bash LSP
-    lspconfig.bashls.setup {
+    vim.lsp.config("bashls", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("bashls")
 
     -- CSS LSP
-    lspconfig.cssls.setup {
+    vim.lsp.config("cssls", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("cssls")
 
     -- Harper LSP
-    lspconfig.harper_ls.setup {
+    vim.lsp.config("harper_ls", {
       capabilities = capabilities,
       settings = {
         ["harper-ls"] = {
-          -- userDictPath = "",
-          -- fileDictPath = "",
           linters = {
             SpellCheck = true,
             SpelledNumbers = false,
@@ -56,15 +55,17 @@ return {
           dialect = "British",
         },
       },
-    }
+    })
+    vim.lsp.enable("harper_ls")
 
     -- HTML LSP
-    lspconfig.html.setup {
+    vim.lsp.config("html", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("html")
 
     -- Java LS
-    lspconfig.jdtls.setup {
+    vim.lsp.config("jdtls", {
       capabilities = capabilities,
       settings = {
         java = {
@@ -73,15 +74,17 @@ return {
           },
         },
       },
-    }
+    })
+    vim.lsp.enable("jdtls")
 
     -- Kotlin LSP
-    lspconfig.kotlin_language_server.setup {
+    vim.lsp.config("kotlin_language_server", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("kotlin_language_server")
 
     -- Lua LS
-    lspconfig.lua_ls.setup {
+    vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -113,20 +116,23 @@ return {
           },
         },
       },
-    }
+    })
+    vim.lsp.enable("lua_ls")
 
     -- Markdown LSP
-    lspconfig.marksman.setup {
+    vim.lsp.config("marksman", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("marksman")
 
     -- Python LSP
-    lspconfig.pyright.setup {
+    vim.lsp.config("pyright", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("pyright")
 
     -- Rust LSP
-    lspconfig.rust_analyzer.setup {
+    vim.lsp.config("rust_analyzer", {
       capabilities = capabilities,
       settings = {
         ["rust-analyzer"] = {
@@ -154,17 +160,20 @@ return {
           },
         },
       },
-    }
+    })
+    vim.lsp.enable("rust_analyzer")
 
     -- LaTeX LSP
-    lspconfig.texlab.setup {
+    vim.lsp.config("texlab", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("texlab")
 
     -- TSServer LSP
-    lspconfig.ts_ls.setup {
+    vim.lsp.config("ts_ls", {
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable("ts_ls")
 
     -- Better icons
     vim.fn.sign_define("DiagnosticSignError", { text = "󰅚 ", texthl = "DiagnosticSignError", })
