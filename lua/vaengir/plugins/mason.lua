@@ -9,6 +9,7 @@ return {
       ensure_installed = {
         "bashls",
         "cssls",
+        "harper_ls",
         "html",
         "jdtls",
         "kotlin_language_server",

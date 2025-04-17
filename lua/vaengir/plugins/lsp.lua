@@ -25,6 +25,39 @@ return {
       capabilities = capabilities,
     }
 
+    -- Harper LSP
+    lspconfig.harper_ls.setup {
+      capabilities = capabilities,
+      settings = {
+        ["harper-ls"] = {
+          -- userDictPath = "",
+          -- fileDictPath = "",
+          linters = {
+            SpellCheck = true,
+            SpelledNumbers = false,
+            AnA = true,
+            SentenceCapitalization = true,
+            UnclosedQuotes = true,
+            WrongQuotes = true,
+            LongSentences = true,
+            RepeatedWords = true,
+            Spaces = true,
+            Matcher = true,
+            CorrectNumberSuffix = true,
+          },
+          codeActions = {
+            ForceStable = false,
+          },
+          markdown = {
+            IgnoreLinkTitle = false,
+          },
+          diagnosticSeverity = "hint",
+          isolateEnglish = true,
+          dialect = "British",
+        },
+      },
+    }
+
     -- HTML LSP
     lspconfig.html.setup {
       capabilities = capabilities,
