@@ -1,6 +1,6 @@
 return {
   "vaengir/quicker.nvim",
-  version = "*",
+  branch = "main",
   event = "FileType qf",
   opts = {},
   keys = {
