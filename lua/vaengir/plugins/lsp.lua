@@ -175,6 +175,12 @@ return {
     })
     vim.lsp.enable("ts_ls")
 
+    -- Zig LSP
+    vim.lsp.config("zls", {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("zls")
+
     -- Better icons
     vim.fn.sign_define("DiagnosticSignError", { text = "󰅚 ", texthl = "DiagnosticSignError", })
     vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn", })

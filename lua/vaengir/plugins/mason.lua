@@ -19,6 +19,7 @@ return {
         "rust_analyzer",
         "texlab",
         "ts_ls",
+        "zls",
       },
     })
   end,
