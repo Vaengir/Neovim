@@ -1,11 +1,12 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = { "williamboman/mason-lspconfig.nvim", },
+  "mason-org/mason.nvim",
+  dependencies = { "mason-org/mason-lspconfig.nvim", },
   version = "*",
   config = function()
     require("mason").setup()
 
     require("mason-lspconfig").setup({
+      automatic_enable = false,
       ensure_installed = {
         "bashls",
         "cssls",
