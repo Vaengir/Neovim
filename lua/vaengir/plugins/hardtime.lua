@@ -17,6 +17,6 @@ return {
       "packer",
     },
     allow_different_key = true,
-    restriction_mode = "hint",
+    restriction_mode = "block",
   },
 }
