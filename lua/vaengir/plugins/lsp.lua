@@ -20,12 +20,6 @@ return {
     })
     vim.lsp.enable("bashls")
 
-    -- C LSP
-    vim.lsp.config("clangd", {
-      capabilities = capabilities,
-    })
-    vim.lsp.enable("clangd")
-
     -- CSS LSP
     vim.lsp.config("cssls", {
       capabilities = capabilities,
