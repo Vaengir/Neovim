@@ -9,6 +9,7 @@ return {
       automatic_enable = false,
       ensure_installed = {
         "bashls",
+        "clangd",
         "cssls",
         "harper_ls",
         "html",
