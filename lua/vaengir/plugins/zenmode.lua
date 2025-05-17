@@ -17,11 +17,9 @@ return {
     },
     on_open = function()
       vim.wo.wrap = true
-      require("ibl").overwrite { enabled = false, }
     end,
     on_close = function()
       vim.wo.wrap = false
-      require("ibl").overwrite { enabled = true, }
     end,
   },
   keys = {
