@@ -1,8 +1,12 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  branch = "main",
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      branch = "main",
+    },
     "nvim-treesitter/nvim-treesitter-context",
     {
       "rayliwell/tree-sitter-rstml",
@@ -22,7 +26,7 @@ return {
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
-    local ts_configs = require("nvim-treesitter.configs")
+    local ts_configs = require("nvim-treesitter.config")
     ts_configs.setup({
       ensure_installed = {
         "bash",

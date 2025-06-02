@@ -1,6 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  --  NOTE: With treesitter moving to 'main' telescope broke. Fix is on master but not in release branch. <2025-06-02>
+  -- branch = "0.1.x",
   cmd = { "Telescope", },
   dependencies = {
     "nvim-lua/plenary.nvim",
