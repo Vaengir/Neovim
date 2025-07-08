@@ -51,7 +51,7 @@ local todo_snippet_nodes = function(aliases, opts)
   for _, mark in pairs(marks) do
     table.insert(mark_nodes, mark())
   end
-  local comment_node = fmta("<> <>: <><><>", {
+  local comment_node = fmta("<><>: <><><>", {
     f(function()
       return get_cstring()[1]
     end),
