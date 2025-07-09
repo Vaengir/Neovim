@@ -4,26 +4,20 @@ return {
   config = function()
     local lualine = require("lualine")
 
-    local hide_in_width = function()
-      return vim.fn.winwidth(0) > 80
-    end
-
-    --- @param trunc_width number trunctates component when screen width is less then trunc_width
-    --- @param trunc_len number truncates component to trunc_len number of chars
-    --- @param hide_width number | nil hides component when window width is smaller then hide_width
-    --- @param no_ellipsis boolean whether to disable adding '...' at end after truncation
-    --- return function that can format the component accordingly
-    local function trunc(trunc_width, trunc_len, hide_width, no_ellipsis)
-      return function(str)
-        local win_width = vim.fn.winwidth(0)
-        if hide_width and win_width < hide_width then
-          return ""
-        elseif trunc_width and trunc_len and win_width < trunc_width and #str > trunc_len then
-          return str:sub(1, trunc_len) .. (no_ellipsis and "" or "...")
+    local filename = {
+      "filename",
+      path = 1,
+      fmt = function(str)
+        str = str:sub(-28)
+        local pos = str:find("/")
+        if pos and #str >= 27 then
+          str = str:sub(pos + 1)
         end
         return str
-      end
-    end
+      end,
+      color = { bg = "", },
+      padding = { left = 10, right = 1, },
+    }
 
     local diagnostics = {
       "diagnostics",
@@ -33,43 +27,30 @@ return {
       colored = false,
       update_in_insert = false,
       always_visible = false,
+      color = { bg = "", },
     }
 
-    local diff = {
-      "diff",
-      colored = false,
-      symbols = { added = " ", modified = " ", removed = " ", },
-      cond = hide_in_width,
-    }
 
-    local mode = {
-      "mode",
-      fmt = function(str)
-        return "-- " .. str .. " --"
+    local harpoon = {
+      "harpoon2",
+      _separator = " ",
+      icon = "",
+      indicators = { " 1 ", " 2 ", " 3 ", " 4 ", },
+      active_indicators = { "[1]", "[2]", "[3]", "[4]", },
+      no_harpoon = "",
+      padding = { left = 30, right = 50, },
+      color = { fg = "#88c0d0", },
+      cond = function()
+        return vim.fn.winwidth(0) > 100
       end,
-    }
-
-    local function getGuiFont()
-      return vim.api.nvim_get_option_value("guifont", {})
-    end
-
-    local filetype = {
-      "filetype",
-      icons_enabled = true,
-      icon = nil,
-    }
-
-    local branch = {
-      "branch",
-      icons_enabled = true,
-      icon = "",
-      fmt = trunc(120, 6, nil, true),
     }
 
     local cursor_position = {
       "location",
-      padding = 1,
+      color = { bg = "", },
+      padding = { left = 10, right = 1, },
     }
+
     local progress = function()
       local current_line = vim.fn.line(".")
       local total_lines = vim.fn.line("$")
@@ -79,29 +60,38 @@ return {
       return chars[index]
     end
 
+    local progress_widget = {
+      progress,
+      color = { bg = "", fg = "#88c0d0", },
+      padding = { left = 1, right = 10, },
+    }
+
+    local function getGuiFont()
+      return vim.api.nvim_get_option_value("guifont", {})
+    end
+
     lualine.setup({
       options = {
         icons_enabled = true,
         theme = "onenord",
-        component_separators = { left = "", right = "", },
-        section_separators = { left = "", right = "", },
+        component_separators = "",
+        section_separators = "",
         disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", },
         always_divide_middle = true,
       },
       sections = {
-        lualine_a = { branch, diagnostics, },
-        lualine_b = { mode, },
-        lualine_c = { { "filename", separator = "", }, { "%=", separator = "", }, { "harpoon2", separator = " ", }, },
-        -- lualine_x = { "encoding", "fileformat", "filetype" },
-        lualine_x = { --[[ {getGuiFont}, diff, ]] "encoding", filetype, },
+        lualine_a = {},
+        lualine_b = { filename, diagnostics, },
+        lualine_c = {},
+        lualine_x = { harpoon, },
         lualine_y = { cursor_position, },
-        lualine_z = { progress, },
+        lualine_z = { progress_widget, },
       },
       inactive_sections = {
-        lualine_a = {},
+        lualine_a = { filename, diagnostics, },
         lualine_b = {},
         lualine_c = {},
-        lualine_x = { "location", getGuiFont, },
+        lualine_x = { cursor_position, getGuiFont, },
         lualine_y = {},
         lualine_z = {},
       },
