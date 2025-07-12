@@ -43,6 +43,7 @@ return {
             Spaces = true,
             Matcher = true,
             CorrectNumberSuffix = true,
+            ToDoHyphen = false,
           },
           codeActions = {
             ForceStable = false,
