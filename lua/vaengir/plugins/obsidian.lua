@@ -1,19 +1,12 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
   opts = {
     workspaces = {
       {
         name = "private",
         path = "~/Documents/Obsidian",
       },
-      -- {
-      --   name = "work",
-      --   path = "~/work/obsidian",
-      -- },
     },
     notes_subdir = "98-Inbox",
     log_level = vim.log.levels.INFO,
@@ -22,8 +15,6 @@ return {
       date_format = "%Y-%m-%d",
       template = "Daily.md",
     },
-    -- Needs to be here, otherwise it interferes with whichkey
-    mappings = {},
     note_id_func = function(title)
       local suffix = ""
       if title ~= nil then
@@ -59,16 +50,18 @@ return {
         end)
       end,
     },
+    -- Disable legacy commands message
+    legacy_commands = false,
   },
   keys = {
-    { "<leader>fo", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes", },
-    { "<leader>ob", "<cmd>ObsidianBacklinks<cr>",   desc = "Location List of References", },
-    { "<leader>od", "<cmd>ObsidianToday<cr>",       desc = "Daily Note", },
-    { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes", },
-    { "<leader>ol", "<cmd>ObsidianFollowLink<cr>",  desc = "Follow Link", },
-    { "<leader>on", "<cmd>ObsidianNew<cr>",         desc = "Create new Note", },
-    { "<leader>oo", "<cmd>ObsidianOpen<cr>",        desc = "Open Note in Obsidian app", },
-    { "<leader>os", "<cmd>ObsidianSearch<cr>",      desc = "Find Text in Notes", },
-    { "<leader>ot", "<cmd>ObsidianTemplate<cr>",    desc = "Insert Template", },
+    { "<leader>fo", "<cmd>Obsidian quick_switch<cr>", desc = "Find Notes", },
+    { "<leader>ob", "<cmd>Obsidian backlinks<cr>",    desc = "Location List of References", },
+    { "<leader>od", "<cmd>Obsidian today<cr>",        desc = "Daily Note", },
+    { "<leader>of", "<cmd>Obsidian quick_switch<cr>", desc = "Find Notes", },
+    { "<leader>ol", "<cmd>Obsidian follow_link<cr>",  desc = "Follow Link", },
+    { "<leader>on", "<cmd>Obsidian new<cr>",          desc = "Create new Note", },
+    { "<leader>oo", "<cmd>Obsidian open<cr>",         desc = "Open Note in Obsidian app", },
+    { "<leader>os", "<cmd>Obsidian search<cr>",       desc = "Find Text in Notes", },
+    { "<leader>ot", "<cmd>Obsidian template<cr>",     desc = "Insert Template", },
   },
 }
