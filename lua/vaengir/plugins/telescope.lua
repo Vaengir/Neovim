@@ -36,7 +36,6 @@ return {
   keys = {
     { "<leader>fb", "<cmd>Telescope buffers<cr>",                                desc = "Show Buffers", },
     { "<leader>fd", "<cmd>Telescope git_status<cr>",                             desc = "Show Git Diff", },
-    { "<leader>ff", "<cmd>lua require('vaengir.functions').project_files()<cr>", desc = "Find Project Files", },
     { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>",                 desc = "Find Hidden Files", },
     { "<leader>fj", "<cmd>Telescope jumplist<cr>",                               desc = "Jumplist", },
     { "<leader>fk", "<cmd>Telescope lsp_document_symbols<cr>",                   desc = "Find LSP elements in file", },
