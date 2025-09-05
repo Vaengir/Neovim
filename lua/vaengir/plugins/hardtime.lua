@@ -10,6 +10,7 @@ return {
       "mason",
       "harpoon",
       "oil",
+      "Outline",
       "fugitive",
       "undotree",
       "query",
