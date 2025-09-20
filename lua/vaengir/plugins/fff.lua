@@ -1,6 +1,8 @@
 return {
   "dmtrKovalenko/fff.nvim",
-  build = "cargo build --release",
+  build = function()
+    require("fff.download").download_or_build_binary()
+  end,
   opts = {
     base_path = vim.fn.getcwd(),
     prompt = " ",
