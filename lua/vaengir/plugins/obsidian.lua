@@ -25,15 +25,19 @@ return {
       end
     end,
     wiki_link_func = "prepend_note_id",
-    note_frontmatter_func = function(note)
-      local out = { id = note.id, tags = note.tags, date = os.date("%Y-%m-%d %H:%M"), }
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
+    frontmatter = {
+      enabled = true,
+      func = function(note)
+        local out = { id = note.id, tags = note.tags, date = os.date("%Y-%m-%d %H:%M"), }
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
-      end
-      return out
-    end,
+        return out
+      end,
+      sort = { "id", "tags", },
+    },
     templates = {
       subdir = "99-Templates",
       date_format = "%Y-%m-%d",
@@ -42,7 +46,10 @@ return {
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url, })
     end,
-    use_advanced_uri = true,
+    open = {
+      use_advanced_uri = true,
+      func = vim.ui.open,
+    },
     callbacks = {
       leave_note = function(client, note)
         vim.api.nvim_buf_call(note.bufnr or 0, function()
