@@ -139,7 +139,8 @@ return {
         ["rust-analyzer"] = {
           imports = {
             granularity = {
-              group = "module",
+              enforce = true,
+              group = "crate",
             },
             prefix = "self",
           },
@@ -151,8 +152,13 @@ return {
           procMacro = {
             enable = true,
           },
-          checkOnSave = {
+          check = {
             command = "clippy",
+            extraArgs = {
+              "--",
+              "-W",
+              "clippy::pedantic",
+            },
           },
           semanticHighlighting = {
             strings = {
