@@ -35,9 +35,9 @@ local options = {
   conceallevel = 1,                                                                       -- allow concealment
   undodir = os.getenv("HOME") .. "/.config/nvim/undodir",                                 -- allows undotree to have access to old undos
   diffopt = "internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram", -- configure diffview
+  nrformats = "bin,hex,alpha,blank",                                                      -- allows binary, hex, letter incrementation based on preceding whitespace see :help nrformats
 }
 
-vim.opt.nrformats:append({ "alpha", }) -- Allows letter incrementation
 vim.g.markdown_recommended_style = 0   -- Disable default Markdown style
 vim.g.python_recommended_style = 0     -- Disable default python style
 
