@@ -140,14 +140,14 @@ return {
   ),
 
   s({ trig = "nvim", name = "Neovim Update", dscr = "The Neovim submodule was updated", },
-    t "Neovim update"
+    t "chore: Neovim update"
   ),
 
   s({ trig = "plug", name = "Plugin Update", dscr = "The Neovim lazy-lock.json was updated", },
-    t "Plugin update"
+    t "chore: Plugin update"
   ),
 
   s({ trig = "awe", name = "AwesomeWM Update", dscr = "The AwesomeWM submodule was updated", },
-    t "AwesomeWM update"
+    t "chore: AwesomeWM update"
   ),
 }
