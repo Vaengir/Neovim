@@ -1,7 +1,5 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  branch = "main",
+  "romus204/tree-sitter-manager.nvim",
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -17,16 +15,16 @@ return {
       "aaronik/treewalker.nvim",
       opts = {},
       keys = {
-        { "<C-S-H>", "<cmd>Treewalker Left<cr>",  desc = "Treewalk left", },
-        { "<C-S-J>", "<cmd>Treewalker Down<cr>",  desc = "Treewalk down", },
-        { "<C-S-K>", "<cmd>Treewalker Up<cr>",    desc = "Treewalk up", },
-        { "<C-S-L>", "<cmd>Treewalker Right<cr>", desc = "Treewalk right", },
+        { "<C-S-H>", "<cmd>Treewalker Left<cr>",  desc = "Treewalker Left", },
+        { "<C-S-J>", "<cmd>Treewalker Down<cr>",  desc = "Treewalker Down", },
+        { "<C-S-K>", "<cmd>Treewalker Up<cr>",    desc = "Treewalker Up", },
+        { "<C-S-L>", "<cmd>Treewalker Right<cr>", desc = "Treewalker Right", },
       },
     },
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
-    local ts_configs = require("nvim-treesitter.config")
+    local ts_configs = require("tree-sitter-manager")
     ts_configs.setup({
       ensure_installed = {
         "bash",
