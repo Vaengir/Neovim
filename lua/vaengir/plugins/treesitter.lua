@@ -1,16 +1,13 @@
 return {
-  "romus204/tree-sitter-manager.nvim",
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  branch = "main",
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
       branch = "main",
     },
     "nvim-treesitter/nvim-treesitter-context",
-    {
-      "rayliwell/tree-sitter-rstml",
-      build = ":TSUpdate",
-      opts = {},
-    },
     {
       "aaronik/treewalker.nvim",
       opts = {},
@@ -24,7 +21,7 @@ return {
   },
   event = { "BufReadPre", "BufNewFile", },
   config = function()
-    local ts_configs = require("tree-sitter-manager")
+    local ts_configs = require("nvim-treesitter")
     ts_configs.setup({
       ensure_installed = {
         "bash",
