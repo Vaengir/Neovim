@@ -76,5 +76,6 @@ return {
       end,
       desc = "Find Project Files",
     },
+    { "<leader>fs", function() require("fff").live_grep() end, desc = "Find Strings", },
   },
 }

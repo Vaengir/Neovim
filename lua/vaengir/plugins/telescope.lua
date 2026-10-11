@@ -40,7 +40,6 @@ return {
     { "<leader>fk", "<cmd>Telescope lsp_document_symbols<cr>",   desc = "Find LSP elements in file", },
     { "<leader>fq", "<cmd>Telescope quickfix<cr>",               desc = "Quickfixlist", },
     { "<leader>fr", "<cmd>Telescope lsp_references<cr>",         desc = "References", },
-    { "<leader>fs", "<cmd>Telescope live_grep<cr>",              desc = "Find Strings", },
     { "<leader>ft", "<cmd>Telescope builtin<cr>",                desc = "Select Telescope mode", },
     { "<leader>fv", "<cmd>Telescope help_tags<cr>",              desc = "Find Help Entries", },
     {

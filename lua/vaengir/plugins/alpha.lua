@@ -32,10 +32,10 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button("f", "󰈞  Find file", "<cmd>lua require('vaengir.functions').project_files()<cr>"),
+      dashboard.button("f", "󰈞  Find file", function() require("vaengir.functions").project_files() end),
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("r", "󰄉  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("s", "󰊄  Find Strings", ":Telescope live_grep <CR>"),
+      dashboard.button("s", "󰊄  Find Strings", function() require("fff").live_grep() end),
       dashboard.button("l", "󰒲  Lazy", ":Lazy check<CR>"),
       dashboard.button("m", "󰒋  Mason", ":Mason<CR>"),
       dashboard.button("c", "  Configuration", ":e ~/.config/nvim/<CR>"),
