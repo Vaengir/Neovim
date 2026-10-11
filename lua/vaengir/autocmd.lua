@@ -70,6 +70,17 @@ autocmd({ "InsertEnter", "CursorMovedI", }, {
   end,
 })
 
+autocmd("BufEnter", {
+  pattern = "*/tasks/*/*.md",
+  callback = function(ev)
+    vim.keymap.set("n", "<leader>ty", function()
+      local huid = vim.fn.expand("%:p:h:t")
+      vim.fn.setreg("+", huid)
+      vim.notify("Copied " .. huid)
+    end, { buffer = ev.buf, desc = "Copy task HUID", })
+  end,
+})
+
 usercmd("SqlMagic", function()
   require("vaengir.functions").format_dat_sql()
 end, {})
