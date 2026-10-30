@@ -7,7 +7,13 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
       branch = "main",
     },
-    "nvim-treesitter/nvim-treesitter-context",
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      opts = {
+        max_lines = 3,
+        multiline_threshold = 1,
+      },
+    },
     {
       "aaronik/treewalker.nvim",
       opts = {},
